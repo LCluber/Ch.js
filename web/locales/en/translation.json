@@ -1,0 +1,42 @@
+{
+  "title": "Ch.js",
+  "menu" : {
+    "menu"          : "Menu",
+    "home"          : "Home",
+    "about"         : "About",
+    "example"       : "Example",
+    "code"          : "Code",
+    "download"      : "Download",
+    "documentation" : "Documentation",
+    "contact"       : "Contact"
+  },
+  "section" : {
+    "home" : {
+      "h1" : "Ch.js",
+      "description" : "An open source parameter checker library written in TypeScript."
+    },
+    "about" : {
+      "h2" : "About",
+      "text" : "<p>The goal of this library is to provide an easy way to check if a parameter is what it is supposed to be. Function, object, ascii, integer, string, json...</p><p> You can help develop Ch.js on <a href=\"https://github.com/LCluber/Ch.js\" target=\"_blank\">Github</a>.</p>"
+    },
+    "code" : {
+      "h2" : "Code",
+      "h3" : "Javascript (main.js)",
+      "p1" : "Instantiate a Keyboard class and creates input listeners."
+    },
+    "download" : {
+      "h2" : "Download Ch.js",
+      "min" : "Standalone IIFE",
+      "npm" : "Install with ",
+      "zip" : "Chjs.zip",
+      "github" : "Clone from Github "
+    },
+    "contact" : {
+      "h2" : "Contact me",
+      "description" : "Feel free to ask me about my work, give me suggestions, or just to say hi.",
+      "website" : "lcluber.com"
+    }
+  },
+  "github":" Github",
+  "twitter":"Twitter"
+}
