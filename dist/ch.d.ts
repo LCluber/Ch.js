@@ -26,7 +26,9 @@ export declare class Is {
     static json(str: any): Object | false;
     static function(func: any): boolean;
     static object(object: any): boolean;
-    static ascii(code: string | number, extended: boolean): boolean;
-    static integer(value: string | number): boolean;
+    static array(array: any): boolean;
+    static ascii(code: any, extended: boolean): boolean;
+    static integer(value: any): boolean;
+    static float(value: any): boolean;
     static string(str: any): boolean;
 }

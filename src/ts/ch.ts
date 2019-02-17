@@ -25,15 +25,23 @@ export class Is {
     return object !== null && typeof object === 'object';
   }
 
-  static ascii(code: string|number, extended: boolean): boolean {
+  static array(array: any): boolean {
+    return array !== null && array.constructor === Array;
+  }
+  
+  static ascii(code: any, extended: boolean): boolean {
     return (extended ? /^[\x00-\xFF]*$/ : /^[\x00-\x7F]*$/).test(<string>code);
   }
 
-  static integer(value: string|number): boolean {
+  static integer(value: any): boolean {
     return value === parseInt(<string>value, 10);
   }
 
-  static string(str: any) {
+  static float(value: any): boolean {
+    return Number(value) === value && value % 1 !== 0;
+  }
+
+  static string(str: any): boolean {
     return typeof str === 'string';
   }
 
