@@ -228,16 +228,16 @@ var Ch = (function (exports) {
       return (extended ? /^[\x00-\xFF]*$/ : /^[\x00-\x7F]*$/).test(code);
     };
 
-    Is.integer = function integer(value) {
-      return value === parseInt(value, 10);
+    Is.integer = function integer(number) {
+      return number === parseInt(number, 10);
     };
 
-    Is.float = function float(value) {
-      return Number(value) === value && value % 1 !== 0;
+    Is.float = function float(number) {
+      return Number(number) === number && number % 1 !== 0;
     };
 
-    Is.string = function string(str) {
-      return typeof str === 'string';
+    Is.string = function string(_string) {
+      return typeof _string === 'string';
     };
 
     return Is;

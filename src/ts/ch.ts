@@ -33,16 +33,16 @@ export class Is {
     return (extended ? /^[\x00-\xFF]*$/ : /^[\x00-\x7F]*$/).test(<string>code);
   }
 
-  static integer(value: any): boolean {
-    return value === parseInt(<string>value, 10);
+  static integer(number: any): boolean {
+    return number === parseInt(<string>number, 10);
   }
 
-  static float(value: any): boolean {
-    return Number(value) === value && value % 1 !== 0;
+  static float(number: any): boolean {
+    return Number(number) === number && number % 1 !== 0;
   }
 
-  static string(str: any): boolean {
-    return typeof str === 'string';
+  static string(string: any): boolean {
+    return typeof string === 'string';
   }
 
 }

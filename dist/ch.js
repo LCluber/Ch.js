@@ -53,14 +53,14 @@ class Is {
     static ascii(code, extended) {
         return (extended ? /^[\x00-\xFF]*$/ : /^[\x00-\x7F]*$/).test(code);
     }
-    static integer(value) {
-        return value === parseInt(value, 10);
+    static integer(number) {
+        return number === parseInt(number, 10);
     }
-    static float(value) {
-        return Number(value) === value && value % 1 !== 0;
+    static float(number) {
+        return Number(number) === number && number % 1 !== 0;
     }
-    static string(str) {
-        return typeof str === 'string';
+    static string(string) {
+        return typeof string === 'string';
     }
 }
 

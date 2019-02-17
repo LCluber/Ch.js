@@ -28,7 +28,7 @@ export declare class Is {
     static object(object: any): boolean;
     static array(array: any): boolean;
     static ascii(code: any, extended: boolean): boolean;
-    static integer(value: any): boolean;
-    static float(value: any): boolean;
-    static string(str: any): boolean;
+    static integer(number: any): boolean;
+    static float(number: any): boolean;
+    static string(string: any): boolean;
 }

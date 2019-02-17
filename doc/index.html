@@ -65,13 +65,12 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<h2 id="synopsis">Synopsis</h2>
-				<p><a href="http://chjs.lcluber.com">Ch.js</a> is an open source parameter checker library written in TypeScript.</p>
+				<p>Ch.js is an open source variable checker library written in TypeScript.</p>
 				<h2 id="motivation">Motivation</h2>
-				<p>The goal of this library is to provide an easy way to check if a parameter is what it is supposed to be. Function, object, ascii, integer, string, json...</p>
+				<p>The goal of this library is to provide an easy way to check if a variable is what it is supposed to be. Function, object, ascii, integer, string, json...</p>
 				<h2 id="installation">Installation</h2>
 				<pre><code class="lang-bash">$ npm install @lcluber/chjs
 </code></pre>
-				<p>Or download it <strong><a href="http://chjs.lcluber.com/#download">here</a></strong>.</p>
 				<h2 id="usage">Usage</h2>
 				<h3 id="es6">ES6</h3>
 				<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { Is } <span class="hljs-keyword">from</span> <span class="hljs-string">'@lcluber/chjs'</span>;
@@ -83,11 +82,9 @@
 <span class="hljs-keyword">if</span> (!Is.array(variable)) {
   <span class="hljs-comment">//variable is not an array</span>
 }
-
 </code></pre>
 				<h3 id="iife">IIFE</h3>
 				<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"node-modules/@lcluber/chjs/dist/ch.iife.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-
 </code></pre>
 				<pre><code class="lang-javascript">
 <span class="hljs-keyword">if</span> (Ch.Is.function(variable)) {
@@ -97,10 +94,24 @@
 <span class="hljs-keyword">if</span> (!Ch.Is.array(variable)) {
   <span class="hljs-comment">//variable is not an array</span>
 }
-
 </code></pre>
 				<h2 id="api-reference">API Reference</h2>
-				<p>Read the documentation <strong><a href="http://chjs.lcluber.com/doc/">here</a></strong>.</p>
+				<pre><code class="lang-javascript"><span class="hljs-keyword">static</span> Is.json(string: any): <span class="hljs-built_in">Object</span>|<span class="hljs-literal">false</span> {}
+
+<span class="hljs-keyword">static</span> Is.function(func: any): boolean {}
+
+<span class="hljs-keyword">static</span> Is.object(object: any): boolean {}
+
+<span class="hljs-keyword">static</span> Is.array(array: any): boolean {}
+
+<span class="hljs-keyword">static</span> Is.ascii(code: any, <span class="hljs-attr">extended</span>: boolean): boolean {}
+
+<span class="hljs-keyword">static</span> Is.integer(number: any): boolean {}
+
+<span class="hljs-keyword">static</span> Is.float(number: any): boolean {}
+
+<span class="hljs-keyword">static</span> Is.string(string: any): boolean {}
+</code></pre>
 				<h2 id="tests">Tests</h2>
 				<p>No tests to run yet</p>
 				<h2 id="contributors">Contributors</h2>

@@ -1,17 +1,16 @@
 ## Synopsis
 
-[Ch.js](http://chjs.lcluber.com) is an open source parameter checker library written in TypeScript.
+Ch.js is an open source variable checker library written in TypeScript.
 
 ## Motivation
 
-The goal of this library is to provide an easy way to check if a parameter is what it is supposed to be. Function, object, ascii, integer, string, json...
+The goal of this library is to provide an easy way to check if a variable is what it is supposed to be. Function, object, ascii, integer, string, json...
 
 ## Installation
 
 ```bash
 $ npm install @lcluber/chjs
 ```
-Or download it **[here](http://chjs.lcluber.com/#download)**.
 
 ## Usage
 
@@ -27,14 +26,12 @@ if (Is.function(variable)) {
 if (!Is.array(variable)) {
   //variable is not an array
 }
-
 ```
 
 ### IIFE
 
 ```html
 <script src="node-modules/@lcluber/chjs/dist/ch.iife.min.js"></script>
-
 ```
 
 ```javascript
@@ -46,12 +43,27 @@ if (Ch.Is.function(variable)) {
 if (!Ch.Is.array(variable)) {
   //variable is not an array
 }
-
 ```
 
 ## API Reference
 
-Read the documentation **[here](http://chjs.lcluber.com/doc/)**.
+```javascript
+static Is.json(string: any): Object|false {}
+
+static Is.function(func: any): boolean {}
+
+static Is.object(object: any): boolean {}
+
+static Is.array(array: any): boolean {}
+
+static Is.ascii(code: any, extended: boolean): boolean {}
+
+static Is.integer(number: any): boolean {}
+
+static Is.float(number: any): boolean {}
+
+static Is.string(string: any): boolean {}
+```
 
 ## Tests
 
