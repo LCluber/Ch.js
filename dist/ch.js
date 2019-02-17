@@ -47,11 +47,17 @@ class Is {
     static object(object) {
         return object !== null && typeof object === 'object';
     }
+    static array(array) {
+        return array !== null && array.constructor === Array;
+    }
     static ascii(code, extended) {
         return (extended ? /^[\x00-\xFF]*$/ : /^[\x00-\x7F]*$/).test(code);
     }
     static integer(value) {
         return value === parseInt(value, 10);
+    }
+    static float(value) {
+        return Number(value) === value && value % 1 !== 0;
     }
     static string(str) {
         return typeof str === 'string';

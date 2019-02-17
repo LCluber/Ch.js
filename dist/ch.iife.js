@@ -220,12 +220,20 @@ var Ch = (function (exports) {
       return _object !== null && typeof _object === 'object';
     };
 
+    Is.array = function array(_array) {
+      return _array !== null && _array.constructor === Array;
+    };
+
     Is.ascii = function ascii(code, extended) {
       return (extended ? /^[\x00-\xFF]*$/ : /^[\x00-\x7F]*$/).test(code);
     };
 
     Is.integer = function integer(value) {
       return value === parseInt(value, 10);
+    };
+
+    Is.float = function float(value) {
+      return Number(value) === value && value % 1 !== 0;
     };
 
     Is.string = function string(str) {
