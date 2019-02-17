@@ -1,4 +1,8 @@
 
+Version 0.1.2 (February 18th 2019)
+-----------------------------
+ * Updated README.md with documentation
+ 
 Version 0.1.1 (February 17th 2019)
 -----------------------------
  * added Is.array() check

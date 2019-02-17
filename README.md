@@ -65,10 +65,6 @@ static Is.float(number: any): boolean {}
 static Is.string(string: any): boolean {}
 ```
 
-## Tests
-
-No tests to run yet
-
 ## Contributors
 
 Ch.js is still in early development and I would be glad to get all the help you can provide for this project.
