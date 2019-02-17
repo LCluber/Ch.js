@@ -72,8 +72,33 @@
 				<pre><code class="lang-bash">$ npm install @lcluber/chjs
 </code></pre>
 				<p>Or download it <strong><a href="http://chjs.lcluber.com/#download">here</a></strong>.</p>
-				<h2 id="demo">Demo</h2>
-				<p>See a basic example <strong><a href="http://chjs.lcluber.com/#example">here</a></strong>.</p>
+				<h2 id="usage">Usage</h2>
+				<h3 id="es6">ES6</h3>
+				<pre><code class="lang-javascript"><span class="hljs-keyword">import</span> { Is } <span class="hljs-keyword">from</span> <span class="hljs-string">'@lcluber/chjs'</span>;
+
+<span class="hljs-keyword">if</span> (Is.function(variable)) {
+ <span class="hljs-comment">//variable is a function</span>
+}
+
+<span class="hljs-keyword">if</span> (!Is.array(variable)) {
+  <span class="hljs-comment">//variable is not an array</span>
+}
+
+</code></pre>
+				<h3 id="iife">IIFE</h3>
+				<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"node-modules/@lcluber/chjs/dist/ch.iife.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+</code></pre>
+				<pre><code class="lang-javascript">
+<span class="hljs-keyword">if</span> (Ch.Is.function(variable)) {
+ <span class="hljs-comment">//variable is a function</span>
+}
+
+<span class="hljs-keyword">if</span> (!Ch.Is.array(variable)) {
+  <span class="hljs-comment">//variable is not an array</span>
+}
+
+</code></pre>
 				<h2 id="api-reference">API Reference</h2>
 				<p>Read the documentation <strong><a href="http://chjs.lcluber.com/doc/">here</a></strong>.</p>
 				<h2 id="tests">Tests</h2>

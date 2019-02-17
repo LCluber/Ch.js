@@ -13,9 +13,41 @@ $ npm install @lcluber/chjs
 ```
 Or download it **[here](http://chjs.lcluber.com/#download)**.
 
-## Demo
+## Usage
 
-See a basic example **[here](http://chjs.lcluber.com/#example)**.
+### ES6
+
+```javascript
+import { Is } from '@lcluber/chjs';
+
+if (Is.function(variable)) {
+ //variable is a function
+}
+
+if (!Is.array(variable)) {
+  //variable is not an array
+}
+
+```
+
+### IIFE
+
+```html
+<script src="node-modules/@lcluber/chjs/dist/ch.iife.min.js"></script>
+
+```
+
+```javascript
+
+if (Ch.Is.function(variable)) {
+ //variable is a function
+}
+
+if (!Ch.Is.array(variable)) {
+  //variable is not an array
+}
+
+```
 
 ## API Reference
 

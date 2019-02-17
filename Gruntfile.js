@@ -170,7 +170,6 @@ module.exports = function(grunt){
             // })
           ],
           external: [
-            '@lcluber/aiasjs',
             '@lcluber/mouettejs'
           ]
         },
@@ -179,6 +178,26 @@ module.exports = function(grunt){
           dest : distDir + projectNameLC + '.js'
         } ]
       },
+      // cjs:{
+      //   options: {
+      //     format:'cjs',
+      //     // moduleName: projectName,
+      //     banner: banner,
+      //     // sourceMap: 'inline'
+      //     plugins: [
+      //       // resolve({
+      //       // //   //exclude: './node_modules/**'
+      //       // })
+      //     ],
+      //     external: [
+      //       '@lcluber/mouettejs'
+      //     ]
+      //   },
+      //   files: [ {
+      //     src : compiledES6Dir + projectNameLC + '.js',
+      //     dest : distDir + projectNameLC + '.cjs.js'
+      //   } ]
+      // },
       iife:{
         options: {
           format:'iife',
@@ -406,6 +425,7 @@ module.exports = function(grunt){
                         //'ts:es5',
                         'rollup:iife',
                         'uglify:libIife',
+                        //'rollup:cjs',
                         //declaration
                         'concat:declaration',
                         'strip_code:declaration'
