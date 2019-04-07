@@ -8,9 +8,17 @@ The goal of this library is to provide an easy way to check if a variable is wha
 
 ## Installation
 
+### NPM
+
 ```bash
 $ npm install @lcluber/chjs
 ```
+
+### Yarn
+
+```bash
+$ yarn add @lcluber/chjs
+````
 
 ## Usage
 
