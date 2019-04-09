@@ -3,12 +3,12 @@
   "version": "0.1.2",
   "description": "Variable checker library written in Typescript",
   "keywords": [],
-  "homepage": "http://chjs.lcluber.com",
+  "homepage": "https://github.com/LCluber/Ch.js",
   "main": "dist/ch",
   "types": "dist/ch",
   "repository": {
     "type": "git",
-    "url": "https://github.com/LCluber/Ch.js.git"
+    "url": "https://github.com/LCluber/Ch.js"
   },
   "bugs": {
     "url": "https://github.com/LCluber/Ch.js/issues",
