@@ -23,20 +23,17 @@
 * http://chjs.lcluber.com
 */
 
-import { Logger } from '@lcluber/mouettejs';
-
 class Is {
     static json(str) {
         if (!this.string(str)) {
-            return false;
+            return new TypeError('Parameter should be of type string');
         }
         let json = str.replace(/(\r\n|\n|\r|\t)/gm, '');
         try {
             json = JSON.parse(str);
         }
         catch (e) {
-            Logger.error(e);
-            return false;
+            return e;
         }
         return json;
     }

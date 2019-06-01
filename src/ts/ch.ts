@@ -1,17 +1,15 @@
-import { Logger } from '@lcluber/mouettejs';
 
 export class Is {
 
-  static json(str: any): Object|false {
+  static json(str: any): Object|SyntaxError|TypeError {
     if (!this.string(str)) {
-      return false;
+      return new TypeError('Parameter should be of type string');
     }
     let json = str.replace(/(\r\n|\n|\r|\t)/gm, '');
     try {
       json = JSON.parse(str);
     } catch (e) {
-      Logger.error(e);
-      return false;
+      return e;
     }
     return json;
   }
@@ -28,7 +26,7 @@ export class Is {
   static array(array: any): boolean {
     return array !== null && array.constructor === Array;
   }
-  
+
   static ascii(code: any, extended: boolean): boolean {
     return (extended ? /^[\x00-\xFF]*$/ : /^[\x00-\x7F]*$/).test(<string>code);
   }

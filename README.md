@@ -56,7 +56,7 @@ if (!Ch.Is.array(variable)) {
 ## API Reference
 
 ```javascript
-static Is.json(string: any): Object|false {}
+static Is.json(string: any): Object|SyntaxError|TypeError {}
 
 static Is.function(func: any): boolean {}
 
