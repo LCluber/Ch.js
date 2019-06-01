@@ -1,7 +1,7 @@
 Version 1.0.0 (June 01st 2019)
 -----------------------------
  * Deleted Mouette.js dependency
- * Is.json() method now returns an Object, SyntaxError or TypeError
+ * Is.json() method now returns a boolean
 
 Version 0.1.2 (April 07th 2019)
 -----------------------------

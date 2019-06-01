@@ -32,19 +32,13 @@ var Ch = (function (exports) {
     function Is() {}
 
     Is.json = function json(str) {
-      if (!this.string(str)) {
-        return new TypeError('Parameter should be of type string');
-      }
-
-      var json = str.replace(/(\r\n|\n|\r|\t)/gm, '');
-
       try {
-        json = JSON.parse(str);
+        JSON.parse(str);
       } catch (e) {
-        return e;
+        return false;
       }
 
-      return json;
+      return true;
     };
 
     Is.function = function _function(func) {
