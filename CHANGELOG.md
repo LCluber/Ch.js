@@ -1,3 +1,7 @@
+Version 1.0.1 (June 02nd 2019)
+-----------------------------
+ * Updated README.md
+
 Version 1.0.0 (June 01st 2019)
 -----------------------------
  * Deleted Mouette.js dependency
