@@ -1,3 +1,7 @@
+Version 1.0.2 (June 03rd 2019)
+-----------------------------
+ * Improved Is.json() method
+
 Version 1.0.1 (June 02nd 2019)
 -----------------------------
  * Updated README.md

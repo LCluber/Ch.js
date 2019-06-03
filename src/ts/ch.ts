@@ -2,10 +2,10 @@
 export class Is {
 
   static json(str: any): boolean/*Object|SyntaxError|TypeError*/ {
-    // if (!this.string(str)) {
-    //   return false;
-    //   //return new TypeError('Parameter should be of type string');
-    // }
+    if (!this.string(str)) {
+      return false;
+      //return new TypeError('Parameter should be of type string');
+    }
     // let json = str.replace(/(\r\n|\n|\r|\t)/gm, '');
     try {
       JSON.parse(str);

@@ -32,6 +32,10 @@ var Ch = (function (exports) {
     function Is() {}
 
     Is.json = function json(str) {
+      if (!this.string(str)) {
+        return false;
+      }
+
       try {
         JSON.parse(str);
       } catch (e) {

@@ -25,6 +25,9 @@
 
 class Is {
     static json(str) {
+        if (!this.string(str)) {
+            return false;
+        }
         try {
             JSON.parse(str);
         }
