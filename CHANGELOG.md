@@ -1,3 +1,8 @@
+Version 1.1.0 (June 19th 2019)
+-----------------------------
+ * Added Is.htmlElement() method
+ * Added Is.node() method
+
 Version 1.0.2 (June 03rd 2019)
 -----------------------------
  * Improved Is.json() method

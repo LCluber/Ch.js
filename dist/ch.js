@@ -58,6 +58,15 @@ class Is {
     static string(string) {
         return typeof string === 'string';
     }
+    static htmlElement(htmlElement) {
+        return (typeof HTMLElement === "object"
+            ? htmlElement instanceof HTMLElement
+            : htmlElement && typeof htmlElement === "object" && htmlElement !== null && htmlElement.nodeType === 1 && typeof htmlElement.nodeName === "string");
+    }
+    static node(node) {
+        return (typeof Node === "object" ? node instanceof Node :
+            node && typeof node === "object" && typeof node.nodeType === "number" && typeof node.nodeName === "string");
+    }
 }
 
 export { Is };

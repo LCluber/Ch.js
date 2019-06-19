@@ -31,4 +31,6 @@ export declare class Is {
     static integer(number: any): boolean;
     static float(number: any): boolean;
     static string(string: any): boolean;
+    static htmlElement(htmlElement: any): boolean;
+    static node(node: any): boolean;
 }

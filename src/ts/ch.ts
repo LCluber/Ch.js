@@ -45,4 +45,19 @@ export class Is {
     return typeof string === 'string';
   }
 
+  static htmlElement(htmlElement: any): boolean {
+    return (
+      typeof HTMLElement === "object"
+      ? htmlElement instanceof HTMLElement
+      : htmlElement && typeof htmlElement === "object" && htmlElement !== null && htmlElement.nodeType === 1 && typeof htmlElement.nodeName === "string" //DOM2
+    );
+  }
+
+  static node(node: any): boolean {
+    return (
+      typeof Node === "object" ? node instanceof Node :
+      node && typeof node === "object" && typeof node.nodeType === "number" && typeof node.nodeName === "string"
+    );
+  }
+
 }

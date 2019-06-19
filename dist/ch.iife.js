@@ -74,6 +74,14 @@ var Ch = (function (exports) {
       return typeof _string === 'string';
     };
 
+    Is.htmlElement = function htmlElement(_htmlElement) {
+      return typeof HTMLElement === "object" ? _htmlElement instanceof HTMLElement : _htmlElement && typeof _htmlElement === "object" && _htmlElement !== null && _htmlElement.nodeType === 1 && typeof _htmlElement.nodeName === "string";
+    };
+
+    Is.node = function node(_node) {
+      return typeof Node === "object" ? _node instanceof Node : _node && typeof _node === "object" && typeof _node.nodeType === "number" && typeof _node.nodeName === "string";
+    };
+
     return Is;
   }();
 
