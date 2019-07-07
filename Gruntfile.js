@@ -1,56 +1,59 @@
-module.exports = function(grunt){
-  var path = require('path');
-  var babel = require('rollup-plugin-babel');
-  var resolve = require('rollup-plugin-node-resolve');
+module.exports = function(grunt) {
+  var path = require("path");
+  var babel = require("rollup-plugin-babel");
+  var resolve = require("rollup-plugin-node-resolve");
 
-  require('time-grunt')(grunt);
+  require("time-grunt")(grunt);
 
-  var projectName = 'Ch';
+  var projectName = "Ch";
   var projectNameLC = projectName.toLowerCase();
 
-
-  var srcDir          = 'src/';
-  var compiledSrcDir  = srcDir + 'ts/build/';
+  var srcDir = "src/";
+  var compiledSrcDir = srcDir + "ts/build/";
   // var compiledES5Dir  = compiledSrcDir + 'es5/';
-  var compiledES6Dir  = compiledSrcDir + 'es6/';
-  var distDir         = 'dist/';
+  var compiledES6Dir = compiledSrcDir + "es6/";
+  var distDir = "dist/";
 
-  var banner    = '/** MIT License\n' +
-    '* \n' +
-    '* Copyright (c) 2018 Ludovic CLUBER \n' +
-    '* \n' +
-    '* Permission is hereby granted, free of charge, to any person obtaining a copy\n' +
+  var banner =
+    "/** MIT License\n" +
+    "* \n" +
+    "* Copyright (c) 2018 Ludovic CLUBER \n" +
+    "* \n" +
+    "* Permission is hereby granted, free of charge, to any person obtaining a copy\n" +
     '* of this software and associated documentation files (the "Software"), to deal\n' +
-    '* in the Software without restriction, including without limitation the rights\n' +
-    '* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n' +
-    '* copies of the Software, and to permit persons to whom the Software is\n' +
-    '* furnished to do so, subject to the following conditions:\n' +
-    '*\n' +
-    '* The above copyright notice and this permission notice shall be included in all\n' +
-    '* copies or substantial portions of the Software.\n' +
-    '*\n' +
+    "* in the Software without restriction, including without limitation the rights\n" +
+    "* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell\n" +
+    "* copies of the Software, and to permit persons to whom the Software is\n" +
+    "* furnished to do so, subject to the following conditions:\n" +
+    "*\n" +
+    "* The above copyright notice and this permission notice shall be included in all\n" +
+    "* copies or substantial portions of the Software.\n" +
+    "*\n" +
     '* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n' +
-    '* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n' +
-    '* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n' +
-    '* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n' +
-    '* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n' +
-    '* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n' +
-    '* SOFTWARE.\n' +
-    '*\n' +
-    '* http://' + projectNameLC + 'js.lcluber.com\n' +
-    '*/\n';
+    "* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n" +
+    "* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n" +
+    "* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n" +
+    "* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\n" +
+    "* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\n" +
+    "* SOFTWARE.\n" +
+    "*\n" +
+    "* http://" +
+    projectNameLC +
+    "js.lcluber.com\n" +
+    "*/\n";
 
-  grunt.option('stack', true);
+  grunt.option("stack", true);
   // Project configuration.
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
+    pkg: grunt.file.readJSON("package.json"),
     clean: {
-      lib:{
-        src: [  distDir + '*',
-                // compiledES5Dir + '*',
-                compiledES6Dir + '*'
-              ]
-      }//,
+      lib: {
+        src: [
+          distDir + "*",
+          // compiledES5Dir + '*',
+          compiledES6Dir + "*"
+        ]
+      } //,
       // doc:{
       //   src: [  docDir + '*'
       //         ]
@@ -70,20 +73,20 @@ module.exports = function(grunt){
       // }
     },
     // typedoc: {
-  	// 	build: {
-  	// 		options: {
-  	// 			out: docDir,
-  	// 			target: 'es6',
+    // 	build: {
+    // 		options: {
+    // 			out: docDir,
+    // 			target: 'es6',
     //       name: projectName + '.js - Documentation',
     //       includeDeclarations: false,
     //       hideGenerator: true
-  	// 		},
-  	// 		src: [srcDir + 'ts/*.ts']
-  	// 	}
-  	// },
+    // 		},
+    // 		src: [srcDir + 'ts/*.ts']
+    // 	}
+    // },
     // jshint: {
     //   options: {
-    // 
+    //
     //   },
     //   web: [ webDir + 'js/**/*.js']
     // },
@@ -138,12 +141,12 @@ module.exports = function(grunt){
     // },
     ts: {
       options: {
-        fast: 'never'
+        fast: "never"
         //rootDir: srcDir + 'ts/'
       },
       es6: {
-        tsconfig: 'tsconfig.json',
-        src: [ srcDir + 'ts/**/*.ts', '!node_modules/**/*.ts' ]
+        tsconfig: "tsconfig.json",
+        src: [srcDir + "ts/**/*.ts", "!node_modules/**/*.ts"]
       }
       // es5: {
       //   tsconfig: 'tsconfig.es5.json',
@@ -151,9 +154,9 @@ module.exports = function(grunt){
       // }
     },
     rollup: {
-      es6:{
+      es6: {
         options: {
-          format:'es',
+          format: "es",
           // moduleName: projectName,
           banner: banner,
           // sourceMap: 'inline'
@@ -162,14 +165,14 @@ module.exports = function(grunt){
             // //   //exclude: './node_modules/**'
             // })
           ],
-          external: [
-            '@lcluber/mouettejs'
-          ]
+          external: ["@lcluber/mouettejs"]
         },
-        files: [ {
-          src : compiledES6Dir + projectNameLC + '.js',
-          dest : distDir + projectNameLC + '.js'
-        } ]
+        files: [
+          {
+            src: compiledES6Dir + projectNameLC + ".js",
+            dest: distDir + projectNameLC + ".js"
+          }
+        ]
       },
       // cjs:{
       //   options: {
@@ -191,9 +194,9 @@ module.exports = function(grunt){
       //     dest : distDir + projectNameLC + '.cjs.js'
       //   } ]
       // },
-      iife:{
+      iife: {
         options: {
-          format:'iife',
+          format: "iife",
           moduleName: projectName,
           banner: banner,
           plugins: [
@@ -203,47 +206,49 @@ module.exports = function(grunt){
               //   //exclude: './node_modules/**'
             }),
             babel({
-            //   //exclude: './node_modules/**'
+              //   //exclude: './node_modules/**'
             })
           ]
         },
-        files: [ {
-          src : compiledES6Dir + projectNameLC + '.js',
-          dest : distDir + projectNameLC + '.iife.js'
-        } ]
+        files: [
+          {
+            src: compiledES6Dir + projectNameLC + ".js",
+            dest: distDir + projectNameLC + ".iife.js"
+          }
+        ]
       }
     },
     uglify: {
       libIife: {
         options: {
           sourceMap: false,
-          sourceMapName: srcDir + 'sourcemap.map',
+          sourceMapName: srcDir + "sourcemap.map",
           banner: banner,
           mangle: {
-            reserved: [projectName],
+            reserved: [projectName]
           },
           compress: {
             sequences: true,
             properties: true,
             dead_code: true,
             unsafe: false,
-            conditionals:true,
-            comparisons:true,
-            booleans:true,
-            loops:true,
+            conditionals: true,
+            comparisons: true,
+            booleans: true,
+            loops: true,
             unused: true,
-            hoist_funs:true,
-            if_return:true,
-            join_vars:true,
+            hoist_funs: true,
+            if_return: true,
+            join_vars: true,
             warnings: true,
             drop_console: true,
             keep_fargs: false,
             keep_fnames: false
           }
         },
-        src: distDir + projectNameLC + '.iife.js',
-        dest: distDir + projectNameLC + '.iife.min.js'
-      }// ,
+        src: distDir + projectNameLC + ".iife.js",
+        dest: distDir + projectNameLC + ".iife.min.js"
+      } // ,
       // web: {
       //   options: {
       //     sourceMap: false,
@@ -281,16 +286,16 @@ module.exports = function(grunt){
       //   }]
       // }
     },
-    concat:{
+    concat: {
       declaration: {
         options: {
-          separator: '',
+          separator: "",
           stripBanners: false,
           banner: banner
         },
-        src: compiledES6Dir + '*.d.ts',
-        dest: distDir + projectNameLC + '.d.ts'
-      }//,
+        src: compiledES6Dir + "*.d.ts",
+        dest: distDir + projectNameLC + ".d.ts"
+      } //,
       // webjs: {
       //   options: {
       //     separator: '',
@@ -322,13 +327,13 @@ module.exports = function(grunt){
         //import { IBase64Service } from '../services/base64.service';
         // /// <reference path="../config/typings/index.d.ts" />
         patterns: [
-                    // /import.*';/g,
-                    /export { .* } from '.*';/g,
-                    // /\/\/\/ <reference path=.*\/>/g
-                  ]
+          // /import.*';/g,
+          /export { .* } from '.*';/g
+          // /\/\/\/ <reference path=.*\/>/g
+        ]
       },
       declaration: {
-        src: distDir + projectName + '.d.ts'
+        src: distDir + projectName + ".d.ts"
       }
     },
     // copy: {
@@ -358,8 +363,8 @@ module.exports = function(grunt){
     // },
     watch: {
       lib: {
-        files: [ srcDir + 'ts/**/*.ts', '!' + srcDir + 'ts/build/*'],
-        tasks: ['lib']
+        files: [srcDir + "ts/**/*.ts", "!" + srcDir + "ts/build/*"],
+        tasks: ["lib"]
       },
       // webpug:{
       //   files: webDir + 'views/**/*.pug'
@@ -376,9 +381,9 @@ module.exports = function(grunt){
         interrupt: true,
         spawn: false,
         livereload: true,
-        livereloadOnError:false
+        livereloadOnError: false
       }
-    },
+    }
     // run watch and nodemon at the same time
     // concurrent: {
     //   options: {
@@ -388,33 +393,30 @@ module.exports = function(grunt){
     // }
   });
 
-  grunt.loadNpmTasks( 'grunt-contrib-clean' );
-  grunt.loadNpmTasks( 'grunt-contrib-copy' );
-  grunt.loadNpmTasks( 'grunt-contrib-uglify' );
-  grunt.loadNpmTasks( 'grunt-contrib-concat' );
-  grunt.loadNpmTasks( 'grunt-contrib-watch' );
-  grunt.loadNpmTasks( 'grunt-strip-code' );
-  grunt.loadNpmTasks( 'grunt-ts' );
-  grunt.loadNpmTasks( 'grunt-rollup' );
+  grunt.loadNpmTasks("grunt-contrib-clean");
+  grunt.loadNpmTasks("grunt-contrib-copy");
+  grunt.loadNpmTasks("grunt-contrib-uglify");
+  grunt.loadNpmTasks("grunt-contrib-concat");
+  grunt.loadNpmTasks("grunt-contrib-watch");
+  grunt.loadNpmTasks("grunt-strip-code");
+  grunt.loadNpmTasks("grunt-ts");
+  grunt.loadNpmTasks("grunt-rollup");
 
-
-  grunt.registerTask( 'lib',
-                      'build the library in the dist/ folder',
-                      [ // 'tslint:lib',
-                        'clean:lib',
-                        //lib es6
-                        'ts:es6',
-                        'rollup:es6',
-                        //lib es5
-                        //'ts:es5',
-                        'rollup:iife',
-                        'uglify:libIife',
-                        //'rollup:cjs',
-                        //declaration
-                        'concat:declaration',
-                        'strip_code:declaration'
-                      ]
-                    );
+  grunt.registerTask("lib", "build the library in the dist/ folder", [
+    // 'tslint:lib',
+    "clean:lib",
+    //lib es6
+    "ts:es6",
+    "rollup:es6",
+    //lib es5
+    //'ts:es5',
+    "rollup:iife",
+    "uglify:libIife",
+    //'rollup:cjs',
+    //declaration
+    "concat:declaration",
+    "strip_code:declaration"
+  ]);
 
   // grunt.registerTask( 'doc',
   //                     'Compile lib documentation',
@@ -422,12 +424,12 @@ module.exports = function(grunt){
   //                       'typedoc'
   //                      ]
   //                   );
-  // 
+  //
   // grunt.registerTask( 'serve',
   //                     'launch server, open website and watch for changes',
   //                     [ 'concurrent' ]
   //                   );
-  // 
+  //
   // grunt.registerTask( 'websass',
   //                     'Compile website css',
   //                     [ 'clean:websass',
@@ -436,7 +438,7 @@ module.exports = function(grunt){
   //                       'concat:webcss'
   //                      ]
   //                   );
-  // 
+  //
   // grunt.registerTask( 'webjs',
   //                     'Compile website js',
   //                     [ 'jshint:web',
@@ -445,14 +447,14 @@ module.exports = function(grunt){
   //                       'concat:webjs'
   //                      ]
   //                   );
-  // 
+  //
   // grunt.registerTask( 'webmisc',
   //                     'Compile website misc',
   //                     [ 'clean:webmisc',
   //                       'copy:fonts'
   //                      ]
   //                   );
-  // 
+  //
   // grunt.registerTask( 'website',
   //                     'build the website in the website/ folder',
   //                     function() {
@@ -462,19 +464,16 @@ module.exports = function(grunt){
   //                     }
   //                   );
 
-  grunt.registerTask( 'build',
-                      'build for production',
-                      function() {
-                        //build lib
-                        grunt.task.run('lib');
-                        //build site
-                        // grunt.task.run('website');
-                        // //build documentation
-                        // grunt.task.run('doc');
-                        // // launch server and watch for changes
-                        // grunt.task.run('serve');
-                      }
-                    );
+  grunt.registerTask("build", "build for production", function() {
+    //build lib
+    grunt.task.run("lib");
+    //build site
+    // grunt.task.run('website');
+    // //build documentation
+    // grunt.task.run('doc');
+    // // launch server and watch for changes
+    // grunt.task.run('serve');
+  });
 
   // grunt.registerTask( 'default',
   //                     'build library, website, launch server, open website and watch for changes.',
@@ -483,5 +482,4 @@ module.exports = function(grunt){
   //                       grunt.task.run('serve');
   //                     }
   //                   );
-
 };
