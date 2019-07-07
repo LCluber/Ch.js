@@ -24,6 +24,7 @@
   "scripts": {
     "start": "grunt build",
     "pretty": "prettier --check 'src/ts/*.ts' --write",
+    "test": "",
     "commit": "git-cz",
     "semantic-release": "semantic-release"
   },
@@ -49,7 +50,8 @@
     "@commitlint/cli": "8.0.0",
     "@commitlint/config-conventional": "8.0.0",
     "@commitlint/prompt": "8.0.0",
-    "@semantic-release/changelog": "^3.0.4",
+    "@semantic-release/changelog": "3.0.4",
+    "@semantic-release/git": "7.0.16",
     "cz-conventional-changelog": "2.1.0",
     "grunt": "1.0.2",
     "grunt-contrib-clean": "1.1.0",
