@@ -1,7 +1,9 @@
-
 export class Is {
+  static boolean(bool: any): boolean {
+    return typeof bool === "boolean";
+  }
 
-  static json(str: any): boolean/*Object|SyntaxError|TypeError*/ {
+  static json(str: any): boolean /*Object|SyntaxError|TypeError*/ {
     if (!this.string(str)) {
       return false;
       //return new TypeError('Parameter should be of type string');
@@ -18,11 +20,11 @@ export class Is {
 
   static function(func: any): boolean {
     let getType = {};
-    return func && getType.toString.call(func) === '[object Function]';
+    return func && getType.toString.call(func) === "[object Function]";
   }
 
   static object(object: any): boolean {
-    return object !== null && typeof object === 'object';
+    return object !== null && typeof object === "object";
   }
 
   static array(array: any): boolean {
@@ -42,22 +44,25 @@ export class Is {
   }
 
   static string(string: any): boolean {
-    return typeof string === 'string';
+    return typeof string === "string";
   }
 
   static htmlElement(htmlElement: any): boolean {
-    return (
-      typeof HTMLElement === "object"
+    return typeof HTMLElement === "object"
       ? htmlElement instanceof HTMLElement
-      : htmlElement && typeof htmlElement === "object" && htmlElement !== null && htmlElement.nodeType === 1 && typeof htmlElement.nodeName === "string" //DOM2
-    );
+      : htmlElement &&
+          typeof htmlElement === "object" &&
+          htmlElement !== null &&
+          htmlElement.nodeType === 1 &&
+          typeof htmlElement.nodeName === "string"; //DOM2
   }
 
   static node(node: any): boolean {
-    return (
-      typeof Node === "object" ? node instanceof Node :
-      node && typeof node === "object" && typeof node.nodeType === "number" && typeof node.nodeName === "string"
-    );
+    return typeof Node === "object"
+      ? node instanceof Node
+      : node &&
+          typeof node === "object" &&
+          typeof node.nodeType === "number" &&
+          typeof node.nodeName === "string";
   }
-
 }

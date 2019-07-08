@@ -23,6 +23,7 @@
 * http://chjs.lcluber.com
 */
 export declare class Is {
+    static boolean(bool: any): boolean;
     static json(str: any): boolean;
     static function(func: any): boolean;
     static object(object: any): boolean;

@@ -31,6 +31,10 @@ var Ch = (function (exports) {
   function () {
     function Is() {}
 
+    Is.boolean = function boolean(bool) {
+      return typeof bool === "boolean";
+    };
+
     Is.json = function json(str) {
       if (!this.string(str)) {
         return false;

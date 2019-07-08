@@ -24,6 +24,9 @@
 */
 
 class Is {
+    static boolean(bool) {
+        return typeof bool === "boolean";
+    }
     static json(str) {
         if (!this.string(str)) {
             return false;
