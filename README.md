@@ -18,17 +18,17 @@ $ npm install @lcluber/chjs
 
 ```bash
 $ yarn add @lcluber/chjs
-````
+```
 
 ## Usage
 
 ### ES6
 
 ```javascript
-import { Is } from '@lcluber/chjs';
+import { Is } from "@lcluber/chjs";
 
 if (Is.function(variable)) {
- //variable is a function
+  //variable is a function
 }
 
 if (!Is.array(variable)) {
@@ -43,9 +43,8 @@ if (!Is.array(variable)) {
 ```
 
 ```javascript
-
 if (Ch.Is.function(variable)) {
- //variable is a function
+  //variable is a function
 }
 
 if (!Ch.Is.array(variable)) {
@@ -56,6 +55,8 @@ if (!Ch.Is.array(variable)) {
 ## API Reference
 
 ```javascript
+static Is.boolean(bool: any): boolean {}
+
 static Is.json(string: any): boolean {}
 
 static Is.function(func: any): boolean {}
