@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/LCluber/Ch.js/compare/v1.1.0...v1.2.0) (2019-07-08)
+
+
+### Features
+
+* **boolean:** added Is.boolean() method ([250b9cf](https://github.com/LCluber/Ch.js/commit/250b9cf))
+
 Version 1.1.0 (June 19th 2019)
 -----------------------------
  * Added Is.htmlElement() method
