@@ -10,7 +10,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 https://github.com/LCluber/Ch.js
 */
- 
 declare function isBoolean(bool: any): boolean;
 declare function isJson(str: any): boolean;
 declare function isFunction(func: any): boolean;
