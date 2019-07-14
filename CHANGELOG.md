@@ -1,3 +1,21 @@
+# [2.0.0](https://github.com/LCluber/Ch.js/compare/v1.2.0...v2.0.0) (2019-07-14)
+
+
+### Bug Fixes
+
+* **package:** fix husky pre-push command ([0c3c50a](https://github.com/LCluber/Ch.js/commit/0c3c50a))
+
+
+### Features
+
+* **class:** now exports functions instead of a static class ([e99066c](https://github.com/LCluber/Ch.js/commit/e99066c))
+
+
+### BREAKING CHANGES
+
+* **class:** Is.string method replaced by isString function, Is.array method replaced by
+isArray... please see README.md for exhaustive documentation
+
 # [1.2.0](https://github.com/LCluber/Ch.js/compare/v1.1.0...v1.2.0) (2019-07-08)
 
 ### Features
