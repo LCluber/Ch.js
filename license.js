@@ -10,16 +10,3 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 https://github.com/LCluber/Ch.js
 */
- 
-declare function isBoolean(bool: any): boolean;
-declare function isJson(str: any): boolean;
-declare function isFunction(func: any): boolean;
-declare function isObject(object: any): boolean;
-declare function isArray(array: any): boolean;
-declare function isAscii(code: any, extended: boolean): boolean;
-declare function isInteger(number: any): boolean;
-declare function isFloat(number: any): boolean;
-declare function isString(string: any): boolean;
-declare function isHtmlElement(htmlElement: any): boolean;
-declare function isNode(node: any): boolean;
-export { isBoolean, isJson, isFunction, isObject, isArray, isAscii, isInteger, isFloat, isString, isHtmlElement, isNode };

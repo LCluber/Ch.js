@@ -404,18 +404,18 @@ module.exports = function(grunt) {
 
   grunt.registerTask("lib", "build the library in the dist/ folder", [
     // 'tslint:lib',
-    "clean:lib",
+    // "clean:lib",
     //lib es6
-    "ts:es6",
-    "rollup:es6",
+    // "ts:es6",
+    //"rollup:es6",
     //lib es5
     //'ts:es5',
-    "rollup:iife",
-    "uglify:libIife",
+    // "rollup:iife",
+    "uglify:libIife"
     //'rollup:cjs',
     //declaration
-    "concat:declaration",
-    "strip_code:declaration"
+    // "concat:declaration",
+    // "strip_code:declaration"
   ]);
 
   // grunt.registerTask( 'doc',
