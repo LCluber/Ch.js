@@ -57,8 +57,6 @@
     "@semantic-release/git": "7.0.16",
     "@semantic-release/npm": "5.1.13",
     "cz-conventional-changelog": "2.1.0",
-    "grunt": "1.0.2",
-    "grunt-contrib-uglify": "3.3.0",
     "husky": "2.7.0",
     "prettier": "1.18.2",
     "pretty-quick": "1.11.1",
