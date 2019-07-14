@@ -22,7 +22,12 @@
   },
   "contributors": [],
   "scripts": {
-    "start": "grunt build",
+    "start": "",
+    "build": "npm run clean && tsc && npm run rollup && npm run uglify && npm run banner",
+    "clean": "rimraf dist/* build/*",
+    "rollup": "rollup --config",
+    "uglify": "uglifyjs build/ch.iife.js --config-file uglify.config.json --output build/ch.iife.min.js",
+    "banner": "cat license.js build/ch.js > dist/ch.js && cat license.js build/ch.d.ts > dist/ch.d.ts && cat license.js build/ch.iife.js > dist/ch.iife.js && cat license.js build/ch.iife.min.js > dist/ch.iife.min.js",
     "pretty": "prettier --check 'src/ts/*.ts' --write",
     "test": "",
     "commit": "git-cz",
@@ -32,7 +37,7 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "grunt build"
+      "pre-push": "npm run build"
     }
   },
   "config": {
@@ -45,8 +50,6 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "7.2.2",
-    "@babel/preset-env": "7.2.3",
     "@commitlint/cli": "8.0.0",
     "@commitlint/config-conventional": "8.0.0",
     "@commitlint/prompt": "8.0.0",
@@ -55,22 +58,13 @@
     "@semantic-release/npm": "5.1.13",
     "cz-conventional-changelog": "2.1.0",
     "grunt": "1.0.2",
-    "grunt-contrib-clean": "1.1.0",
-    "grunt-contrib-concat": "1.0.1",
-    "grunt-contrib-copy": "1.0.0",
     "grunt-contrib-uglify": "3.3.0",
-    "grunt-contrib-watch": "1.0.1",
-    "grunt-rollup": "9.0.0",
-    "grunt-strip-code": "1.0.6",
-    "grunt-ts": "6.0.0-beta.19",
     "husky": "2.7.0",
     "prettier": "1.18.2",
     "pretty-quick": "1.11.1",
-    "rollup-plugin-babel": "4.1.0",
-    "rollup-plugin-node-resolve": "4.0.0",
     "semantic-release": "15.13.18",
-    "time-grunt": "1.4.0",
     "tslint": "5.9.1",
-    "typescript": "3.2.2"
+    "typescript": "3.2.2",
+    "uglify-js": "3.6.0"
   }
 }
