@@ -4,16 +4,16 @@ test("sends null to isFloat", () => {
   expect(Ch.isFloat(null)).toBe(false);
 });
 
-test("sends string to isFloat", () => {
-  expect(Ch.isFloat("string")).toBe(false);
+test("sends true to isFloat", () => {
+  expect(Ch.isFloat(true)).toBe(false);
 });
 
 test("sends false to isFloat", () => {
   expect(Ch.isFloat(false)).toBe(false);
 });
 
-test("sends true to isFloat", () => {
-  expect(Ch.isFloat(true)).toBe(false);
+test("sends string to isFloat", () => {
+  expect(Ch.isFloat("string")).toBe(false);
 });
 
 test("sends integer to isFloat", () => {

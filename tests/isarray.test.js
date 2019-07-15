@@ -4,16 +4,16 @@ test("sends null to isArray", () => {
   expect(Ch.isArray(null)).toBe(false);
 });
 
-test("sends string to isArray", () => {
-  expect(Ch.isArray("string")).toBe(false);
+test("sends true to isArray", () => {
+  expect(Ch.isArray(true)).toBe(false);
 });
 
 test("sends false to isArray", () => {
   expect(Ch.isArray(false)).toBe(false);
 });
 
-test("sends true to isArray", () => {
-  expect(Ch.isArray(true)).toBe(false);
+test("sends string to isArray", () => {
+  expect(Ch.isArray("string")).toBe(false);
 });
 
 test("sends integer to isArray", () => {

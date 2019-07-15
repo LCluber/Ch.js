@@ -33,7 +33,7 @@ var Ch = (function (exports) {
         return func && getType.toString.call(func) === "[object Function]";
     }
     function isObject(object) {
-        return object !== null && typeof object === "object";
+        return object !== null && typeof object === "object" && !isArray(object);
     }
     function isArray(array) {
         return array !== null && array.constructor === Array;

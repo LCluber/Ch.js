@@ -4,16 +4,16 @@ test("sends null to isNode", () => {
   expect(Ch.isNode(null)).toBe(false);
 });
 
-test("sends string to isNode", () => {
-  expect(Ch.isNode("string")).toBe(false);
+test("sends true to isNode", () => {
+  expect(Ch.isNode(true)).toBe(false);
 });
 
 test("sends false to isNode", () => {
   expect(Ch.isNode(false)).toBe(false);
 });
 
-test("sends true to isNode", () => {
-  expect(Ch.isNode(true)).toBe(false);
+test("sends string to isNode", () => {
+  expect(Ch.isNode("string")).toBe(false);
 });
 
 test("sends integer to isNode", () => {

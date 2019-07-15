@@ -4,16 +4,16 @@ test("sends null to isString", () => {
   expect(Ch.isString(null)).toBe(false);
 });
 
-test("sends string to isString", () => {
-  expect(Ch.isString("string")).toBe(true);
+test("sends true to isString", () => {
+  expect(Ch.isString(true)).toBe(false);
 });
 
 test("sends false to isString", () => {
   expect(Ch.isString(false)).toBe(false);
 });
 
-test("sends true to isString", () => {
-  expect(Ch.isString(true)).toBe(false);
+test("sends string to isString", () => {
+  expect(Ch.isString("string")).toBe(true);
 });
 
 test("sends integer to isString", () => {

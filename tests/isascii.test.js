@@ -4,16 +4,16 @@ test("sends null to isAscii", () => {
   expect(Ch.isAscii(null, false)).toBe(false);
 });
 
-test("sends string to isAscii", () => {
-  expect(Ch.isAscii("string", false)).toBe(false);
+test("sends true to isAscii", () => {
+  expect(Ch.isAscii(true, false)).toBe(false);
 });
 
 test("sends false to isAscii", () => {
   expect(Ch.isAscii(false, false)).toBe(false);
 });
 
-test("sends true to isAscii", () => {
-  expect(Ch.isAscii(true, false)).toBe(false);
+test("sends string to isAscii", () => {
+  expect(Ch.isAscii("string", false)).toBe(false);
 });
 
 test("sends integer to isAscii", () => {

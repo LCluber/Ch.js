@@ -23,7 +23,7 @@ function isFunction(func: any): boolean {
 }
 
 function isObject(object: any): boolean {
-  return object !== null && typeof object === "object";
+  return object !== null && typeof object === "object" && !isArray(object);
 }
 
 function isArray(array: any): boolean {

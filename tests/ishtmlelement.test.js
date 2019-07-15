@@ -4,16 +4,16 @@ test("sends null to isHtmlElement", () => {
   expect(Ch.isHtmlElement(null)).toBe(false);
 });
 
-test("sends string to isHtmlElement", () => {
-  expect(Ch.isHtmlElement("string")).toBe(false);
+test("sends true to isHtmlElement", () => {
+  expect(Ch.isHtmlElement(true)).toBe(false);
 });
 
 test("sends false to isHtmlElement", () => {
   expect(Ch.isHtmlElement(false)).toBe(false);
 });
 
-test("sends true to isHtmlElement", () => {
-  expect(Ch.isHtmlElement(true)).toBe(false);
+test("sends string to isHtmlElement", () => {
+  expect(Ch.isHtmlElement("string")).toBe(false);
 });
 
 test("sends integer to isHtmlElement", () => {

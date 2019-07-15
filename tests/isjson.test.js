@@ -4,16 +4,16 @@ test("sends null to isJson", () => {
   expect(Ch.isJson(null)).toBe(false);
 });
 
-test("sends string to isJson", () => {
-  expect(Ch.isJson("string")).toBe(false);
+test("sends true to isJson", () => {
+  expect(Ch.isJson(true)).toBe(false);
 });
 
 test("sends false to isJson", () => {
   expect(Ch.isJson(false)).toBe(false);
 });
 
-test("sends true to isJson", () => {
-  expect(Ch.isJson(true)).toBe(false);
+test("sends string to isJson", () => {
+  expect(Ch.isJson("string")).toBe(false);
 });
 
 test("sends integer to isJson", () => {
