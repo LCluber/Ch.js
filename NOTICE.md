@@ -13,7 +13,7 @@ $ git clone https://github.com/LCluber/Ch.js.git
 Install global dependencies :
 
 ```bash
-$ npm i -G typescript rollup uglify-js jest
+$ npm i -G typescript rollup uglify-js jest commitizen
 ```
 
 Install project dependencies :
@@ -35,6 +35,12 @@ test the library :
 
 ```bash
 $ npm run test
+```
+
+commit your work with [conventional commits](https://conventionalcommits.org) :
+
+```bash
+$ npm run commit
 ```
 
 Set node environment if needed :
