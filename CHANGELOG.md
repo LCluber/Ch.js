@@ -1,3 +1,12 @@
+## [2.0.1](https://github.com/LCluber/Ch.js/compare/v2.0.0...v2.0.1) (2019-07-15)
+
+
+### Bug Fixes
+
+* **htmlelement:** ishtmlelement & isnode return behavior ([86ceeac](https://github.com/LCluber/Ch.js/commit/86ceeac))
+* **isascii:** fix isascii method ([b3a74c0](https://github.com/LCluber/Ch.js/commit/b3a74c0))
+* **isobject:** isobject method now returns false with array prameter ([b4c4000](https://github.com/LCluber/Ch.js/commit/b4c4000))
+
 # [2.0.0](https://github.com/LCluber/Ch.js/compare/v1.2.0...v2.0.0) (2019-07-14)
 
 
