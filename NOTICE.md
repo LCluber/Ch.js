@@ -23,6 +23,10 @@
 
 - Run **npm install -g uglify-js**
 
+### Install jest :
+
+- Run **npm install -g jest**
+
 ### Install project dependencies
 
 - Run **npm install** in your project directory
