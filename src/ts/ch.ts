@@ -32,7 +32,7 @@ function isArray(array: any): boolean {
 
 function isAscii(code: any, extended: boolean): boolean {
   if (isInteger(code)) {
-    return (extended ? /^[\x00-\xFF]*$/ : /^[\x00-\x7F]*$/).test(<string>code);
+    return (extended && code >= 0 && code <= 255) || (code >= 0 && code <= 127);
   }
   return false;
 }
