@@ -31,7 +31,10 @@ function isArray(array: any): boolean {
 }
 
 function isAscii(code: any, extended: boolean): boolean {
-  return (extended ? /^[\x00-\xFF]*$/ : /^[\x00-\x7F]*$/).test(<string>code);
+  if (isInteger(code)) {
+    return (extended ? /^[\x00-\xFF]*$/ : /^[\x00-\x7F]*$/).test(<string>code);
+  }
+  return false;
 }
 
 function isInteger(number: any): boolean {
@@ -47,22 +50,28 @@ function isString(string: any): boolean {
 }
 
 function isHtmlElement(htmlElement: any): boolean {
-  return typeof HTMLElement === "object"
-    ? htmlElement instanceof HTMLElement
-    : htmlElement &&
-        typeof htmlElement === "object" &&
-        htmlElement !== null &&
-        htmlElement.nodeType === 1 &&
-        typeof htmlElement.nodeName === "string"; //DOM2
+  if (htmlElement) {
+    return typeof HTMLElement === "object"
+      ? htmlElement instanceof HTMLElement
+      : htmlElement &&
+          typeof htmlElement === "object" &&
+          htmlElement !== null &&
+          htmlElement.nodeType === 1 &&
+          typeof htmlElement.nodeName === "string"; //DOM2
+  }
+  return false;
 }
 
 function isNode(node: any): boolean {
-  return typeof Node === "object"
-    ? node instanceof Node
-    : node &&
-        typeof node === "object" &&
-        typeof node.nodeType === "number" &&
-        typeof node.nodeName === "string";
+  if (node) {
+    return typeof Node === "object"
+      ? node instanceof Node
+      : node &&
+          typeof node === "object" &&
+          typeof node.nodeType === "number" &&
+          typeof node.nodeName === "string";
+  }
+  return false;
 }
 
 export {

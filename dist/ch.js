@@ -36,7 +36,10 @@ function isArray(array) {
     return array !== null && array.constructor === Array;
 }
 function isAscii(code, extended) {
-    return (extended ? /^[\x00-\xFF]*$/ : /^[\x00-\x7F]*$/).test(code);
+    if (isInteger(code)) {
+        return (extended ? /^[\x00-\xFF]*$/ : /^[\x00-\x7F]*$/).test(code);
+    }
+    return false;
 }
 function isInteger(number) {
     return number === parseInt(number, 10);
@@ -48,20 +51,26 @@ function isString(string) {
     return typeof string === "string";
 }
 function isHtmlElement(htmlElement) {
-    return typeof HTMLElement === "object"
-        ? htmlElement instanceof HTMLElement
-        : htmlElement &&
-            typeof htmlElement === "object" &&
-            htmlElement !== null &&
-            htmlElement.nodeType === 1 &&
-            typeof htmlElement.nodeName === "string";
+    if (htmlElement) {
+        return typeof HTMLElement === "object"
+            ? htmlElement instanceof HTMLElement
+            : htmlElement &&
+                typeof htmlElement === "object" &&
+                htmlElement !== null &&
+                htmlElement.nodeType === 1 &&
+                typeof htmlElement.nodeName === "string";
+    }
+    return false;
 }
 function isNode(node) {
-    return typeof Node === "object"
-        ? node instanceof Node
-        : node &&
-            typeof node === "object" &&
-            typeof node.nodeType === "number" &&
-            typeof node.nodeName === "string";
+    if (node) {
+        return typeof Node === "object"
+            ? node instanceof Node
+            : node &&
+                typeof node === "object" &&
+                typeof node.nodeType === "number" &&
+                typeof node.nodeName === "string";
+    }
+    return false;
 }
 export { isBoolean, isJson, isFunction, isObject, isArray, isAscii, isInteger, isFloat, isString, isHtmlElement, isNode };
