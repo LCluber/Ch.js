@@ -1,3 +1,16 @@
+- [Synopsis](#synopsis)
+- [Motivation](#motivation)
+- [Installation](#installation)
+  - [npm](#npm)
+  - [Yarn](#yarn)
+- [Usage](#usage)
+  - [ES6](#es6)
+  - [IIFE](#iife)
+- [API Reference](#api-reference)
+- [Contributors](#contributors)
+- [License](#license)
+- [Stack](#stack)
+
 ## Synopsis
 
 **[Ch.js](https://github.com/LCluber/Ch.js)** is an open source variable checker library written in TypeScript.
@@ -8,10 +21,10 @@ The goal of this library is to provide an easy way to check if a variable is wha
 
 ## Installation
 
-### NPM
+### npm
 
 ```bash
-$ npm install @lcluber/chjs
+$ npm i @lcluber/chjs
 ```
 
 ### Yarn
@@ -77,8 +90,19 @@ isString(string: any): boolean {}
 ## Contributors
 
 Ch.js is still in development and I would be glad to get all the help you can provide for this project.
-To contribute you can clone the project on **[GitHub](https://github.com/LCluber/Ch.js)** and See **NOTICE.md** for detailed installation walkthrough.
+To contribute you can read **NOTICE.md** for detailed installation and workflow guide.
 
 ## License
 
 **[MIT](https://github.com/LCluber/Ch.js/blob/master/LICENSE.md)**
+
+## Stack
+
+| Purpose         |                    Choice                    |                                                                                Motivation |
+| :-------------- | :------------------------------------------: | ----------------------------------------------------------------------------------------: |
+| repository      |        [Github](https://github.com/)         | the world’s largest community of developers to discover, share, and build better software |
+| package manager |     [npm](https://www.npmjs.com/get-npm)     |                                                           default node.js package manager |
+| type checking   | [TypeScript](https://www.typescriptlang.org) |                            static type checking along with the latest ECMAScript features |
+| module bundler  |      [Rollup.js](https://rollupjs.org)       |                                                   advanced module bundler for ES6 modules |
+| unit testing    |          [Jest](https://jestjs.io/)          |                                             delightful testing with a focus on simplicity |
+| deployment      |       [Travis](https://travis-ci.com/)       |                                                           test and deploy with confidence |

@@ -1,42 +1,62 @@
 ## Installation guide
 
-### Clone the project :
+Install Git : [https://git-scm.com/](https://git-scm.com/)
 
-- Run **git clone https://github.com/LCluber/Ch.js.git**
+Install Node.js : [https://nodejs.org](https://nodejs.org)
 
-### Install nodejs on your server :
+Clone the project :
 
-- Windows and OSX : **https://nodejs.org/en/**
-- Linux : run
-  - **curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -**
-  - **sudo apt-get install -y nodejs**
+```bash
+$ git clone https://github.com/LCluber/Ch.js.git
+```
 
-### Install typescript :
+Install global dependencies :
 
-- Run **npm install -g typescript**
+```bash
+$ npm i -G typescript rollup uglify-js jest
+```
 
-### Install rollup :
+Install project dependencies :
 
-- Run **npm install -g rollup**
+```bash
+$ cd <project-directory>
+$ npm i
+```
 
-### Install uglify :
+## Workflow
 
-- Run **npm install -g uglify-js**
+build the library :
 
-### Install jest :
+```bash
+$ npm run build
+```
 
-- Run **npm install -g jest**
+test the library :
 
-### Install project dependencies
+```bash
+$ npm run test
+```
 
-- Run **npm install** in your project directory
+Set node environment if needed :
 
-### Workflow
+```bash
+export NODE_ENV=development
+export NODE_ENV=production
+```
 
-- Run **grunt** to serve the website. (http://localhost:3000/)
-- Run **grunt build** to build the library and serve the website.
-- Use **grunt --help** to see the list of tasks.
+## Folders
 
-- Set node environment if needed :
-  - Run **export NODE_ENV=development**
-  - Or **export NODE_ENV=production**
+- dist/
+- src/
+- tests/
+
+## Stack
+
+| Purpose         |                    Choice                    |                                                                                Motivation |
+| :-------------- | :------------------------------------------: | ----------------------------------------------------------------------------------------: |
+| repository      |        [Github](https://github.com/)         | the world’s largest community of developers to discover, share, and build better software |
+| package manager |     [npm](https://www.npmjs.com/get-npm)     |                                                           default node.js package manager |
+| type checking   | [TypeScript](https://www.typescriptlang.org) |                            static type checking along with the latest ECMAScript features |
+| module bundler  |      [Rollup.js](https://rollupjs.org)       |                                                   advanced module bundler for ES6 modules |
+| unit testing    |          [Jest](https://jestjs.io/)          |                                             delightful testing with a focus on simplicity |
+| deployment      |       [Travis](https://travis-ci.com/)       |                                                           test and deploy with confidence |
