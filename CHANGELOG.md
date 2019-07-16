@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/LCluber/Ch.js/compare/v2.1.0...v2.1.1) (2019-07-16)
+
+
+### Bug Fixes
+
+* **isfunction:** returns false if parameter is null or 0 ([4000759](https://github.com/LCluber/Ch.js/commit/4000759))
+
 # [2.1.0](https://github.com/LCluber/Ch.js/compare/v2.0.1...v2.1.0) (2019-07-16)
 
 ### Features
