@@ -1,9 +1,8 @@
 ## [2.1.1](https://github.com/LCluber/Ch.js/compare/v2.1.0...v2.1.1) (2019-07-16)
 
-
 ### Bug Fixes
 
-* **isfunction:** returns false if parameter is null or 0 ([4000759](https://github.com/LCluber/Ch.js/commit/4000759))
+- **isfunction:** returns false if parameter is null or 0 ([4000759](https://github.com/LCluber/Ch.js/commit/4000759))
 
 # [2.1.0](https://github.com/LCluber/Ch.js/compare/v2.0.1...v2.1.0) (2019-07-16)
 
@@ -15,9 +14,9 @@
 
 ### Bug Fixes
 
-- **htmlelement:** ishtmlelement & isnode return false with null parameter ([86ceeac](https://github.com/LCluber/Ch.js/commit/86ceeac))
-- **isascii:** fix isascii method ([b3a74c0](https://github.com/LCluber/Ch.js/commit/b3a74c0))
-- **isobject:** isobject method now returns false with array parameter ([b4c4000](https://github.com/LCluber/Ch.js/commit/b4c4000))
+- **htmlelement:** & isnode return false with null parameter ([86ceeac](https://github.com/LCluber/Ch.js/commit/86ceeac))
+- **isascii:** method fixed ([b3a74c0](https://github.com/LCluber/Ch.js/commit/b3a74c0))
+- **isobject:** method now returns false with array parameter ([b4c4000](https://github.com/LCluber/Ch.js/commit/b4c4000))
 
 # [2.0.0](https://github.com/LCluber/Ch.js/compare/v1.2.0...v2.0.0) (2019-07-14)
 
@@ -27,18 +26,18 @@
 
 ### Features
 
-- **class:** now exports functions instead of a static class ([e99066c](https://github.com/LCluber/Ch.js/commit/e99066c))
+- **ch:** now exports functions instead of a static class ([e99066c](https://github.com/LCluber/Ch.js/commit/e99066c))
 
 ### BREAKING CHANGES
 
-- **class:** Is.string method replaced by isString function, Is.array method replaced by
+- **ch:** Is.string method replaced by isString function, Is.array method replaced by
   isArray... please see README.md for exhaustive documentation
 
 # [1.2.0](https://github.com/LCluber/Ch.js/compare/v1.1.0...v1.2.0) (2019-07-08)
 
 ### Features
 
-- **boolean:** added Is.boolean() method ([250b9cf](https://github.com/LCluber/Ch.js/commit/250b9cf))
+- **isboolean:** added Is.boolean() method ([250b9cf](https://github.com/LCluber/Ch.js/commit/250b9cf))
 
 # 1.1.0 (June 19th 2019)
 
