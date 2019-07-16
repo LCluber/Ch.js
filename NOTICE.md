@@ -37,7 +37,7 @@ test the library :
 $ npm run test
 ```
 
-commit your work with [conventional commits](https://conventionalcommits.org) :
+commit your work with [conventional commits](#conventional-commits) :
 
 ```bash
 $ npm run commit
@@ -66,3 +66,7 @@ export NODE_ENV=production
 | module bundler  |      [Rollup.js](https://rollupjs.org)       |                                                   advanced module bundler for ES6 modules |
 | unit testing    |          [Jest](https://jestjs.io/)          |                                             delightful testing with a focus on simplicity |
 | deployment      |       [Travis](https://travis-ci.com/)       |                                                           test and deploy with confidence |
+
+## Conventional commits
+
+[see COMMITS.md](https://github.com/LCluber/Ch.js/blob/master/COMMITS.md).
