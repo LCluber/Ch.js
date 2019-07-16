@@ -45,6 +45,10 @@ function isFloat(number: any): boolean {
   return Number(number) === number && number % 1 !== 0;
 }
 
+function isNumber(number: any): boolean {
+  return isInteger(number) || isFloat(number);
+}
+
 function isString(string: any): boolean {
   return typeof string === "string";
 }
@@ -83,6 +87,7 @@ export {
   isAscii,
   isInteger,
   isFloat,
+  isNumber,
   isString,
   isHtmlElement,
   isNode

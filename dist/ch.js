@@ -47,6 +47,9 @@ function isInteger(number) {
 function isFloat(number) {
     return Number(number) === number && number % 1 !== 0;
 }
+function isNumber(number) {
+    return isInteger(number) || isFloat(number);
+}
 function isString(string) {
     return typeof string === "string";
 }
@@ -73,4 +76,4 @@ function isNode(node) {
     }
     return false;
 }
-export { isBoolean, isJson, isFunction, isObject, isArray, isAscii, isInteger, isFloat, isString, isHtmlElement, isNode };
+export { isBoolean, isJson, isFunction, isObject, isArray, isAscii, isInteger, isFloat, isNumber, isString, isHtmlElement, isNode };

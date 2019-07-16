@@ -50,6 +50,9 @@ var Ch = (function (exports) {
     function isFloat(number) {
         return Number(number) === number && number % 1 !== 0;
     }
+    function isNumber(number) {
+        return isInteger(number) || isFloat(number);
+    }
     function isString(string) {
         return typeof string === "string";
     }
@@ -86,6 +89,7 @@ var Ch = (function (exports) {
     exports.isInteger = isInteger;
     exports.isJson = isJson;
     exports.isNode = isNode;
+    exports.isNumber = isNumber;
     exports.isObject = isObject;
     exports.isString = isString;
 

@@ -84,6 +84,8 @@ isInteger(number: any): boolean {}
 
 isFloat(number: any): boolean {}
 
+isNumber(number: any): boolean {}
+
 isString(string: any): boolean {}
 ```
 
