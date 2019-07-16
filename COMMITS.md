@@ -2,15 +2,15 @@
 
 [official website](https://conventionalcommits.org).
 
-It is a specification for adding human and machine readable meaning to commit messages allowing to :
+A specification for adding human and machine readable meaning to commit messages :
 
-- Automatically generating CHANGELOGs.
-- Automatically determining a semantic version bump (based on the types of commits landed).
-- Communicating the nature of changes to teammates, the public, and other stakeholders.
-- Triggering build and publish processes.
-- Making it easier for people to contribute to your projects, by allowing them to explore a more structured commit history.
+- Automatic CHANGELOGs.
+- Automatic semantic version bump (based on the types of commits landed).
+- Communicate the nature of changes to teammates, the public, and other stakeholders.
+- Trigger build and publish processes.
+- Make it easier for people to contribute to your projects, by allowing them to explore a more structured commit history.
 
-The commit message should be structured as follows:
+The message is structured as follows:
 
 ```
 <type>([optional scope]): <description>
@@ -37,7 +37,7 @@ feat(lang): added polish language
 
 ### Commitizen
 
-Launch commitizen CLI to commit your work will help you to write good conventional commits.
+Launch commitizen CLI to commit your work. It will guide you to write good conventional commits.
 
 ```bash
 $ npm run commit
