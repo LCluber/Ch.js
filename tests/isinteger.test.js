@@ -40,6 +40,34 @@ test("sends array to isInteger", () => {
   expect(Ch.isInteger(["white", "grey", "black"])).toBe(false);
 });
 
+var json = `{
+  "actor": {
+    "name": "Tom Cruise",
+    "age": 56,
+    "Born At": "Syracuse, NY",
+    "Birthdate": "July 3 1962",
+    "photo": "https://jsonformatter.org/img/tom-cruise.jpg"
+  }
+}`;
+
+test("sends json to isInteger", () => {
+  expect(Ch.isInteger(json)).toBe(false);
+});
+
+var invalidjson = `{
+  "actor: {
+    "name": "Tom Cruise",
+    "age": 56
+    "Born At": "Syracuse, NY",
+    "Birthdate": "July 3 1962",
+    "photo": "https://jsonformatter.org/img/tom-cruise.jpg"
+  }
+}`;
+
+test("sends invalid json to isInteger", () => {
+  expect(Ch.isInteger(invalidjson)).toBe(false);
+});
+
 function testFunction() {
   console.log("function");
 }

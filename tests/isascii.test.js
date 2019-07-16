@@ -52,6 +52,34 @@ test("sends array to isAscii", () => {
   expect(Ch.isAscii(["white", "grey", "black"], false)).toBe(false);
 });
 
+var json = `{
+  "actor": {
+    "name": "Tom Cruise",
+    "age": 56,
+    "Born At": "Syracuse, NY",
+    "Birthdate": "July 3 1962",
+    "photo": "https://jsonformatter.org/img/tom-cruise.jpg"
+  }
+}`;
+
+test("sends json to isAscii", () => {
+  expect(Ch.isAscii(json)).toBe(false);
+});
+
+var invalidjson = `{
+  "actor: {
+    "name": "Tom Cruise",
+    "age": 56
+    "Born At": "Syracuse, NY",
+    "Birthdate": "July 3 1962",
+    "photo": "https://jsonformatter.org/img/tom-cruise.jpg"
+  }
+}`;
+
+test("sends invalid json to isAscii", () => {
+  expect(Ch.isAscii(invalidjson)).toBe(false);
+});
+
 function testFunction() {
   console.log("function");
 }

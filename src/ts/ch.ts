@@ -19,7 +19,10 @@ function isJson(str: any): boolean /*Object|SyntaxError|TypeError*/ {
 
 function isFunction(func: any): boolean {
   let getType = {};
-  return func && getType.toString.call(func) === "[object Function]";
+  if (func) {
+    return func && getType.toString.call(func) === "[object Function]";
+  }
+  return false;
 }
 
 function isObject(object: any): boolean {

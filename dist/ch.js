@@ -27,7 +27,10 @@ function isJson(str) {
 }
 function isFunction(func) {
     var getType = {};
-    return func && getType.toString.call(func) === "[object Function]";
+    if (func) {
+        return func && getType.toString.call(func) === "[object Function]";
+    }
+    return false;
 }
 function isObject(object) {
     return object !== null && typeof object === "object" && !isArray(object);

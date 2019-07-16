@@ -1,9 +1,8 @@
 # [2.1.0](https://github.com/LCluber/Ch.js/compare/v2.0.1...v2.1.0) (2019-07-16)
 
-
 ### Features
 
-* **isnumber:** added isnumber() method ([6f57267](https://github.com/LCluber/Ch.js/commit/6f57267))
+- **isnumber:** added isnumber() method ([6f57267](https://github.com/LCluber/Ch.js/commit/6f57267))
 
 ## [2.0.1](https://github.com/LCluber/Ch.js/compare/v2.0.0...v2.0.1) (2019-07-15)
 
