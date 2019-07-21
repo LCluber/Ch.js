@@ -16,7 +16,11 @@ test("sends string to isHtmlElement", () => {
   expect(Ch.isHtmlElement("string")).toBe(false);
 });
 
-test("sends integer to isHtmlElement", () => {
+test("sends positive even integer to isHtmlElement", () => {
+  expect(Ch.isHtmlElement(2)).toBe(false);
+});
+
+test("sends positive odd integer to isHtmlElement", () => {
   expect(Ch.isHtmlElement(1)).toBe(false);
 });
 
@@ -24,8 +28,20 @@ test("sends zero to isHtmlElement", () => {
   expect(Ch.isHtmlElement(0)).toBe(false);
 });
 
-test("sends float to isHtmlElement", () => {
+test("sends positive float to isHtmlElement", () => {
   expect(Ch.isHtmlElement(1.1)).toBe(false);
+});
+
+test("sends negative odd integer to isHtmlElement", () => {
+  expect(Ch.isHtmlElement(-1)).toBe(false);
+});
+
+test("sends negative even integer to isHtmlElement", () => {
+  expect(Ch.isHtmlElement(-2)).toBe(false);
+});
+
+test("sends negative float to isHtmlElement", () => {
+  expect(Ch.isHtmlElement(-1.1)).toBe(false);
 });
 
 test("sends object to isHtmlElement", () => {

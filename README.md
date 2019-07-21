@@ -90,6 +90,16 @@ isFloat(number: any): boolean {}
 isNumber(number: any): boolean {}
 
 isString(string: any): boolean {}
+
+isEven(number: any): boolean {}
+
+isOdd(number: any): boolean {}
+
+isOrigin(number: any): boolean {}
+
+isPositive(number: any): boolean {}
+
+isNegative(number: any): boolean {}
 ```
 
 ## Contributors

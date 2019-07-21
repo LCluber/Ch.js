@@ -79,4 +79,19 @@ function isNode(node) {
     }
     return false;
 }
-export { isBoolean, isJson, isFunction, isObject, isArray, isAscii, isInteger, isFloat, isNumber, isString, isHtmlElement, isNode };
+function isEven(number) {
+    return isInteger(number) && !(number & 1);
+}
+function isOdd(number) {
+    return isInteger(number) && number & 1 ? true : false;
+}
+function isOrigin(number) {
+    return number === 0 ? true : false;
+}
+function isPositive(number) {
+    return isNumber(number) && number > 0 ? true : false;
+}
+function isNegative(number) {
+    return number < 0 ? true : false;
+}
+export { isBoolean, isJson, isFunction, isObject, isArray, isAscii, isInteger, isFloat, isNumber, isString, isHtmlElement, isNode, isEven, isOdd, isOrigin, isPositive, isNegative };

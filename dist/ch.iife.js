@@ -82,18 +82,38 @@ var Ch = (function (exports) {
         }
         return false;
     }
+    function isEven(number) {
+        return isInteger(number) && !(number & 1);
+    }
+    function isOdd(number) {
+        return isInteger(number) && number & 1 ? true : false;
+    }
+    function isOrigin(number) {
+        return number === 0 ? true : false;
+    }
+    function isPositive(number) {
+        return isNumber(number) && number > 0 ? true : false;
+    }
+    function isNegative(number) {
+        return number < 0 ? true : false;
+    }
 
     exports.isArray = isArray;
     exports.isAscii = isAscii;
     exports.isBoolean = isBoolean;
+    exports.isEven = isEven;
     exports.isFloat = isFloat;
     exports.isFunction = isFunction;
     exports.isHtmlElement = isHtmlElement;
     exports.isInteger = isInteger;
     exports.isJson = isJson;
+    exports.isNegative = isNegative;
     exports.isNode = isNode;
     exports.isNumber = isNumber;
     exports.isObject = isObject;
+    exports.isOdd = isOdd;
+    exports.isOrigin = isOrigin;
+    exports.isPositive = isPositive;
     exports.isString = isString;
 
     return exports;

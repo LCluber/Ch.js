@@ -81,6 +81,26 @@ function isNode(node: any): boolean {
   return false;
 }
 
+function isEven(number: any): boolean {
+  return isInteger(number) && !(number & 1);
+}
+
+function isOdd(number: any): boolean {
+  return isInteger(number) && number & 1 ? true : false;
+}
+
+function isOrigin(number: any): boolean {
+  return number === 0 ? true : false;
+}
+
+function isPositive(number: any): boolean {
+  return isNumber(number) && number > 0 ? true : false;
+}
+
+function isNegative(number: any): boolean {
+  return number < 0 ? true : false;
+}
+
 export {
   isBoolean,
   isJson,
@@ -93,5 +113,10 @@ export {
   isNumber,
   isString,
   isHtmlElement,
-  isNode
+  isNode,
+  isEven,
+  isOdd,
+  isOrigin,
+  isPositive,
+  isNegative
 };

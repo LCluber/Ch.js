@@ -16,7 +16,11 @@ test("sends string to isInteger", () => {
   expect(Ch.isInteger("string")).toBe(false);
 });
 
-test("sends integer to isInteger", () => {
+test("sends positive even integer to isInteger", () => {
+  expect(Ch.isInteger(2)).toBe(true);
+});
+
+test("sends positive odd integer to isInteger", () => {
   expect(Ch.isInteger(1)).toBe(true);
 });
 
@@ -24,8 +28,20 @@ test("sends zero to isInteger", () => {
   expect(Ch.isInteger(0)).toBe(true);
 });
 
-test("sends float to isInteger", () => {
+test("sends positive float to isInteger", () => {
   expect(Ch.isInteger(1.1)).toBe(false);
+});
+
+test("sends negative odd integer to isInteger", () => {
+  expect(Ch.isInteger(-1)).toBe(true);
+});
+
+test("sends negative even integer to isInteger", () => {
+  expect(Ch.isInteger(-2)).toBe(true);
+});
+
+test("sends negative float to isInteger", () => {
+  expect(Ch.isInteger(-1.1)).toBe(false);
 });
 
 test("sends object to isInteger", () => {

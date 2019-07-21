@@ -16,12 +16,64 @@ test("sends string to isAscii", () => {
   expect(Ch.isAscii("string", false)).toBe(false);
 });
 
-test("sends integer to isAscii", () => {
+test("sends positive even integer to isAscii not extended", () => {
+  expect(Ch.isAscii(2, false)).toBe(true);
+});
+
+test("sends positive odd integer to isAscii not extended", () => {
   expect(Ch.isAscii(1, false)).toBe(true);
 });
 
-test("sends zero to isAscii", () => {
+test("sends zero to isAscii not extended", () => {
   expect(Ch.isAscii(0, false)).toBe(true);
+});
+
+test("sends positive float to isAscii not extended", () => {
+  expect(Ch.isAscii(1.1, false)).toBe(false);
+});
+
+test("sends negative odd integer to isAscii not extended", () => {
+  expect(Ch.isAscii(-1, false)).toBe(false);
+});
+
+test("sends negative even integer to isAscii not extended", () => {
+  expect(Ch.isAscii(-2, false)).toBe(false);
+});
+
+test("sends negative float to isAscii not extended", () => {
+  expect(Ch.isAscii(-1.1, false)).toBe(false);
+});
+
+test("sends positive even integer to isAscii extended", () => {
+  expect(Ch.isAscii(2, true)).toBe(true);
+});
+
+test("sends positive odd integer to isAscii extended", () => {
+  expect(Ch.isAscii(1, true)).toBe(true);
+});
+
+test("sends zero to isAscii extended", () => {
+  expect(Ch.isAscii(0, true)).toBe(true);
+});
+
+test("sends positive float to isAscii extended", () => {
+  expect(Ch.isAscii(1.1, true)).toBe(false);
+});
+
+test("sends negative odd integer to isAscii extended", () => {
+  expect(Ch.isAscii(-1, true)).toBe(false);
+});
+
+test("sends negative even integer to isAscii extended", () => {
+  expect(Ch.isAscii(-2, true)).toBe(false);
+});
+
+test("sends negative float to isAscii extended", () => {
+  expect(Ch.isAscii(-1.1, true)).toBe(false);
+});
+
+test("sends 127 to isAscii not extended", () => {
+  expect(Ch.isAscii(127, false)).toBe(true);
 });
 
 test("sends 128 to isAscii not extended", () => {
@@ -34,10 +86,6 @@ test("sends 255 to isAscii extended", () => {
 
 test("sends 256 to isAscii extended", () => {
   expect(Ch.isAscii(256, true)).toBe(false);
-});
-
-test("sends float to isAscii", () => {
-  expect(Ch.isAscii(1.1, false)).toBe(false);
 });
 
 test("sends object to isAscii", () => {

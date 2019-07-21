@@ -16,7 +16,11 @@ test("sends string to isJson", () => {
   expect(Ch.isJson("string")).toBe(false);
 });
 
-test("sends integer to isJson", () => {
+test("sends positive even integer to isJson", () => {
+  expect(Ch.isJson(2)).toBe(false);
+});
+
+test("sends positive odd integer to isJson", () => {
   expect(Ch.isJson(1)).toBe(false);
 });
 
@@ -24,8 +28,20 @@ test("sends zero to isJson", () => {
   expect(Ch.isJson(0)).toBe(false);
 });
 
-test("sends float to isJson", () => {
+test("sends positive float to isJson", () => {
   expect(Ch.isJson(1.1)).toBe(false);
+});
+
+test("sends negative odd integer to isJson", () => {
+  expect(Ch.isJson(-1)).toBe(false);
+});
+
+test("sends negative even integer to isJson", () => {
+  expect(Ch.isJson(-2)).toBe(false);
+});
+
+test("sends negative float to isJson", () => {
+  expect(Ch.isJson(-1.1)).toBe(false);
 });
 
 test("sends object to isJson", () => {

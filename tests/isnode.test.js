@@ -16,7 +16,11 @@ test("sends string to isNode", () => {
   expect(Ch.isNode("string")).toBe(false);
 });
 
-test("sends integer to isNode", () => {
+test("sends positive even integer to isNode", () => {
+  expect(Ch.isNode(2)).toBe(false);
+});
+
+test("sends positive odd integer to isNode", () => {
   expect(Ch.isNode(1)).toBe(false);
 });
 
@@ -24,8 +28,20 @@ test("sends zero to isNode", () => {
   expect(Ch.isNode(0)).toBe(false);
 });
 
-test("sends float to isNode", () => {
+test("sends positive float to isNode", () => {
   expect(Ch.isNode(1.1)).toBe(false);
+});
+
+test("sends negative odd integer to isNode", () => {
+  expect(Ch.isNode(-1)).toBe(false);
+});
+
+test("sends negative even integer to isNode", () => {
+  expect(Ch.isNode(-2)).toBe(false);
+});
+
+test("sends negative float to isNode", () => {
+  expect(Ch.isNode(-1.1)).toBe(false);
 });
 
 test("sends object to isNode", () => {
