@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/LCluber/Ch.js/compare/v2.1.1...v2.2.0) (2019-07-21)
+
+
+### Features
+
+* **numbers:** added isEven, isOdd, isOrigin, isPositive, isNegative ([61db1c5](https://github.com/LCluber/Ch.js/commit/61db1c5))
+
 ## [2.1.1](https://github.com/LCluber/Ch.js/compare/v2.1.0...v2.1.1) (2019-07-16)
 
 ### Bug Fixes
