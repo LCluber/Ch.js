@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/LCluber/Ch.js/compare/v2.2.0...v2.3.0) (2019-07-31)
+
+
+### Features
+
+* **html events:** added isHTMLEventAttribute method ([beaf7ac](https://github.com/LCluber/Ch.js/commit/beaf7ac))
+
 # [2.2.0](https://github.com/LCluber/Ch.js/compare/v2.1.1...v2.2.0) (2019-07-21)
 
 
