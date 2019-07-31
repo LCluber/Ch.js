@@ -91,6 +91,12 @@ isNumber(number: any): boolean {}
 
 isString(string: any): boolean {}
 
+isHtmlElement(htmlElement: any): boolean {}
+
+isHtmlEventAttribute(htmlEventAttribute: any): boolean {}
+
+isNode(node: any): boolean {}
+
 isEven(number: any): boolean {}
 
 isOdd(number: any): boolean {}
