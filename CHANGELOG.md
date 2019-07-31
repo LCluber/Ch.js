@@ -1,3 +1,10 @@
+## [2.3.1](https://github.com/LCluber/Ch.js/compare/v2.3.0...v2.3.1) (2019-07-31)
+
+
+### Bug Fixes
+
+* **readme:** updated api reference ([192074a](https://github.com/LCluber/Ch.js/commit/192074a))
+
 # [2.3.0](https://github.com/LCluber/Ch.js/compare/v2.2.0...v2.3.0) (2019-07-31)
 
 
