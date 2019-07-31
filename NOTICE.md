@@ -13,7 +13,7 @@ $ git clone https://github.com/LCluber/Ch.js.git
 Install global dependencies :
 
 ```bash
-$ npm i -G typescript rollup uglify-js jest commitizen
+$ npm i -G typescript rollup uglify-js jest commitizen semantic-release-cli
 ```
 
 Install project dependencies :
