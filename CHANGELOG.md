@@ -1,3 +1,11 @@
+# [2.4.0](https://github.com/LCluber/Ch.js/compare/v2.3.1...v2.4.0) (2019-08-08)
+
+
+### Features
+
+* **isinteger:** now returns true with number as string ([69ed1fe](https://github.com/LCluber/Ch.js/commit/69ed1fe))
+* **isinteger:** now with typecheck parameter ([38e64e5](https://github.com/LCluber/Ch.js/commit/38e64e5))
+
 ## [2.3.1](https://github.com/LCluber/Ch.js/compare/v2.3.0...v2.3.1) (2019-07-31)
 
 
