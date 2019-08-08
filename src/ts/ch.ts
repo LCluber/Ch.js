@@ -41,7 +41,7 @@ function isAscii(code: any, extended: boolean): boolean {
 }
 
 function isInteger(number: any): boolean {
-  return number === parseInt(<string>number, 10);
+  return number == parseInt(<string>number, 10);
 }
 
 function isFloat(number: any): boolean {

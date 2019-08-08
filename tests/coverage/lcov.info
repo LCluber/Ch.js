@@ -26,7 +26,7 @@ FNDA:19,isFunction
 FNDA:19,isObject
 FNDA:24,isArray
 FNDA:30,isAscii
-FNDA:125,isInteger
+FNDA:127,isInteger
 FNDA:47,isFloat
 FNDA:38,isNumber
 FNDA:38,isString
@@ -54,7 +54,7 @@ DA:39,24
 DA:42,30
 DA:43,14
 DA:45,16
-DA:48,125
+DA:48,127
 DA:51,47
 DA:54,38
 DA:57,38

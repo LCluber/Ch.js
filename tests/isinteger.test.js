@@ -16,6 +16,14 @@ test("sends string to isInteger", () => {
   expect(Ch.isInteger("string")).toBe(false);
 });
 
+test("sends fugure as string to isInteger", () => {
+  expect(Ch.isInteger("1")).toBe(true);
+});
+
+test("sends number as string to isInteger", () => {
+  expect(Ch.isInteger("89")).toBe(true);
+});
+
 test("sends positive even integer to isInteger", () => {
   expect(Ch.isInteger(2)).toBe(true);
 });

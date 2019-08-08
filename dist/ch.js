@@ -45,7 +45,7 @@ function isAscii(code, extended) {
     return false;
 }
 function isInteger(number) {
-    return number === parseInt(number, 10);
+    return number == parseInt(number, 10);
 }
 function isFloat(number) {
     return Number(number) === number && number % 1 !== 0;
