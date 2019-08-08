@@ -16,7 +16,7 @@ declare function isFunction(func: any): boolean;
 declare function isObject(object: any): boolean;
 declare function isArray(array: any): boolean;
 declare function isAscii(code: any, extended: boolean): boolean;
-declare function isInteger(number: any): boolean;
+declare function isInteger(number: any, typeCheck?: boolean): boolean;
 declare function isFloat(number: any): boolean;
 declare function isNumber(number: any): boolean;
 declare function isString(string: any): boolean;

@@ -16,12 +16,28 @@ test("sends string to isInteger", () => {
   expect(Ch.isInteger("string")).toBe(false);
 });
 
-test("sends fugure as string to isInteger", () => {
-  expect(Ch.isInteger("1")).toBe(true);
+test("sends figure as string to isInteger", () => {
+  expect(Ch.isInteger("1")).toBe(false);
 });
 
 test("sends number as string to isInteger", () => {
-  expect(Ch.isInteger("89")).toBe(true);
+  expect(Ch.isInteger("89")).toBe(false);
+});
+
+test("sends number in string to isInteger", () => {
+  expect(Ch.isInteger("89rt")).toBe(false);
+});
+
+test("sends figure as string to isInteger without typeCheck", () => {
+  expect(Ch.isInteger("1", false)).toBe(true);
+});
+
+test("sends number as string to isInteger without typeCheck", () => {
+  expect(Ch.isInteger("89", false)).toBe(true);
+});
+
+test("sends number in string to isInteger without typeCheck", () => {
+  expect(Ch.isInteger("89rt", false)).toBe(false);
 });
 
 test("sends positive even integer to isInteger", () => {

@@ -44,8 +44,10 @@ function isAscii(code, extended) {
     }
     return false;
 }
-function isInteger(number) {
-    return number == parseInt(number, 10);
+function isInteger(number, typeCheck) {
+    if (typeCheck === void 0) { typeCheck = true; }
+    var int = parseInt(number, 10);
+    return typeCheck ? number === int : number == int;
 }
 function isFloat(number) {
     return Number(number) === number && number % 1 !== 0;
