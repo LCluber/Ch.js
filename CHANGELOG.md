@@ -1,31 +1,26 @@
 # [2.4.0](https://github.com/LCluber/Ch.js/compare/v2.3.1...v2.4.0) (2019-08-08)
 
-
 ### Features
 
-* **isinteger:** now returns true with number as string ([69ed1fe](https://github.com/LCluber/Ch.js/commit/69ed1fe))
-* **isinteger:** now with typecheck parameter ([38e64e5](https://github.com/LCluber/Ch.js/commit/38e64e5))
+- **isinteger:** now with type checking parameter ([38e64e5](https://github.com/LCluber/Ch.js/commit/38e64e5))
 
 ## [2.3.1](https://github.com/LCluber/Ch.js/compare/v2.3.0...v2.3.1) (2019-07-31)
 
-
 ### Bug Fixes
 
-* **readme:** updated api reference ([192074a](https://github.com/LCluber/Ch.js/commit/192074a))
+- **readme:** updated api reference ([192074a](https://github.com/LCluber/Ch.js/commit/192074a))
 
 # [2.3.0](https://github.com/LCluber/Ch.js/compare/v2.2.0...v2.3.0) (2019-07-31)
 
-
 ### Features
 
-* **html events:** added isHTMLEventAttribute method ([beaf7ac](https://github.com/LCluber/Ch.js/commit/beaf7ac))
+- **html events:** added isHTMLEventAttribute method ([beaf7ac](https://github.com/LCluber/Ch.js/commit/beaf7ac))
 
 # [2.2.0](https://github.com/LCluber/Ch.js/compare/v2.1.1...v2.2.0) (2019-07-21)
 
-
 ### Features
 
-* **numbers:** added isEven, isOdd, isOrigin, isPositive, isNegative ([61db1c5](https://github.com/LCluber/Ch.js/commit/61db1c5))
+- **numbers:** added isEven, isOdd, isOrigin, isPositive, isNegative ([61db1c5](https://github.com/LCluber/Ch.js/commit/61db1c5))
 
 ## [2.1.1](https://github.com/LCluber/Ch.js/compare/v2.1.0...v2.1.1) (2019-07-16)
 
