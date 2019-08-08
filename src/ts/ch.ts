@@ -40,7 +40,7 @@ function isAscii(code: any, extended: boolean): boolean {
   return false;
 }
 
-function isInteger(number: any, typeCheck:boolean = true): boolean {
+function isInteger(number: any, typeCheck: boolean = true): boolean {
   let int = parseInt(<string>number, 10);
   return typeCheck ? number === int : number == int;
 }

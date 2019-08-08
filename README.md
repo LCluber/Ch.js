@@ -84,7 +84,7 @@ isArray(array: any): boolean {}
 
 isAscii(code: any, extended: boolean): boolean {}
 
-isInteger(number: any): boolean {}
+isInteger(number: any, typeCheck: boolean = true): boolean {}
 
 isFloat(number: any): boolean {}
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1565298035459" clover="3.2.0">
-  <project timestamp="1565298035460" name="All files">
+<coverage generated="1565298575236" clover="3.2.0">
+  <project timestamp="1565298575236" name="All files">
     <metrics statements="36" coveredstatements="36" conditionals="130" coveredconditionals="100" methods="18" coveredmethods="18" elements="184" coveredelements="154" complexity="0" loc="36" ncloc="36" packages="1" files="1" classes="1"/>
     <file name="ch.js" path="/Users/lcluber/Projects/github/Ch.js/dist/ch.js">
       <metrics statements="36" coveredstatements="36" conditionals="130" coveredconditionals="100" methods="18" coveredmethods="18"/>
