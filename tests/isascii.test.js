@@ -16,6 +16,14 @@ test("sends string to isAscii extended", () => {
   expect(Ch.isAscii("string")).toBe(false);
 });
 
+test("sends number as string to isAscii extended", () => {
+  expect(Ch.isAscii("2")).toBe(true);
+});
+
+test("sends 256 as string to isAscii extended", () => {
+  expect(Ch.isAscii("256")).toBe(false);
+});
+
 test("sends positive even integer to isAscii not extended", () => {
   expect(Ch.isAscii(2, false)).toBe(true);
 });

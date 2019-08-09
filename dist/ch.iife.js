@@ -43,7 +43,7 @@ var Ch = (function (exports) {
     }
     function isAscii(code, extended) {
         if (extended === void 0) { extended = true; }
-        if (isInteger(code)) {
+        if (isInteger(code, false)) {
             return (extended && code >= 0 && code <= 255) || (code >= 0 && code <= 127);
         }
         return false;

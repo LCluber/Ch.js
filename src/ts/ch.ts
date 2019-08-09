@@ -34,7 +34,7 @@ function isArray(array: any): boolean {
 }
 
 function isAscii(code: any, extended: boolean = true): boolean {
-  if (isInteger(code)) {
+  if (isInteger(code, false)) {
     return (extended && code >= 0 && code <= 255) || (code >= 0 && code <= 127);
   }
   return false;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1565381213027" clover="3.2.0">
-  <project timestamp="1565381213027" name="All files">
+<coverage generated="1565384094224" clover="3.2.0">
+  <project timestamp="1565384094224" name="All files">
     <metrics statements="39" coveredstatements="39" conditionals="138" coveredconditionals="108" methods="18" coveredmethods="18" elements="195" coveredelements="165" complexity="0" loc="39" ncloc="39" packages="1" files="1" classes="1"/>
     <file name="ch.js" path="/Users/lcluber/Projects/github/Ch.js/dist/ch.js">
       <metrics statements="39" coveredstatements="39" conditionals="138" coveredconditionals="108" methods="18" coveredmethods="18"/>
@@ -17,13 +17,13 @@
       <line num="33" count="3" type="stmt"/>
       <line num="36" count="19" type="cond" truecount="3" falsecount="0"/>
       <line num="39" count="24" type="cond" truecount="2" falsecount="0"/>
-      <line num="42" count="30" type="cond" truecount="2" falsecount="0"/>
-      <line num="43" count="30" type="cond" truecount="2" falsecount="0"/>
-      <line num="44" count="14" type="cond" truecount="5" falsecount="0"/>
+      <line num="42" count="32" type="cond" truecount="2" falsecount="0"/>
+      <line num="43" count="32" type="cond" truecount="2" falsecount="0"/>
+      <line num="44" count="16" type="cond" truecount="5" falsecount="0"/>
       <line num="46" count="16" type="stmt"/>
-      <line num="49" count="135" type="cond" truecount="2" falsecount="0"/>
-      <line num="50" count="135" type="stmt"/>
-      <line num="51" count="135" type="cond" truecount="2" falsecount="0"/>
+      <line num="49" count="137" type="cond" truecount="2" falsecount="0"/>
+      <line num="50" count="137" type="stmt"/>
+      <line num="51" count="137" type="cond" truecount="2" falsecount="0"/>
       <line num="54" count="57" type="cond" truecount="2" falsecount="0"/>
       <line num="55" count="57" type="stmt"/>
       <line num="56" count="57" type="cond" truecount="2" falsecount="0"/>
