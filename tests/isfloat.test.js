@@ -16,6 +16,46 @@ test("sends string to isFloat", () => {
   expect(Ch.isFloat("string")).toBe(false);
 });
 
+test("sends figure as string to isFloat", () => {
+  expect(Ch.isFloat("1")).toBe(false);
+});
+
+test("sends number as string to isFloat", () => {
+  expect(Ch.isFloat("89")).toBe(false);
+});
+
+test("sends number in string to isFloat", () => {
+  expect(Ch.isFloat("89rt")).toBe(false);
+});
+
+test("sends figure as string to isFloat without typeCheck", () => {
+  expect(Ch.isFloat("1", false)).toBe(false);
+});
+
+test("sends number as string to isFloat without typeCheck", () => {
+  expect(Ch.isFloat("89", false)).toBe(false);
+});
+
+test("sends number in string to isFloat without typeCheck", () => {
+  expect(Ch.isFloat("89rt", false)).toBe(false);
+});
+
+test("sends float as string to isFloat", () => {
+  expect(Ch.isFloat("1.5")).toBe(false);
+});
+
+test("sends number in string to isFloat", () => {
+  expect(Ch.isFloat("8.9rt")).toBe(false);
+});
+
+test("sends float as string to isFloat without typeCheck", () => {
+  expect(Ch.isFloat("1.5", false)).toBe(true);
+});
+
+test("sends float in string to isFloat without typeCheck", () => {
+  expect(Ch.isFloat("8.9rt", false)).toBe(false);
+});
+
 test("sends positive even integer to isFloat", () => {
   expect(Ch.isFloat(2)).toBe(false);
 });

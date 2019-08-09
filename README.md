@@ -82,11 +82,11 @@ isObject(object: any): boolean {}
 
 isArray(array: any): boolean {}
 
-isAscii(code: any, extended: boolean): boolean {}
+isAscii(code: any, extended: boolean = false): boolean {}
 
 isInteger(number: any, typeCheck: boolean = true): boolean {}
 
-isFloat(number: any): boolean {}
+isFloat(number: any, typeCheck: boolean = true): boolean {}
 
 isNumber(number: any): boolean {}
 

@@ -39,6 +39,7 @@ function isArray(array) {
     return array !== null && array.constructor === Array;
 }
 function isAscii(code, extended) {
+    if (extended === void 0) { extended = true; }
     if (isInteger(code)) {
         return (extended && code >= 0 && code <= 255) || (code >= 0 && code <= 127);
     }
@@ -49,8 +50,10 @@ function isInteger(number, typeCheck) {
     var int = parseInt(number, 10);
     return typeCheck ? number === int : number == int;
 }
-function isFloat(number) {
-    return Number(number) === number && number % 1 !== 0;
+function isFloat(number, typeCheck) {
+    if (typeCheck === void 0) { typeCheck = true; }
+    var moduloCheck = number % 1 !== 0;
+    return typeCheck ? Number(number) === number && moduloCheck : Number(number) == number && moduloCheck;
 }
 function isNumber(number) {
     return isInteger(number) || isFloat(number);

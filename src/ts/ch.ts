@@ -33,7 +33,7 @@ function isArray(array: any): boolean {
   return array !== null && array.constructor === Array;
 }
 
-function isAscii(code: any, extended: boolean): boolean {
+function isAscii(code: any, extended: boolean = true): boolean {
   if (isInteger(code)) {
     return (extended && code >= 0 && code <= 255) || (code >= 0 && code <= 127);
   }
@@ -45,8 +45,11 @@ function isInteger(number: any, typeCheck: boolean = true): boolean {
   return typeCheck ? number === int : number == int;
 }
 
-function isFloat(number: any): boolean {
-  return Number(number) === number && number % 1 !== 0;
+function isFloat(number: any, typeCheck: boolean = true): boolean {
+  const moduloCheck = number % 1 !== 0;
+  return typeCheck
+    ? Number(number) === number && moduloCheck
+    : Number(number) == number && moduloCheck;
 }
 
 function isNumber(number: any): boolean {

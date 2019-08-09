@@ -40,6 +40,22 @@ test("sends number in string to isInteger without typeCheck", () => {
   expect(Ch.isInteger("89rt", false)).toBe(false);
 });
 
+test("sends float as string to isInteger", () => {
+  expect(Ch.isInteger("1.5")).toBe(false);
+});
+
+test("sends number in string to isInteger", () => {
+  expect(Ch.isInteger("8.9rt")).toBe(false);
+});
+
+test("sends float as string to isInteger without typeCheck", () => {
+  expect(Ch.isInteger("1.5", false)).toBe(false);
+});
+
+test("sends float in string to isInteger without typeCheck", () => {
+  expect(Ch.isInteger("8.9rt", false)).toBe(false);
+});
+
 test("sends positive even integer to isInteger", () => {
   expect(Ch.isInteger(2)).toBe(true);
 });
