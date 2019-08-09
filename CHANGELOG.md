@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/LCluber/Ch.js/compare/v2.4.0...v2.5.0) (2019-08-09)
+
+
+### Features
+
+* **isfloat:** added type check parameter ([d4bbc2b](https://github.com/LCluber/Ch.js/commit/d4bbc2b))
+
 # [2.4.0](https://github.com/LCluber/Ch.js/compare/v2.3.1...v2.4.0) (2019-08-08)
 
 ### Features
