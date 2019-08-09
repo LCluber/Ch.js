@@ -53,7 +53,9 @@ function isInteger(number, typeCheck) {
 function isFloat(number, typeCheck) {
     if (typeCheck === void 0) { typeCheck = true; }
     var moduloCheck = number % 1 !== 0;
-    return typeCheck ? Number(number) === number && moduloCheck : Number(number) == number && moduloCheck;
+    return typeCheck
+        ? Number(number) === number && moduloCheck
+        : Number(number) == number && moduloCheck;
 }
 function isNumber(number) {
     return isInteger(number) || isFloat(number);
