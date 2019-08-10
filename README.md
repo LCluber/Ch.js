@@ -17,7 +17,7 @@
 
 ## Synopsis
 
-**[Ch.js](https://github.com/LCluber/Ch.js)** is an open source variable checker library written in TypeScript.
+**[Ch.js](https://github.com/LCluber/Ch.js)** is an open source type checking library written in TypeScript.
 
 ## Motivation
 
