@@ -1,3 +1,9 @@
+# [2.6.0](https://github.com/LCluber/Ch.js/compare/v2.5.0...v2.6.0) (2019-08-09)
+
+### Features
+
+- **isascii:** now accepts integers with string type ([140eba3](https://github.com/LCluber/Ch.js/commit/140eba3))
+
 # [2.5.0](https://github.com/LCluber/Ch.js/compare/v2.4.0...v2.5.0) (2019-08-09)
 
 ### Features
