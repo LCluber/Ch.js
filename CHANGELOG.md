@@ -1,3 +1,10 @@
+## [2.6.1](https://github.com/LCluber/Ch.js/compare/v2.6.0...v2.6.1) (2019-08-10)
+
+
+### Bug Fixes
+
+* **readme:** updated description of the library ([f7d429f](https://github.com/LCluber/Ch.js/commit/f7d429f))
+
 # [2.6.0](https://github.com/LCluber/Ch.js/compare/v2.5.0...v2.6.0) (2019-08-09)
 
 ### Features
