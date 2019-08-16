@@ -1,3 +1,10 @@
+## [2.6.2](https://github.com/LCluber/Ch.js/compare/v2.6.1...v2.6.2) (2019-08-16)
+
+
+### Bug Fixes
+
+* **es6:** ch.js is now in ES6 format ([64cecc3](https://github.com/LCluber/Ch.js/commit/64cecc3))
+
 ## [2.6.1](https://github.com/LCluber/Ch.js/compare/v2.6.0...v2.6.1) (2019-08-10)
 
 
