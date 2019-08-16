@@ -14,174 +14,194 @@ var Ch = (function (exports) {
     'use strict';
 
     function isBoolean(bool) {
-        return typeof bool === "boolean";
+      return typeof bool === "boolean";
     }
+
     function isJson(str) {
-        if (!isString(str)) {
-            return false;
-        }
-        try {
-            JSON.parse(str);
-        }
-        catch (e) {
-            return false;
-        }
-        return true;
+      if (!isString(str)) {
+        return false;
+      }
+
+      try {
+        JSON.parse(str);
+      } catch (e) {
+        return false;
+      }
+
+      return true;
     }
+
     function isFunction(func) {
-        if (func) {
-            var getType = {};
-            return func && getType.toString.call(func) === "[object Function]";
-        }
-        return false;
+      if (func) {
+        var getType = {};
+        return func && getType.toString.call(func) === "[object Function]";
+      }
+
+      return false;
     }
+
     function isObject(object) {
-        return object !== null && typeof object === "object" && !isArray(object);
+      return object !== null && typeof object === "object" && !isArray(object);
     }
+
     function isArray(array) {
-        return array !== null && array.constructor === Array;
+      return array !== null && array.constructor === Array;
     }
+
     function isAscii(code, extended) {
-        if (extended === void 0) { extended = true; }
-        if (isInteger(code, false)) {
-            return (extended && code >= 0 && code <= 255) || (code >= 0 && code <= 127);
-        }
-        return false;
+      if (extended === void 0) {
+        extended = true;
+      }
+
+      if (isInteger(code, false)) {
+        return extended && code >= 0 && code <= 255 || code >= 0 && code <= 127;
+      }
+
+      return false;
     }
+
     function isInteger(number, typeCheck) {
-        if (typeCheck === void 0) { typeCheck = true; }
-        var int = parseInt(number, 10);
-        return typeCheck ? number === int : number == int;
+      if (typeCheck === void 0) {
+        typeCheck = true;
+      }
+
+      var _int = parseInt(number, 10);
+
+      return typeCheck ? number === _int : number == _int;
     }
+
     function isFloat(number, typeCheck) {
-        if (typeCheck === void 0) { typeCheck = true; }
-        var moduloCheck = number % 1 !== 0;
-        return typeCheck
-            ? Number(number) === number && moduloCheck
-            : Number(number) == number && moduloCheck;
+      if (typeCheck === void 0) {
+        typeCheck = true;
+      }
+
+      var moduloCheck = number % 1 !== 0;
+      return typeCheck ? Number(number) === number && moduloCheck : Number(number) == number && moduloCheck;
     }
+
     function isNumber(number) {
-        return isInteger(number) || isFloat(number);
+      return isInteger(number) || isFloat(number);
     }
+
     function isString(string) {
-        return typeof string === "string";
+      return typeof string === "string";
     }
+
     function isHtmlElement(htmlElement) {
-        if (htmlElement) {
-            return typeof HTMLElement === "object"
-                ? htmlElement instanceof HTMLElement
-                : htmlElement &&
-                    typeof htmlElement === "object" &&
-                    htmlElement !== null &&
-                    htmlElement.nodeType === 1 &&
-                    typeof htmlElement.nodeName === "string";
-        }
-        return false;
+      if (htmlElement) {
+        return typeof HTMLElement === "object" ? htmlElement instanceof HTMLElement : htmlElement && typeof htmlElement === "object" && htmlElement !== null && htmlElement.nodeType === 1 && typeof htmlElement.nodeName === "string";
+      }
+
+      return false;
     }
+
     function isHtmlEventAttribute(htmlEventAttribute) {
-        switch (htmlEventAttribute) {
-            case "onafterprint":
-            case "onbeforeprint":
-            case "onbeforeunload":
-            case "onerror":
-            case "onhashchange":
-            case "onload":
-            case "onmessage":
-            case "onoffline":
-            case "ononline":
-            case "onpagehide":
-            case "onpageshow":
-            case "onpopstate":
-            case "onresize":
-            case "onstorage":
-            case "onunload":
-            case "onblur":
-            case "onchange":
-            case "oncontextmenu":
-            case "onfocus":
-            case "oninput":
-            case "oninvalid":
-            case "onreset":
-            case "onsearch":
-            case "onselect":
-            case "onsubmit":
-            case "onkeydown":
-            case "onkeypress":
-            case "onkeyup":
-            case "onclick":
-            case "ondblclick":
-            case "onmousedown":
-            case "onmousemove":
-            case "onmouseout":
-            case "onmouseover":
-            case "onmouseup":
-            case "onmousewheel":
-            case "onwheel":
-            case "ondrag":
-            case "ondragend":
-            case "ondragenter":
-            case "ondragleave":
-            case "ondragover":
-            case "ondragstart":
-            case "ondrop":
-            case "onscroll":
-            case "oncopy":
-            case "oncut":
-            case "onpaste":
-            case "onabort":
-            case "oncanplay":
-            case "oncanplaythrough":
-            case "oncuechange":
-            case "ondurationchange":
-            case "onemptied":
-            case "onended":
-            case "onerror":
-            case "onloadeddata":
-            case "onloadedmetadata":
-            case "onloadstart":
-            case "onpause":
-            case "onplay":
-            case "onplaying":
-            case "onprogress":
-            case "onratechange":
-            case "onseeked":
-            case "onseeking":
-            case "onstalled":
-            case "onsuspend":
-            case "ontimeupdate":
-            case "onvolumechange":
-            case "onwaiting":
-            case "ontoggle":
-                return true;
-            default:
-                return false;
-        }
+      switch (htmlEventAttribute) {
+        case "onafterprint":
+        case "onbeforeprint":
+        case "onbeforeunload":
+        case "onerror":
+        case "onhashchange":
+        case "onload":
+        case "onmessage":
+        case "onoffline":
+        case "ononline":
+        case "onpagehide":
+        case "onpageshow":
+        case "onpopstate":
+        case "onresize":
+        case "onstorage":
+        case "onunload":
+        case "onblur":
+        case "onchange":
+        case "oncontextmenu":
+        case "onfocus":
+        case "oninput":
+        case "oninvalid":
+        case "onreset":
+        case "onsearch":
+        case "onselect":
+        case "onsubmit":
+        case "onkeydown":
+        case "onkeypress":
+        case "onkeyup":
+        case "onclick":
+        case "ondblclick":
+        case "onmousedown":
+        case "onmousemove":
+        case "onmouseout":
+        case "onmouseover":
+        case "onmouseup":
+        case "onmousewheel":
+        case "onwheel":
+        case "ondrag":
+        case "ondragend":
+        case "ondragenter":
+        case "ondragleave":
+        case "ondragover":
+        case "ondragstart":
+        case "ondrop":
+        case "onscroll":
+        case "oncopy":
+        case "oncut":
+        case "onpaste":
+        case "onabort":
+        case "oncanplay":
+        case "oncanplaythrough":
+        case "oncuechange":
+        case "ondurationchange":
+        case "onemptied":
+        case "onended":
+        case "onerror":
+        case "onloadeddata":
+        case "onloadedmetadata":
+        case "onloadstart":
+        case "onpause":
+        case "onplay":
+        case "onplaying":
+        case "onprogress":
+        case "onratechange":
+        case "onseeked":
+        case "onseeking":
+        case "onstalled":
+        case "onsuspend":
+        case "ontimeupdate":
+        case "onvolumechange":
+        case "onwaiting":
+        case "ontoggle":
+          return true;
+
+        default:
+          return false;
+      }
     }
+
     function isNode(node) {
-        if (node) {
-            return typeof Node === "object"
-                ? node instanceof Node
-                : node &&
-                    typeof node === "object" &&
-                    typeof node.nodeType === "number" &&
-                    typeof node.nodeName === "string";
-        }
-        return false;
+      if (node) {
+        return typeof Node === "object" ? node instanceof Node : node && typeof node === "object" && typeof node.nodeType === "number" && typeof node.nodeName === "string";
+      }
+
+      return false;
     }
+
     function isEven(number) {
-        return isInteger(number) && !(number & 1);
+      return isInteger(number) && !(number & 1);
     }
+
     function isOdd(number) {
-        return isInteger(number) && number & 1 ? true : false;
+      return isInteger(number) && number & 1 ? true : false;
     }
+
     function isOrigin(number) {
-        return number === 0 ? true : false;
+      return number === 0 ? true : false;
     }
+
     function isPositive(number) {
-        return isNumber(number) && number > 0 ? true : false;
+      return isNumber(number) && number > 0 ? true : false;
     }
+
     function isNegative(number) {
-        return number < 0 ? true : false;
+      return number < 0 ? true : false;
     }
 
     exports.isArray = isArray;

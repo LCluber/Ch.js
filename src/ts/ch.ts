@@ -19,7 +19,7 @@ function isJson(str: any): boolean /*Object|SyntaxError|TypeError*/ {
 
 function isFunction(func: any): boolean {
   if (func) {
-    let getType = {};
+    const getType = {};
     return func && getType.toString.call(func) === "[object Function]";
   }
   return false;
@@ -41,7 +41,7 @@ function isAscii(code: any, extended: boolean = true): boolean {
 }
 
 function isInteger(number: any, typeCheck: boolean = true): boolean {
-  let int = parseInt(<string>number, 10);
+  const int = parseInt(<string>number, 10);
   return typeCheck ? number === int : number == int;
 }
 

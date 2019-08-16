@@ -27,7 +27,7 @@ function isJson(str) {
 }
 function isFunction(func) {
     if (func) {
-        var getType = {};
+        const getType = {};
         return func && getType.toString.call(func) === "[object Function]";
     }
     return false;
@@ -38,21 +38,18 @@ function isObject(object) {
 function isArray(array) {
     return array !== null && array.constructor === Array;
 }
-function isAscii(code, extended) {
-    if (extended === void 0) { extended = true; }
+function isAscii(code, extended = true) {
     if (isInteger(code, false)) {
         return (extended && code >= 0 && code <= 255) || (code >= 0 && code <= 127);
     }
     return false;
 }
-function isInteger(number, typeCheck) {
-    if (typeCheck === void 0) { typeCheck = true; }
-    var int = parseInt(number, 10);
+function isInteger(number, typeCheck = true) {
+    const int = parseInt(number, 10);
     return typeCheck ? number === int : number == int;
 }
-function isFloat(number, typeCheck) {
-    if (typeCheck === void 0) { typeCheck = true; }
-    var moduloCheck = number % 1 !== 0;
+function isFloat(number, typeCheck = true) {
+    const moduloCheck = number % 1 !== 0;
     return typeCheck
         ? Number(number) === number && moduloCheck
         : Number(number) == number && moduloCheck;
