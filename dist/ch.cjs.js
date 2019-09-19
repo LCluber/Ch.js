@@ -24,9 +24,12 @@
  * https://github.com/LCluber/Ch.js
  */
 
- function isBoolean(bool) {
+ "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+function isBoolean(bool) {
     return typeof bool === "boolean";
 }
+exports.isBoolean = isBoolean;
 function isJson(str) {
     if (!isString(str)) {
         return false;
@@ -39,41 +42,53 @@ function isJson(str) {
     }
     return true;
 }
+exports.isJson = isJson;
 function isFunction(func) {
     if (func) {
-        const getType = {};
+        var getType = {};
         return func && getType.toString.call(func) === "[object Function]";
     }
     return false;
 }
+exports.isFunction = isFunction;
 function isObject(object) {
     return object !== null && typeof object === "object" && !isArray(object);
 }
+exports.isObject = isObject;
 function isArray(array) {
     return array !== null && array.constructor === Array;
 }
-function isAscii(code, extended = true) {
+exports.isArray = isArray;
+function isAscii(code, extended) {
+    if (extended === void 0) { extended = true; }
     if (isInteger(code, false)) {
         return (extended && code >= 0 && code <= 255) || (code >= 0 && code <= 127);
     }
     return false;
 }
-function isInteger(number, typeCheck = true) {
-    const int = parseInt(number, 10);
+exports.isAscii = isAscii;
+function isInteger(number, typeCheck) {
+    if (typeCheck === void 0) { typeCheck = true; }
+    var int = parseInt(number, 10);
     return typeCheck ? number === int : number == int;
 }
-function isFloat(number, typeCheck = true) {
-    const moduloCheck = number % 1 !== 0;
+exports.isInteger = isInteger;
+function isFloat(number, typeCheck) {
+    if (typeCheck === void 0) { typeCheck = true; }
+    var moduloCheck = number % 1 !== 0;
     return typeCheck
         ? Number(number) === number && moduloCheck
         : Number(number) == number && moduloCheck;
 }
+exports.isFloat = isFloat;
 function isNumber(number) {
     return isInteger(number) || isFloat(number);
 }
+exports.isNumber = isNumber;
 function isString(string) {
     return typeof string === "string";
 }
+exports.isString = isString;
 function isHtmlElement(htmlElement) {
     if (htmlElement) {
         return typeof HTMLElement === "object"
@@ -86,6 +101,7 @@ function isHtmlElement(htmlElement) {
     }
     return false;
 }
+exports.isHtmlElement = isHtmlElement;
 function isHtmlEventAttribute(htmlEventAttribute) {
     switch (htmlEventAttribute) {
         case "onafterprint":
@@ -165,6 +181,7 @@ function isHtmlEventAttribute(htmlEventAttribute) {
             return false;
     }
 }
+exports.isHtmlEventAttribute = isHtmlEventAttribute;
 function isNode(node) {
     if (node) {
         return typeof Node === "object"
@@ -176,19 +193,24 @@ function isNode(node) {
     }
     return false;
 }
+exports.isNode = isNode;
 function isEven(number) {
     return isInteger(number) && !(number & 1);
 }
+exports.isEven = isEven;
 function isOdd(number) {
     return isInteger(number) && number & 1 ? true : false;
 }
+exports.isOdd = isOdd;
 function isOrigin(number) {
     return number === 0 ? true : false;
 }
+exports.isOrigin = isOrigin;
 function isPositive(number) {
     return isNumber(number) && number > 0 ? true : false;
 }
+exports.isPositive = isPositive;
 function isNegative(number) {
     return number < 0 ? true : false;
 }
-export { isBoolean, isJson, isFunction, isObject, isArray, isAscii, isInteger, isFloat, isNumber, isString, isHtmlElement, isHtmlEventAttribute, isNode, isEven, isOdd, isOrigin, isPositive, isNegative };
+exports.isNegative = isNegative;

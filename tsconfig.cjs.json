@@ -17,10 +17,9 @@
     "suppressImplicitAnyIndexErrors": false,
     "allowJs": false,
     "removeComments": true,
-    "declaration": true,
-    "declarationDir": "build/",
-    "outDir": "build/",
-    "rootDir": "src/ts/"
+    "declaration": false,
+    "outDir": "build/cjs/",
+    "rootDir": "src/"
   },
   "exclude": ["node_modules"]
 }

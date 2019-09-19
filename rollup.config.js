@@ -1,7 +1,7 @@
 import babel from "rollup-plugin-babel";
 
 module.exports = {
-  input: "build/ch.js",
+  input: "build/es6/ch.js",
   output: {
     name: "Ch",
     file: "build/ch.iife.js",
