@@ -9,6 +9,7 @@
   - [Yarn](#yarn)
 - [Usage](#usage)
   - [ES6](#es6)
+  - [CommonJS](#commonjs)
   - [IIFE](#iife)
 - [API Reference](#api-reference)
 - [Contributors](#contributors)
@@ -49,6 +50,20 @@ if (isFunction(variable)) {
 }
 
 if (!isArray(variable)) {
+  //variable is not an array
+}
+```
+
+### CommonJS
+
+```javascript
+const ch = require("node-modules/@lcluber/chjs/dist/ch.cjs.js");
+
+if (ch.isFunction(variable)) {
+  //variable is a function
+}
+
+if (!ch.isArray(variable)) {
   //variable is not an array
 }
 ```
@@ -120,11 +135,11 @@ To contribute you can read **NOTICE.md** for detailed installation and workflow 
 
 ## Stack
 
-| Purpose         |                    Choice                    |                                                                                Motivation |
-| :-------------- | :------------------------------------------: | ----------------------------------------------------------------------------------------: |
-| repository      |        [Github](https://github.com/)         | the world’s largest community of developers to discover, share, and build better software |
-| package manager |     [npm](https://www.npmjs.com/get-npm)     |                                                           default node.js package manager |
-| type checking   | [TypeScript](https://www.typescriptlang.org) |                            static type checking along with the latest ECMAScript features |
-| module bundler  |      [Rollup.js](https://rollupjs.org)       |                                                   advanced module bundler for ES6 modules |
-| unit testing    |          [Jest](https://jestjs.io/)          |                                             delightful testing with a focus on simplicity |
-| deployment      |       [Travis](https://travis-ci.com/)       |                                                           test and deploy with confidence |
+| Purpose         |                    Choice                    |                                                     Motivation |
+| :-------------- | :------------------------------------------: | -------------------------------------------------------------: |
+| repository      |        [Github](https://github.com/)         |     hosting for software development version control using Git |
+| package manager |     [npm](https://www.npmjs.com/get-npm)     |                                default node.js package manager |
+| type checking   | [TypeScript](https://www.typescriptlang.org) | static type checking along with the latest ECMAScript features |
+| module bundler  |      [Rollup.js](https://rollupjs.org)       |                        advanced module bundler for ES6 modules |
+| unit testing    |          [Jest](https://jestjs.io/)          |                  delightful testing with a focus on simplicity |
+| deployment      |       [Travis](https://travis-ci.com/)       |                                test and deploy with confidence |
