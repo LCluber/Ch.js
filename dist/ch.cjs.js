@@ -23,8 +23,7 @@
  *
  * https://github.com/LCluber/Ch.js
  */
-
- "use strict";
+"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 function isBoolean(bool) {
     return typeof bool === "boolean";

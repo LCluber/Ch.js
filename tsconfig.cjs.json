@@ -3,7 +3,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "ES5",
-    "lib": ["DOM", "ES2015"],
+    "lib": ["dom", "es2015"],
     "sourceMap": false,
     "noImplicitAny": true,
     "noImplicitReturns": true,

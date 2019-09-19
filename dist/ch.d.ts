@@ -23,8 +23,7 @@
  *
  * https://github.com/LCluber/Ch.js
  */
-
- declare function isBoolean(bool: any): boolean;
+declare function isBoolean(bool: any): boolean;
 declare function isJson(str: any): boolean;
 declare function isFunction(func: any): boolean;
 declare function isObject(object: any): boolean;

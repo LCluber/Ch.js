@@ -23,8 +23,7 @@
  *
  * https://github.com/LCluber/Ch.js
  */
-
- function isBoolean(bool) {
+function isBoolean(bool) {
     return typeof bool === "boolean";
 }
 function isJson(str) {

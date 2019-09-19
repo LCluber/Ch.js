@@ -23,8 +23,7 @@
  *
  * https://github.com/LCluber/Ch.js
  */
-
- var Ch = (function (exports) {
+var Ch = (function (exports) {
     'use strict';
 
     function isBoolean(bool) {
