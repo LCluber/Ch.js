@@ -57,7 +57,7 @@ if (!isArray(variable)) {
 ### CommonJS
 
 ```javascript
-const ch = require("@lcluber/chjs/dist/ch.cjs.js");
+const ch = require("@lcluber/chjs/dist/ch.cjs");
 
 if (ch.isFunction(variable)) {
   //variable is a function
@@ -129,7 +129,7 @@ isNegative(number: any): boolean {}
 Ch.js is still in development and I would be glad to get all the help you can provide for this project.
 To contribute you can please read :
 
-- **NOTICE.md** for detailed installation guide.
+- **[NOTICE.md](https://github.com/LCluber/Ch.js/blob/master/NOTICE.md)** for detailed installation guide.
 
 ## License
 
