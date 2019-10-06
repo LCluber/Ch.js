@@ -1,4 +1,4 @@
-const Ch = require("../dist/ch");
+const Ch = require("../dist/ch.cjs");
 
 test("sends null to isNode", () => {
   expect(Ch.isNode(null)).toBe(false);

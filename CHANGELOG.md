@@ -1,3 +1,10 @@
+# [2.7.0](https://github.com/LCluber/Ch.js/compare/v2.6.2...v2.7.0) (2019-09-19)
+
+
+### Features
+
+* **commonjs:** added commonjs version of Ch.js into dist folder ([fc8dd4e](https://github.com/LCluber/Ch.js/commit/fc8dd4e))
+
 ## [2.6.2](https://github.com/LCluber/Ch.js/compare/v2.6.1...v2.6.2) (2019-08-16)
 
 
