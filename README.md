@@ -18,7 +18,7 @@
 
 ## Synopsis
 
-**[Ch.js](https://github.com/LCluber/Ch.js)** is an open source type checking library written in TypeScript.
+**[Ch.js](https://github.com/LCluber/Ch.js)** is an open source type checking library for Javascript.
 
 ## Motivation
 
@@ -57,7 +57,7 @@ if (!isArray(variable)) {
 ### CommonJS
 
 ```javascript
-const ch = require("node-modules/@lcluber/chjs/dist/ch.cjs.js");
+const ch = require("@lcluber/chjs/dist/ch.cjs");
 
 if (ch.isFunction(variable)) {
   //variable is a function
@@ -127,7 +127,9 @@ isNegative(number: any): boolean {}
 ## Contributors
 
 Ch.js is still in development and I would be glad to get all the help you can provide for this project.
-To contribute you can read **NOTICE.md** for detailed installation and workflow guide.
+To contribute you can please read :
+
+- **[NOTICE.md](https://github.com/LCluber/Ch.js/blob/master/NOTICE.md)** for detailed installation guide.
 
 ## License
 

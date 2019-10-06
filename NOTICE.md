@@ -1,54 +1,51 @@
-## Installation guide
+# Installation guide
 
-Install Git : [https://git-scm.com/](https://git-scm.com/)
+- Install Git : [https://git-scm.com/](https://git-scm.com/)
 
-Install Node.js : [https://nodejs.org](https://nodejs.org)
+- Install Node.js : [https://nodejs.org](https://nodejs.org)
 
-Clone the project :
+- Clone the project :
 
-```bash
-$ git clone https://github.com/LCluber/Ch.js.git
-```
+  ```bash
+  $ git clone https://github.com/LCluber/Ch.js.git
+  ```
 
-Install global dependencies :
+- Install global dependencies :
 
-```bash
-$ npm i -g typescript rollup uglify-js jest commitizen semantic-release-cli rimraf
-```
+  ```bash
+  $ npm i -g typescript rollup uglify-js jest commitizen semantic-release-cli rimraf
+  ```
 
-Install project dependencies :
+- Install project dependencies :
 
-```bash
-$ cd <project-directory>
-$ npm i
-```
+  ```bash
+  $ cd <project-directory>
+  $ npm i
+  ```
 
-## Workflow
+# Workflow
 
-build the library :
+- create a branch following [these instructions](https://github.com/LCluber/LeadDevToolkit/blob/master/BRANCH.md)
 
-```bash
-$ npm run build
-```
+- build the library :
 
-test the library :
+  ```bash
+  $ npm run build
+  ```
 
-```bash
-$ npm run test
-```
+- test the library :
 
-commit your work with [conventional commits](#conventional-commits) :
+  ```bash
+  $ npm run test
+  ```
 
-```bash
-$ npm run commit
-```
+- commit your following [conventional commits rules](https://github.com/LCluber/LeadDevToolkit/blob/master/COMMIT.md) :
 
-Set node environment if needed :
+  ```bash
+  $ npm run commit
+  ```
 
-```bash
-export NODE_ENV=development
-export NODE_ENV=production
-```
+  This command will guide you to write correct conventional commits and help us keep a clear changelog file.
 
 ## Folders
 
@@ -66,7 +63,3 @@ export NODE_ENV=production
 | module bundler  |      [Rollup.js](https://rollupjs.org)       |                                                   advanced module bundler for ES6 modules |
 | unit testing    |          [Jest](https://jestjs.io/)          |                                             delightful testing with a focus on simplicity |
 | deployment      |       [Travis](https://travis-ci.com/)       |                                                           test and deploy with confidence |
-
-## Conventional commits
-
-[see COMMITS.md](https://github.com/LCluber/Ch.js/blob/master/COMMITS.md).

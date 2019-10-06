@@ -1,4 +1,4 @@
-const Ch = require("../dist/ch");
+const Ch = require("../dist/ch.cjs");
 
 test("sends null to isBoolean", () => {
   expect(Ch.isBoolean(null)).toBe(false);

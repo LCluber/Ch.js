@@ -1,7 +1,7 @@
 {
   "name": "@lcluber/chjs",
-  "version": "2.6.2",
-  "description": "Type checking library written in Typescript",
+  "version": "2.7.1",
+  "description": "Type checking library for Javascript",
   "keywords": [
     "type checking"
   ],
@@ -37,9 +37,9 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged",
+      "pre-commit": "bash ./scripts/branch.sh && pretty-quick --staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "npm run build && npm run test"
+      "pre-push": "npm run test"
     }
   },
   "config": {
@@ -52,23 +52,23 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "7.5.4",
-    "@babel/preset-env": "7.5.4",
+    "@babel/core": "7.6.2",
+    "@babel/preset-env": "7.6.2",
     "@commitlint/cli": "8.0.0",
     "@commitlint/config-conventional": "8.0.0",
     "@commitlint/prompt": "8.0.0",
     "@semantic-release/changelog": "3.0.4",
     "@semantic-release/git": "7.0.16",
     "@semantic-release/npm": "5.1.13",
-    "babel-jest": "24.8.0",
+    "babel-jest": "24.9.0",
     "cz-conventional-changelog": "2.1.0",
     "husky": "2.7.0",
-    "jest": "24.8.0",
+    "jest": "24.9.0",
     "prettier": "1.18.2",
     "pretty-quick": "1.11.1",
     "rollup-plugin-babel": "4.3.3",
-    "semantic-release": "15.13.18",
-    "tslint": "5.9.1",
+    "semantic-release": "15.13.24",
+    "tslint": "5.20.0",
     "typescript": "3.2.2",
     "uglify-js": "3.6.0"
   }
