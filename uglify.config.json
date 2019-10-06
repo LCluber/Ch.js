@@ -12,7 +12,7 @@
     "hoist_funs": true,
     "if_return": true,
     "join_vars": true,
-    "drop_console": true,
+    "drop_console": false,
     "keep_fargs": false,
     "keep_fnames": false
   },
