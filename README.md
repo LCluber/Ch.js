@@ -127,7 +127,9 @@ isNegative(number: any): boolean {}
 ## Contributors
 
 Ch.js is still in development and I would be glad to get all the help you can provide for this project.
-To contribute you can read **NOTICE.md** for detailed installation and workflow guide.
+To contribute you can please read :
+
+- **NOTICE.md** for detailed installation guide.
 
 ## License
 
