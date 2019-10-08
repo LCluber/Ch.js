@@ -1,59 +1,59 @@
-const Ch = require("../dist/ch.cjs");
+import { isPositive } from "../dist/ch";
 
 test("sends null to isPositive", () => {
-  expect(Ch.isPositive(null)).toBe(false);
+  expect(isPositive(null)).toBe(false);
 });
 
 test("sends true to isPositive", () => {
-  expect(Ch.isPositive(true)).toBe(false);
+  expect(isPositive(true)).toBe(false);
 });
 
 test("sends false to isPositive", () => {
-  expect(Ch.isPositive(false)).toBe(false);
+  expect(isPositive(false)).toBe(false);
 });
 
 test("sends string to isPositive", () => {
-  expect(Ch.isPositive("string")).toBe(false);
+  expect(isPositive("string")).toBe(false);
 });
 
 test("sends positive even integer to isPositive", () => {
-  expect(Ch.isPositive(2)).toBe(true);
+  expect(isPositive(2)).toBe(true);
 });
 
 test("sends positive odd integer to isPositive", () => {
-  expect(Ch.isPositive(1)).toBe(true);
+  expect(isPositive(1)).toBe(true);
 });
 
 test("sends zero to isPositive", () => {
-  expect(Ch.isPositive(0)).toBe(false);
+  expect(isPositive(0)).toBe(false);
 });
 
 test("sends positive float to isPositive", () => {
-  expect(Ch.isPositive(1.1)).toBe(true);
+  expect(isPositive(1.1)).toBe(true);
 });
 
 test("sends negative odd integer to isPositive", () => {
-  expect(Ch.isPositive(-1)).toBe(false);
+  expect(isPositive(-1)).toBe(false);
 });
 
 test("sends negative even integer to isPositive", () => {
-  expect(Ch.isPositive(-2)).toBe(false);
+  expect(isPositive(-2)).toBe(false);
 });
 
 test("sends negative float to isPositive", () => {
-  expect(Ch.isPositive(-1.1)).toBe(false);
+  expect(isPositive(-1.1)).toBe(false);
 });
 
 test("sends object to isPositive", () => {
-  expect(Ch.isPositive({})).toBe(false);
+  expect(isPositive({})).toBe(false);
 });
 
 test("sends empty array to isPositive", () => {
-  expect(Ch.isPositive([])).toBe(false);
+  expect(isPositive([])).toBe(false);
 });
 
 test("sends array to isPositive", () => {
-  expect(Ch.isPositive(["white", "grey", "black"])).toBe(false);
+  expect(isPositive(["white", "grey", "black"])).toBe(false);
 });
 
 var json = `{
@@ -67,7 +67,7 @@ var json = `{
 }`;
 
 test("sends json to isPositive", () => {
-  expect(Ch.isPositive(json)).toBe(false);
+  expect(isPositive(json)).toBe(false);
 });
 
 var invalidjson = `{
@@ -81,7 +81,7 @@ var invalidjson = `{
 }`;
 
 test("sends invalid json to isPositive", () => {
-  expect(Ch.isPositive(invalidjson)).toBe(false);
+  expect(isPositive(invalidjson)).toBe(false);
 });
 
 function testFunction() {
@@ -89,17 +89,17 @@ function testFunction() {
 }
 
 test("sends function to isPositive", () => {
-  expect(Ch.isPositive(testFunction)).toBe(false);
+  expect(isPositive(testFunction)).toBe(false);
 });
 
 var para = document.createElement("p");
 
 test("sends htmlElement to isPositive", () => {
-  expect(Ch.isPositive(para)).toBe(false);
+  expect(isPositive(para)).toBe(false);
 });
 
 var node = document.createTextNode("new node");
 
 test("sends node to isPositive", () => {
-  expect(Ch.isPositive(node)).toBe(false);
+  expect(isPositive(node)).toBe(false);
 });

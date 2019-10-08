@@ -1,59 +1,59 @@
-const Ch = require("../dist/ch.cjs");
+import { isFunction } from "../dist/ch";
 
 test("sends null to isFunction", () => {
-  expect(Ch.isFunction(null)).toBe(false);
+  expect(isFunction(null)).toBe(false);
 });
 
 test("sends true to isFunction", () => {
-  expect(Ch.isFunction(true)).toBe(false);
+  expect(isFunction(true)).toBe(false);
 });
 
 test("sends false to isFunction", () => {
-  expect(Ch.isFunction(false)).toBe(false);
+  expect(isFunction(false)).toBe(false);
 });
 
 test("sends string to isFunction", () => {
-  expect(Ch.isFunction("string")).toBe(false);
+  expect(isFunction("string")).toBe(false);
 });
 
 test("sends positive even integer to isFunction", () => {
-  expect(Ch.isFunction(2)).toBe(false);
+  expect(isFunction(2)).toBe(false);
 });
 
 test("sends positive odd integer to isFunction", () => {
-  expect(Ch.isFunction(1)).toBe(false);
+  expect(isFunction(1)).toBe(false);
 });
 
 test("sends zero to isFunction", () => {
-  expect(Ch.isFunction(0)).toBe(false);
+  expect(isFunction(0)).toBe(false);
 });
 
 test("sends positive float to isFunction", () => {
-  expect(Ch.isFunction(1.1)).toBe(false);
+  expect(isFunction(1.1)).toBe(false);
 });
 
 test("sends negative odd integer to isFunction", () => {
-  expect(Ch.isFunction(-1)).toBe(false);
+  expect(isFunction(-1)).toBe(false);
 });
 
 test("sends negative even integer to isFunction", () => {
-  expect(Ch.isFunction(-2)).toBe(false);
+  expect(isFunction(-2)).toBe(false);
 });
 
 test("sends negative float to isFunction", () => {
-  expect(Ch.isFunction(-1.1)).toBe(false);
+  expect(isFunction(-1.1)).toBe(false);
 });
 
 test("sends object to isFunction", () => {
-  expect(Ch.isFunction({})).toBe(false);
+  expect(isFunction({})).toBe(false);
 });
 
 test("sends empty array to isFunction", () => {
-  expect(Ch.isFunction([])).toBe(false);
+  expect(isFunction([])).toBe(false);
 });
 
 test("sends array to isFunction", () => {
-  expect(Ch.isFunction(["white", "grey", "black"])).toBe(false);
+  expect(isFunction(["white", "grey", "black"])).toBe(false);
 });
 
 var json = `{
@@ -67,7 +67,7 @@ var json = `{
 }`;
 
 test("sends json to isFunction", () => {
-  expect(Ch.isFunction(json)).toBe(false);
+  expect(isFunction(json)).toBe(false);
 });
 
 var invalidjson = `{
@@ -81,7 +81,7 @@ var invalidjson = `{
 }`;
 
 test("sends invalid json to isFunction", () => {
-  expect(Ch.isFunction(invalidjson)).toBe(false);
+  expect(isFunction(invalidjson)).toBe(false);
 });
 
 function testFunction() {
@@ -89,17 +89,17 @@ function testFunction() {
 }
 
 test("sends function to isFunction", () => {
-  expect(Ch.isFunction(testFunction)).toBe(true);
+  expect(isFunction(testFunction)).toBe(true);
 });
 
 var para = document.createElement("p");
 
 test("sends htmlElement to isFunction", () => {
-  expect(Ch.isFunction(para)).toBe(false);
+  expect(isFunction(para)).toBe(false);
 });
 
 var node = document.createTextNode("new node");
 
 test("sends node to isFunction", () => {
-  expect(Ch.isFunction(node)).toBe(false);
+  expect(isFunction(node)).toBe(false);
 });
