@@ -1,59 +1,59 @@
-const Ch = require("../dist/ch.cjs");
+import { isBoolean } from "../dist/ch";
 
 test("sends null to isBoolean", () => {
-  expect(Ch.isBoolean(null)).toBe(false);
+  expect(isBoolean(null)).toBe(false);
 });
 
 test("sends true to isBoolean", () => {
-  expect(Ch.isBoolean(true)).toBe(true);
+  expect(isBoolean(true)).toBe(true);
 });
 
 test("sends false to isBoolean", () => {
-  expect(Ch.isBoolean(false)).toBe(true);
+  expect(isBoolean(false)).toBe(true);
 });
 
 test("sends string to isBoolean", () => {
-  expect(Ch.isBoolean("string")).toBe(false);
+  expect(isBoolean("string")).toBe(false);
 });
 
 test("sends positive even integer to isBoolean", () => {
-  expect(Ch.isBoolean(2)).toBe(false);
+  expect(isBoolean(2)).toBe(false);
 });
 
 test("sends positive odd integer to isBoolean", () => {
-  expect(Ch.isBoolean(1)).toBe(false);
+  expect(isBoolean(1)).toBe(false);
 });
 
 test("sends zero to isBoolean", () => {
-  expect(Ch.isBoolean(0)).toBe(false);
+  expect(isBoolean(0)).toBe(false);
 });
 
 test("sends positive float to isBoolean", () => {
-  expect(Ch.isBoolean(1.1)).toBe(false);
+  expect(isBoolean(1.1)).toBe(false);
 });
 
 test("sends negative odd integer to isBoolean", () => {
-  expect(Ch.isBoolean(-1)).toBe(false);
+  expect(isBoolean(-1)).toBe(false);
 });
 
 test("sends negative even integer to isBoolean", () => {
-  expect(Ch.isBoolean(-2)).toBe(false);
+  expect(isBoolean(-2)).toBe(false);
 });
 
 test("sends negative float to isBoolean", () => {
-  expect(Ch.isBoolean(-1.1)).toBe(false);
+  expect(isBoolean(-1.1)).toBe(false);
 });
 
 test("sends object to isBoolean", () => {
-  expect(Ch.isBoolean({})).toBe(false);
+  expect(isBoolean({})).toBe(false);
 });
 
 test("sends empty array to isBoolean", () => {
-  expect(Ch.isBoolean([])).toBe(false);
+  expect(isBoolean([])).toBe(false);
 });
 
 test("sends array to isBoolean", () => {
-  expect(Ch.isBoolean(["white", "grey", "black"])).toBe(false);
+  expect(isBoolean(["white", "grey", "black"])).toBe(false);
 });
 
 var json = `{
@@ -67,7 +67,7 @@ var json = `{
 }`;
 
 test("sends json to isBoolean", () => {
-  expect(Ch.isBoolean(json)).toBe(false);
+  expect(isBoolean(json)).toBe(false);
 });
 
 var invalidjson = `{
@@ -81,7 +81,7 @@ var invalidjson = `{
 }`;
 
 test("sends invalid json to isBoolean", () => {
-  expect(Ch.isBoolean(invalidjson)).toBe(false);
+  expect(isBoolean(invalidjson)).toBe(false);
 });
 
 function testFunction() {
@@ -89,17 +89,17 @@ function testFunction() {
 }
 
 test("sends function to isBoolean", () => {
-  expect(Ch.isBoolean(testFunction)).toBe(false);
+  expect(isBoolean(testFunction)).toBe(false);
 });
 
 var para = document.createElement("p");
 
 test("sends htmlElement to isBoolean", () => {
-  expect(Ch.isBoolean(para)).toBe(false);
+  expect(isBoolean(para)).toBe(false);
 });
 
 var node = document.createTextNode("new node");
 
 test("sends node to isBoolean", () => {
-  expect(Ch.isBoolean(node)).toBe(false);
+  expect(isBoolean(node)).toBe(false);
 });

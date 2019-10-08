@@ -1,99 +1,99 @@
-const Ch = require("../dist/ch.cjs");
+import { isInteger } from "../dist/ch";
 
 test("sends null to isInteger", () => {
-  expect(Ch.isInteger(null)).toBe(false);
+  expect(isInteger(null)).toBe(false);
 });
 
 test("sends true to isInteger", () => {
-  expect(Ch.isInteger(true)).toBe(false);
+  expect(isInteger(true)).toBe(false);
 });
 
 test("sends false to isInteger", () => {
-  expect(Ch.isInteger(false)).toBe(false);
+  expect(isInteger(false)).toBe(false);
 });
 
 test("sends string to isInteger", () => {
-  expect(Ch.isInteger("string")).toBe(false);
+  expect(isInteger("string")).toBe(false);
 });
 
 test("sends figure as string to isInteger", () => {
-  expect(Ch.isInteger("1")).toBe(false);
+  expect(isInteger("1")).toBe(false);
 });
 
 test("sends number as string to isInteger", () => {
-  expect(Ch.isInteger("89")).toBe(false);
+  expect(isInteger("89")).toBe(false);
 });
 
 test("sends number in string to isInteger", () => {
-  expect(Ch.isInteger("89rt")).toBe(false);
+  expect(isInteger("89rt")).toBe(false);
 });
 
 test("sends figure as string to isInteger without typeCheck", () => {
-  expect(Ch.isInteger("1", false)).toBe(true);
+  expect(isInteger("1", false)).toBe(true);
 });
 
 test("sends number as string to isInteger without typeCheck", () => {
-  expect(Ch.isInteger("89", false)).toBe(true);
+  expect(isInteger("89", false)).toBe(true);
 });
 
 test("sends number in string to isInteger without typeCheck", () => {
-  expect(Ch.isInteger("89rt", false)).toBe(false);
+  expect(isInteger("89rt", false)).toBe(false);
 });
 
 test("sends float as string to isInteger", () => {
-  expect(Ch.isInteger("1.5")).toBe(false);
+  expect(isInteger("1.5")).toBe(false);
 });
 
 test("sends number in string to isInteger", () => {
-  expect(Ch.isInteger("8.9rt")).toBe(false);
+  expect(isInteger("8.9rt")).toBe(false);
 });
 
 test("sends float as string to isInteger without typeCheck", () => {
-  expect(Ch.isInteger("1.5", false)).toBe(false);
+  expect(isInteger("1.5", false)).toBe(false);
 });
 
 test("sends float in string to isInteger without typeCheck", () => {
-  expect(Ch.isInteger("8.9rt", false)).toBe(false);
+  expect(isInteger("8.9rt", false)).toBe(false);
 });
 
 test("sends positive even integer to isInteger", () => {
-  expect(Ch.isInteger(2)).toBe(true);
+  expect(isInteger(2)).toBe(true);
 });
 
 test("sends positive odd integer to isInteger", () => {
-  expect(Ch.isInteger(1)).toBe(true);
+  expect(isInteger(1)).toBe(true);
 });
 
 test("sends zero to isInteger", () => {
-  expect(Ch.isInteger(0)).toBe(true);
+  expect(isInteger(0)).toBe(true);
 });
 
 test("sends positive float to isInteger", () => {
-  expect(Ch.isInteger(1.1)).toBe(false);
+  expect(isInteger(1.1)).toBe(false);
 });
 
 test("sends negative odd integer to isInteger", () => {
-  expect(Ch.isInteger(-1)).toBe(true);
+  expect(isInteger(-1)).toBe(true);
 });
 
 test("sends negative even integer to isInteger", () => {
-  expect(Ch.isInteger(-2)).toBe(true);
+  expect(isInteger(-2)).toBe(true);
 });
 
 test("sends negative float to isInteger", () => {
-  expect(Ch.isInteger(-1.1)).toBe(false);
+  expect(isInteger(-1.1)).toBe(false);
 });
 
 test("sends object to isInteger", () => {
-  expect(Ch.isInteger({})).toBe(false);
+  expect(isInteger({})).toBe(false);
 });
 
 test("sends empty array to isInteger", () => {
-  expect(Ch.isInteger([])).toBe(false);
+  expect(isInteger([])).toBe(false);
 });
 
 test("sends array to isInteger", () => {
-  expect(Ch.isInteger(["white", "grey", "black"])).toBe(false);
+  expect(isInteger(["white", "grey", "black"])).toBe(false);
 });
 
 var json = `{
@@ -107,7 +107,7 @@ var json = `{
 }`;
 
 test("sends json to isInteger", () => {
-  expect(Ch.isInteger(json)).toBe(false);
+  expect(isInteger(json)).toBe(false);
 });
 
 var invalidjson = `{
@@ -121,7 +121,7 @@ var invalidjson = `{
 }`;
 
 test("sends invalid json to isInteger", () => {
-  expect(Ch.isInteger(invalidjson)).toBe(false);
+  expect(isInteger(invalidjson)).toBe(false);
 });
 
 function testFunction() {
@@ -129,17 +129,17 @@ function testFunction() {
 }
 
 test("sends function to isInteger", () => {
-  expect(Ch.isInteger(testFunction)).toBe(false);
+  expect(isInteger(testFunction)).toBe(false);
 });
 
 var para = document.createElement("p");
 
 test("sends htmlElement to isInteger", () => {
-  expect(Ch.isInteger(para)).toBe(false);
+  expect(isInteger(para)).toBe(false);
 });
 
 var node = document.createTextNode("new node");
 
 test("sends node to isInteger", () => {
-  expect(Ch.isInteger(node)).toBe(false);
+  expect(isInteger(node)).toBe(false);
 });

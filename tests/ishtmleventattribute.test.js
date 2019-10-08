@@ -1,67 +1,67 @@
-const Ch = require("../dist/ch.cjs");
+import { isHtmlEventAttribute } from "../dist/ch";
 
 test("sends null to isHtmlEventAttribute", () => {
-  expect(Ch.isHtmlEventAttribute(null)).toBe(false);
+  expect(isHtmlEventAttribute(null)).toBe(false);
 });
 
 test("sends true to isHtmlEventAttribute", () => {
-  expect(Ch.isHtmlEventAttribute(true)).toBe(false);
+  expect(isHtmlEventAttribute(true)).toBe(false);
 });
 
 test("sends false to isHtmlEventAttribute", () => {
-  expect(Ch.isHtmlEventAttribute(false)).toBe(false);
+  expect(isHtmlEventAttribute(false)).toBe(false);
 });
 
 test("sends string to isHtmlEventAttribute", () => {
-  expect(Ch.isHtmlEventAttribute("string")).toBe(false);
+  expect(isHtmlEventAttribute("string")).toBe(false);
 });
 
 test("sends onclick to isHtmlEventAttribute", () => {
-  expect(Ch.isHtmlEventAttribute("onclick")).toBe(true);
+  expect(isHtmlEventAttribute("onclick")).toBe(true);
 });
 
 test("sends onClick to isHtmlEventAttribute", () => {
-  expect(Ch.isHtmlEventAttribute("onClick")).toBe(false);
+  expect(isHtmlEventAttribute("onClick")).toBe(false);
 });
 
 test("sends positive even integer to isHtmlEventAttribute", () => {
-  expect(Ch.isHtmlEventAttribute(2)).toBe(false);
+  expect(isHtmlEventAttribute(2)).toBe(false);
 });
 
 test("sends positive odd integer to isHtmlEventAttribute", () => {
-  expect(Ch.isHtmlEventAttribute(1)).toBe(false);
+  expect(isHtmlEventAttribute(1)).toBe(false);
 });
 
 test("sends zero to isHtmlEventAttribute", () => {
-  expect(Ch.isHtmlEventAttribute(0)).toBe(false);
+  expect(isHtmlEventAttribute(0)).toBe(false);
 });
 
 test("sends positive float to isHtmlEventAttribute", () => {
-  expect(Ch.isHtmlEventAttribute(1.1)).toBe(false);
+  expect(isHtmlEventAttribute(1.1)).toBe(false);
 });
 
 test("sends negative odd integer to isHtmlEventAttribute", () => {
-  expect(Ch.isHtmlEventAttribute(-1)).toBe(false);
+  expect(isHtmlEventAttribute(-1)).toBe(false);
 });
 
 test("sends negative even integer to isHtmlEventAttribute", () => {
-  expect(Ch.isHtmlEventAttribute(-2)).toBe(false);
+  expect(isHtmlEventAttribute(-2)).toBe(false);
 });
 
 test("sends negative float to isHtmlEventAttribute", () => {
-  expect(Ch.isHtmlEventAttribute(-1.1)).toBe(false);
+  expect(isHtmlEventAttribute(-1.1)).toBe(false);
 });
 
 test("sends object to isHtmlEventAttribute", () => {
-  expect(Ch.isHtmlEventAttribute({})).toBe(false);
+  expect(isHtmlEventAttribute({})).toBe(false);
 });
 
 test("sends empty array to isHtmlEventAttribute", () => {
-  expect(Ch.isHtmlEventAttribute([])).toBe(false);
+  expect(isHtmlEventAttribute([])).toBe(false);
 });
 
 test("sends array to isHtmlEventAttribute", () => {
-  expect(Ch.isHtmlEventAttribute(["white", "grey", "black"])).toBe(false);
+  expect(isHtmlEventAttribute(["white", "grey", "black"])).toBe(false);
 });
 
 var json = `{
@@ -75,7 +75,7 @@ var json = `{
 }`;
 
 test("sends json to isHtmlEventAttribute", () => {
-  expect(Ch.isHtmlEventAttribute(json)).toBe(false);
+  expect(isHtmlEventAttribute(json)).toBe(false);
 });
 
 var invalidjson = `{
@@ -89,7 +89,7 @@ var invalidjson = `{
 }`;
 
 test("sends invalid json to isHtmlEventAttribute", () => {
-  expect(Ch.isHtmlEventAttribute(invalidjson)).toBe(false);
+  expect(isHtmlEventAttribute(invalidjson)).toBe(false);
 });
 
 function testFunction() {
@@ -97,17 +97,17 @@ function testFunction() {
 }
 
 test("sends function to isHtmlEventAttribute", () => {
-  expect(Ch.isHtmlEventAttribute(testFunction)).toBe(false);
+  expect(isHtmlEventAttribute(testFunction)).toBe(false);
 });
 
 var para = document.createElement("p");
 
 test("sends htmlElement to isHtmlEventAttribute", () => {
-  expect(Ch.isHtmlEventAttribute(para)).toBe(false);
+  expect(isHtmlEventAttribute(para)).toBe(false);
 });
 
 var node = document.createTextNode("new node");
 
 test("sends node to isHtmlEventAttribute", () => {
-  expect(Ch.isHtmlEventAttribute(node)).toBe(false);
+  expect(isHtmlEventAttribute(node)).toBe(false);
 });

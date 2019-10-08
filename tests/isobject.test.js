@@ -1,59 +1,59 @@
-const Ch = require("../dist/ch.cjs");
+import { isObject } from "../dist/ch";
 
 test("sends null to isObject", () => {
-  expect(Ch.isObject(null)).toBe(false);
+  expect(isObject(null)).toBe(false);
 });
 
 test("sends true to isObject", () => {
-  expect(Ch.isObject(true)).toBe(false);
+  expect(isObject(true)).toBe(false);
 });
 
 test("sends false to isObject", () => {
-  expect(Ch.isObject(false)).toBe(false);
+  expect(isObject(false)).toBe(false);
 });
 
 test("sends string to isObject", () => {
-  expect(Ch.isObject("string")).toBe(false);
+  expect(isObject("string")).toBe(false);
 });
 
 test("sends positive even integer to isObject", () => {
-  expect(Ch.isObject(2)).toBe(false);
+  expect(isObject(2)).toBe(false);
 });
 
 test("sends positive odd integer to isObject", () => {
-  expect(Ch.isObject(1)).toBe(false);
+  expect(isObject(1)).toBe(false);
 });
 
 test("sends zero to isObject", () => {
-  expect(Ch.isObject(0)).toBe(false);
+  expect(isObject(0)).toBe(false);
 });
 
 test("sends positive float to isObject", () => {
-  expect(Ch.isObject(1.1)).toBe(false);
+  expect(isObject(1.1)).toBe(false);
 });
 
 test("sends negative odd integer to isObject", () => {
-  expect(Ch.isObject(-1)).toBe(false);
+  expect(isObject(-1)).toBe(false);
 });
 
 test("sends negative even integer to isObject", () => {
-  expect(Ch.isObject(-2)).toBe(false);
+  expect(isObject(-2)).toBe(false);
 });
 
 test("sends negative float to isObject", () => {
-  expect(Ch.isObject(-1.1)).toBe(false);
+  expect(isObject(-1.1)).toBe(false);
 });
 
 test("sends object to isObject", () => {
-  expect(Ch.isObject({})).toBe(true);
+  expect(isObject({})).toBe(true);
 });
 
 test("sends empty array to isObject", () => {
-  expect(Ch.isObject([])).toBe(false);
+  expect(isObject([])).toBe(false);
 });
 
 test("sends array to isObject", () => {
-  expect(Ch.isObject(["white", "grey", "black"])).toBe(false);
+  expect(isObject(["white", "grey", "black"])).toBe(false);
 });
 
 var json = `{
@@ -67,7 +67,7 @@ var json = `{
 }`;
 
 test("sends json to isObject", () => {
-  expect(Ch.isObject(json)).toBe(false);
+  expect(isObject(json)).toBe(false);
 });
 
 var invalidjson = `{
@@ -81,7 +81,7 @@ var invalidjson = `{
 }`;
 
 test("sends invalid json to isObject", () => {
-  expect(Ch.isObject(invalidjson)).toBe(false);
+  expect(isObject(invalidjson)).toBe(false);
 });
 
 function testFunction() {
@@ -89,17 +89,17 @@ function testFunction() {
 }
 
 test("sends function to isObject", () => {
-  expect(Ch.isObject(testFunction)).toBe(false);
+  expect(isObject(testFunction)).toBe(false);
 });
 
 var para = document.createElement("p");
 
 test("sends htmlElement to isObject", () => {
-  expect(Ch.isObject(para)).toBe(true);
+  expect(isObject(para)).toBe(true);
 });
 
 var node = document.createTextNode("new node");
 
 test("sends node to isObject", () => {
-  expect(Ch.isObject(node)).toBe(true);
+  expect(isObject(node)).toBe(true);
 });
