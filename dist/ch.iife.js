@@ -197,6 +197,10 @@ var Ch = (function (exports) {
       return false;
     }
 
+    function isRegex(regex) {
+      return regex instanceof RegExp ? true : false;
+    }
+
     function isEven(number) {
       return isInteger(number) && !(number & 1);
     }
@@ -234,6 +238,7 @@ var Ch = (function (exports) {
     exports.isOdd = isOdd;
     exports.isOrigin = isOrigin;
     exports.isPositive = isPositive;
+    exports.isRegex = isRegex;
     exports.isString = isString;
 
     return exports;

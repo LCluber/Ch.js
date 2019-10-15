@@ -103,3 +103,7 @@ var node = document.createTextNode("new node");
 test("sends node to isPositive", () => {
   expect(isPositive(node)).toBe(false);
 });
+
+test("sends regex to isPositive", () => {
+  expect(isPositive(/ab+c/i)).toBe(false);
+});

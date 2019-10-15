@@ -103,3 +103,7 @@ var node = document.createTextNode("new node");
 test("sends node to isArray", () => {
   expect(isArray(node)).toBe(false);
 });
+
+test("sends regex to isArray", () => {
+  expect(isArray(/ab+c/i)).toBe(false);
+});

@@ -143,3 +143,7 @@ var node = document.createTextNode("new node");
 test("sends node to isFloat", () => {
   expect(isFloat(node)).toBe(false);
 });
+
+test("sends regex to isFloat", () => {
+  expect(isFloat(/ab+c/i)).toBe(false);
+});
