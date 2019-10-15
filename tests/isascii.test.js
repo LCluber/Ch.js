@@ -155,3 +155,7 @@ var node = document.createTextNode("new node");
 test("sends node to isAscii not extended", () => {
   expect(isAscii(node)).toBe(false);
 });
+
+test("sends regex to isAscii", () => {
+  expect(isAscii(/ab+c/i)).toBe(false);
+});

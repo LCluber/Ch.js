@@ -143,3 +143,7 @@ var node = document.createTextNode("new node");
 test("sends node to isInteger", () => {
   expect(isInteger(node)).toBe(false);
 });
+
+test("sends regex to isInteger", () => {
+  expect(isInteger(/ab+c/i)).toBe(false);
+});

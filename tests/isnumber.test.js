@@ -103,3 +103,7 @@ var node = document.createTextNode("new node");
 test("sends node to isNumber", () => {
   expect(isNumber(node)).toBe(false);
 });
+
+test("sends regex to isNumber", () => {
+  expect(isNumber(/ab+c/i)).toBe(false);
+});

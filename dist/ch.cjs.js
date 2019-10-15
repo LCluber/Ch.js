@@ -193,6 +193,10 @@ function isNode(node) {
     return false;
 }
 exports.isNode = isNode;
+function isRegex(regex) {
+    return (regex instanceof RegExp) ? true : false;
+}
+exports.isRegex = isRegex;
 function isEven(number) {
     return isInteger(number) && !(number & 1);
 }
