@@ -1,3 +1,10 @@
+# [2.8.0](https://github.com/LCluber/Ch.js/compare/v2.7.1...v2.8.0) (2019-10-15)
+
+
+### Features
+
+* **isregex:** added isregex method ([b335980](https://github.com/LCluber/Ch.js/commit/b335980))
+
 ## [2.7.1](https://github.com/LCluber/Ch.js/compare/v2.7.0...v2.7.1) (2019-10-06)
 
 
