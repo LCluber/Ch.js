@@ -108,6 +108,18 @@ test("sends stringified regex to isRegex", () => {
   expect(isRegex("/ab+c/i")).toBe(false);
 });
 
+test("sends stringified regex to isRegex without typeCheck", () => {
+  expect(isRegex("/ab+c/i", false)).toBe(true);
+});
+
 test("sends regex to isRegex", () => {
   expect(isRegex(/ab+c/i)).toBe(true);
+});
+
+test("sends stringified invalid regex to isRegex", () => {
+  expect(isRegex("/[/i")).toBe(false);
+});
+
+test("sends stringified invalid regex to isRegex without typeCheck", () => {
+  expect(isRegex("/[/i", false)).toBe(false);
 });

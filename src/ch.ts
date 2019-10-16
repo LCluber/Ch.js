@@ -165,8 +165,17 @@ function isNode(node: any): boolean {
   return false;
 }
 
-function isRegex(regex: any): boolean {
-  return regex instanceof RegExp ? true : false;
+function isRegex(regex: any, typeCheck: boolean = true): boolean {
+  if (typeCheck) {
+    return regex instanceof RegExp ? true : false;
+  } else {
+    try {
+      new RegExp(regex);
+    } catch (e) {
+      return false;
+    }
+    return true;
+  }
 }
 
 function isEven(number: any): boolean {

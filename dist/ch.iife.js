@@ -197,8 +197,22 @@ var Ch = (function (exports) {
       return false;
     }
 
-    function isRegex(regex) {
-      return regex instanceof RegExp ? true : false;
+    function isRegex(regex, typeCheck) {
+      if (typeCheck === void 0) {
+        typeCheck = true;
+      }
+
+      if (typeCheck) {
+        return regex instanceof RegExp ? true : false;
+      } else {
+        try {
+          new RegExp(regex);
+        } catch (e) {
+          return false;
+        }
+
+        return true;
+      }
     }
 
     function isEven(number) {
