@@ -36,7 +36,7 @@ declare function isString(string: any): boolean;
 declare function isHtmlElement(htmlElement: any): boolean;
 declare function isHtmlEventAttribute(htmlEventAttribute: any): boolean;
 declare function isNode(node: any): boolean;
-declare function isRegex(regex: any): boolean;
+declare function isRegex(regex: any, typeCheck?: boolean): boolean;
 declare function isEven(number: any): boolean;
 declare function isOdd(number: any): boolean;
 declare function isOrigin(number: any): boolean;
