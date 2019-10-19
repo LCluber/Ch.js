@@ -37,9 +37,9 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "gbvalidator && pretty-quick --staged",
+      "pre-commit": "gbvalidator && pretty-quick --staged && npm run test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "npm run test"
+      "pre-push": "gbvalidator"
     }
   },
   "config": {
