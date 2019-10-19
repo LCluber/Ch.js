@@ -37,6 +37,7 @@
   },
   "husky": {
     "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
       "pre-commit": "gbvalidator && pretty-quick --staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-push": "npm run test"
@@ -44,7 +45,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "cz-conventional-changelog"
     }
   },
   "files": [
