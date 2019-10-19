@@ -129,9 +129,7 @@ isRegex(regex: any, typeCheck: boolean = true): boolean {}
 ## Contributors
 
 Ch.js is still in development and I would be glad to get all the help you can provide for this project.
-To contribute you can please read :
-
-- **[NOTICE.md](https://github.com/LCluber/Ch.js/blob/master/NOTICE.md)** for detailed installation guide.
+To contribute please read **[NOTICE.md](https://github.com/LCluber/Ch.js/blob/master/NOTICE.md)** for detailed installation guide.
 
 ## License
 
