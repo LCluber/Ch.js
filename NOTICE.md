@@ -13,7 +13,7 @@
 - Install global dependencies :
 
   ```bash
-  $ npm i -g typescript rollup uglify-js jest commitizen semantic-release-cli rimraf @lcluber/gitbranchvalidator
+  $ npm i -g typescript rollup uglify-js semantic-release-cli
   ```
 
 - Install project dependencies :
