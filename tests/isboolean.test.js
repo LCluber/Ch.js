@@ -103,3 +103,7 @@ var node = document.createTextNode("new node");
 test("sends node to isBoolean", () => {
   expect(isBoolean(node)).toBe(false);
 });
+
+test("sends regex to isBoolean", () => {
+  expect(isBoolean(/ab+c/i)).toBe(false);
+});

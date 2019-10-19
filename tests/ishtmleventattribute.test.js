@@ -111,3 +111,7 @@ var node = document.createTextNode("new node");
 test("sends node to isHtmlEventAttribute", () => {
   expect(isHtmlEventAttribute(node)).toBe(false);
 });
+
+test("sends regex to isHtmlEventAttribute", () => {
+  expect(isHtmlEventAttribute(/ab+c/i)).toBe(false);
+});

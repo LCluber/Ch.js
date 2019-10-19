@@ -103,3 +103,7 @@ var node = document.createTextNode("new node");
 test("sends node to isJson", () => {
   expect(isJson(node)).toBe(false);
 });
+
+test("sends regex to isJson", () => {
+  expect(isJson(/ab+c/i)).toBe(false);
+});

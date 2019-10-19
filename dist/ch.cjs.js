@@ -193,6 +193,22 @@ function isNode(node) {
     return false;
 }
 exports.isNode = isNode;
+function isRegex(regex, typeCheck) {
+    if (typeCheck === void 0) { typeCheck = true; }
+    if (typeCheck) {
+        return regex instanceof RegExp ? true : false;
+    }
+    else {
+        try {
+            new RegExp(regex);
+        }
+        catch (e) {
+            return false;
+        }
+        return true;
+    }
+}
+exports.isRegex = isRegex;
 function isEven(number) {
     return isInteger(number) && !(number & 1);
 }

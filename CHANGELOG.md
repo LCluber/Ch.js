@@ -1,3 +1,17 @@
+# [2.9.0](https://github.com/LCluber/Ch.js/compare/v2.8.0...v2.9.0) (2019-10-16)
+
+
+### Features
+
+* **isregex:** added typecheck to isregex ([22d9707](https://github.com/LCluber/Ch.js/commit/22d9707))
+
+# [2.8.0](https://github.com/LCluber/Ch.js/compare/v2.7.1...v2.8.0) (2019-10-15)
+
+
+### Features
+
+* **isregex:** added isregex method ([b335980](https://github.com/LCluber/Ch.js/commit/b335980))
+
 ## [2.7.1](https://github.com/LCluber/Ch.js/compare/v2.7.0...v2.7.1) (2019-10-06)
 
 

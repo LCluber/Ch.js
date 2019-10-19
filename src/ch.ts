@@ -165,6 +165,19 @@ function isNode(node: any): boolean {
   return false;
 }
 
+function isRegex(regex: any, typeCheck: boolean = true): boolean {
+  if (typeCheck) {
+    return regex instanceof RegExp ? true : false;
+  } else {
+    try {
+      new RegExp(regex);
+    } catch (e) {
+      return false;
+    }
+    return true;
+  }
+}
+
 function isEven(number: any): boolean {
   return isInteger(number) && !(number & 1);
 }
@@ -203,5 +216,6 @@ export {
   isOdd,
   isOrigin,
   isPositive,
-  isNegative
+  isNegative,
+  isRegex
 };

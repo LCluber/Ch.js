@@ -175,6 +175,20 @@ function isNode(node) {
     }
     return false;
 }
+function isRegex(regex, typeCheck = true) {
+    if (typeCheck) {
+        return regex instanceof RegExp ? true : false;
+    }
+    else {
+        try {
+            new RegExp(regex);
+        }
+        catch (e) {
+            return false;
+        }
+        return true;
+    }
+}
 function isEven(number) {
     return isInteger(number) && !(number & 1);
 }
@@ -190,4 +204,4 @@ function isPositive(number) {
 function isNegative(number) {
     return number < 0 ? true : false;
 }
-export { isBoolean, isJson, isFunction, isObject, isArray, isAscii, isInteger, isFloat, isNumber, isString, isHtmlElement, isHtmlEventAttribute, isNode, isEven, isOdd, isOrigin, isPositive, isNegative };
+export { isBoolean, isJson, isFunction, isObject, isArray, isAscii, isInteger, isFloat, isNumber, isString, isHtmlElement, isHtmlEventAttribute, isNode, isEven, isOdd, isOrigin, isPositive, isNegative, isRegex };

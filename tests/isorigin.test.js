@@ -103,3 +103,7 @@ var node = document.createTextNode("new node");
 test("sends node to isOrigin", () => {
   expect(isOrigin(node)).toBe(false);
 });
+
+test("sends regex to isOrigin", () => {
+  expect(isOrigin(/ab+c/i)).toBe(false);
+});
