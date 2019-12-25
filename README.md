@@ -23,7 +23,7 @@
 
 ## Motivation
 
-The goal of this library is to provide an easy way to check if a variable is what it is supposed to be. Function, object, ascii, boolean, integer, string, json...
+The goal of this library is to provide an easy way to check if a variable is what it is supposed to be. Function, object, ascii, boolean, integer, string, json, email...
 
 ## Installation
 
