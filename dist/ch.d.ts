@@ -42,4 +42,6 @@ declare function isOdd(number: any): boolean;
 declare function isOrigin(number: any): boolean;
 declare function isPositive(number: any): boolean;
 declare function isNegative(number: any): boolean;
-export { isBoolean, isJson, isFunction, isObject, isArray, isAscii, isInteger, isFloat, isNumber, isString, isHtmlElement, isHtmlEventAttribute, isNode, isEven, isOdd, isOrigin, isPositive, isNegative, isRegex };
+declare function isEmail(email: any): boolean;
+declare function isIpAddress(ipAddress: any): boolean;
+export { isBoolean, isJson, isFunction, isObject, isArray, isAscii, isInteger, isFloat, isNumber, isString, isHtmlElement, isHtmlEventAttribute, isNode, isEven, isOdd, isOrigin, isPositive, isNegative, isRegex, isEmail, isIpAddress };

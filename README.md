@@ -1,6 +1,7 @@
 [![License: MIT](https://img.shields.io/npm/l/@lcluber/chjs.svg)](https://opensource.org/licenses/MIT)
 [![npm version](https://badge.fury.io/js/%40lcluber%2Fchjs.svg)](https://www.npmjs.com/package/@lcluber/chjs)
 ![Jest:coverage](https://img.shields.io/badge/Jest:coverage-100%25-brightgreen.svg)
+[![minified size](https://img.shields.io/bundlephobia/min/@lcluber/chjs)](https://www.npmjs.com/package/@lcluber/chjs)
 
 - [Synopsis](#synopsis)
 - [Motivation](#motivation)
@@ -124,6 +125,10 @@ isPositive(number: any): boolean {}
 isNegative(number: any): boolean {}
 
 isRegex(regex: any, typeCheck: boolean = true): boolean {}
+
+isEmail(email: any): boolean {}
+
+isIpAddress(ipAddress: any): boolean {}
 ```
 
 ## Contributors

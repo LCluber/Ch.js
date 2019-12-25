@@ -235,15 +235,27 @@ var Ch = (function (exports) {
       return number < 0 ? true : false;
     }
 
+    function isEmail(email) {
+      var regex = /^(?=[a-z0-9@.!$%&'*+\/=?^_‘{|}~-]{6,254}$)(?=[a-z0-9.!#$%&'*+\/=?^_‘{|}~-]{1,64}@)[a-z0-9!#$%&'*+\/=?^‘{|}~]+(?:[\._-][a-z0-9!#$%&'*+\/=?^‘{|}~]+)*@(?:(?=[a-z0-9-]{1,63}\.)[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?=[a-z0-9-]{2,63}$)[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+      return regex.test(String(email).toLowerCase());
+    }
+
+    function isIpAddress(ipAddress) {
+      var regex = /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+      return regex.test(ipAddress);
+    }
+
     exports.isArray = isArray;
     exports.isAscii = isAscii;
     exports.isBoolean = isBoolean;
+    exports.isEmail = isEmail;
     exports.isEven = isEven;
     exports.isFloat = isFloat;
     exports.isFunction = isFunction;
     exports.isHtmlElement = isHtmlElement;
     exports.isHtmlEventAttribute = isHtmlEventAttribute;
     exports.isInteger = isInteger;
+    exports.isIpAddress = isIpAddress;
     exports.isJson = isJson;
     exports.isNegative = isNegative;
     exports.isNode = isNode;

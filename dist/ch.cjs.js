@@ -229,3 +229,13 @@ function isNegative(number) {
     return number < 0 ? true : false;
 }
 exports.isNegative = isNegative;
+function isEmail(email) {
+    var regex = /^(?=[a-z0-9@.!$%&'*+\/=?^_‘{|}~-]{6,254}$)(?=[a-z0-9.!#$%&'*+\/=?^_‘{|}~-]{1,64}@)[a-z0-9!#$%&'*+\/=?^‘{|}~]+(?:[\._-][a-z0-9!#$%&'*+\/=?^‘{|}~]+)*@(?:(?=[a-z0-9-]{1,63}\.)[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?=[a-z0-9-]{2,63}$)[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    return regex.test(String(email).toLowerCase());
+}
+exports.isEmail = isEmail;
+function isIpAddress(ipAddress) {
+    var regex = /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+    return regex.test(ipAddress);
+}
+exports.isIpAddress = isIpAddress;
