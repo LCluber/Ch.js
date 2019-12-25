@@ -73,7 +73,7 @@
     "rollup-plugin-babel": "4.3.3",
     "semantic-release": "15.13.24",
     "tslint": "5.20.1",
-    "typescript": "3.7.3",
+    "typescript": "3.2.2",
     "uglify-js": "3.7.2"
   }
 }
