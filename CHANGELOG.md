@@ -1,3 +1,10 @@
+# [2.10.0](https://github.com/LCluber/Ch.js/compare/v2.9.0...v2.10.0) (2019-12-25)
+
+
+### Features
+
+* **validator:** added isemail and isipaddress validators ([99a2990](https://github.com/LCluber/Ch.js/commit/99a299024812211d65d5077c4b58024b60a1db62))
+
 # [2.9.0](https://github.com/LCluber/Ch.js/compare/v2.8.0...v2.9.0) (2019-10-16)
 
 
