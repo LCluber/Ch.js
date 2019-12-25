@@ -124,6 +124,10 @@ isPositive(number: any): boolean {}
 isNegative(number: any): boolean {}
 
 isRegex(regex: any, typeCheck: boolean = true): boolean {}
+
+isEmail(email: any): boolean {}
+
+isIpAddress(ipAddress: any): boolean {}
 ```
 
 ## Contributors
