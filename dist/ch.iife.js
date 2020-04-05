@@ -24,249 +24,256 @@
  * https://github.com/LCluber/Ch.js
  */
 var Ch = (function (exports) {
-    'use strict';
+  'use strict';
 
-    function isBoolean(bool) {
-      return typeof bool === "boolean";
+  function _typeof(obj) {
+    "@babel/helpers - typeof";
+
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+      _typeof = function (obj) {
+        return typeof obj;
+      };
+    } else {
+      _typeof = function (obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+      };
     }
 
-    function isJson(str) {
-      if (!isString(str)) {
-        return false;
-      }
+    return _typeof(obj);
+  }
 
+  function isBoolean(bool) {
+    return typeof bool === "boolean";
+  }
+
+  function isJson(str) {
+    if (!isString(str)) {
+      return false;
+    }
+
+    try {
+      JSON.parse(str);
+    } catch (e) {
+      return false;
+    }
+
+    return true;
+  }
+
+  function isFunction(func) {
+    if (func) {
+      var getType = {};
+      return func && getType.toString.call(func) === "[object Function]";
+    }
+
+    return false;
+  }
+
+  function isObject(object) {
+    return object !== null && _typeof(object) === "object" && !isArray(object);
+  }
+
+  function isArray(array) {
+    return array !== null && array.constructor === Array;
+  }
+
+  function isAscii(code) {
+    var extended = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+
+    if (isInteger(code, false)) {
+      return extended && code >= 0 && code <= 255 || code >= 0 && code <= 127;
+    }
+
+    return false;
+  }
+
+  function isInteger(number) {
+    var typeCheck = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+
+    var _int = parseInt(number, 10);
+
+    return typeCheck ? number === _int : number == _int;
+  }
+
+  function isFloat(number) {
+    var typeCheck = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+    var moduloCheck = number % 1 !== 0;
+    return typeCheck ? Number(number) === number && moduloCheck : Number(number) == number && moduloCheck;
+  }
+
+  function isNumber(number) {
+    return isInteger(number) || isFloat(number);
+  }
+
+  function isString(string) {
+    return typeof string === "string";
+  }
+
+  function isHtmlElement(htmlElement) {
+    if (htmlElement) {
+      return (typeof HTMLElement === "undefined" ? "undefined" : _typeof(HTMLElement)) === "object" ? htmlElement instanceof HTMLElement : htmlElement && _typeof(htmlElement) === "object" && htmlElement !== null && htmlElement.nodeType === 1 && typeof htmlElement.nodeName === "string";
+    }
+
+    return false;
+  }
+
+  function isHtmlEventAttribute(htmlEventAttribute) {
+    switch (htmlEventAttribute) {
+      case "onafterprint":
+      case "onbeforeprint":
+      case "onbeforeunload":
+      case "onerror":
+      case "onhashchange":
+      case "onload":
+      case "onmessage":
+      case "onoffline":
+      case "ononline":
+      case "onpagehide":
+      case "onpageshow":
+      case "onpopstate":
+      case "onresize":
+      case "onstorage":
+      case "onunload":
+      case "onblur":
+      case "onchange":
+      case "oncontextmenu":
+      case "onfocus":
+      case "oninput":
+      case "oninvalid":
+      case "onreset":
+      case "onsearch":
+      case "onselect":
+      case "onsubmit":
+      case "onkeydown":
+      case "onkeypress":
+      case "onkeyup":
+      case "onclick":
+      case "ondblclick":
+      case "onmousedown":
+      case "onmousemove":
+      case "onmouseout":
+      case "onmouseover":
+      case "onmouseup":
+      case "onmousewheel":
+      case "onwheel":
+      case "ondrag":
+      case "ondragend":
+      case "ondragenter":
+      case "ondragleave":
+      case "ondragover":
+      case "ondragstart":
+      case "ondrop":
+      case "onscroll":
+      case "oncopy":
+      case "oncut":
+      case "onpaste":
+      case "onabort":
+      case "oncanplay":
+      case "oncanplaythrough":
+      case "oncuechange":
+      case "ondurationchange":
+      case "onemptied":
+      case "onended":
+      case "onerror":
+      case "onloadeddata":
+      case "onloadedmetadata":
+      case "onloadstart":
+      case "onpause":
+      case "onplay":
+      case "onplaying":
+      case "onprogress":
+      case "onratechange":
+      case "onseeked":
+      case "onseeking":
+      case "onstalled":
+      case "onsuspend":
+      case "ontimeupdate":
+      case "onvolumechange":
+      case "onwaiting":
+      case "ontoggle":
+        return true;
+
+      default:
+        return false;
+    }
+  }
+
+  function isNode(node) {
+    if (node) {
+      return (typeof Node === "undefined" ? "undefined" : _typeof(Node)) === "object" ? node instanceof Node : node && _typeof(node) === "object" && typeof node.nodeType === "number" && typeof node.nodeName === "string";
+    }
+
+    return false;
+  }
+
+  function isRegex(regex) {
+    var typeCheck = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+
+    if (typeCheck) {
+      return regex instanceof RegExp ? true : false;
+    } else {
       try {
-        JSON.parse(str);
+        new RegExp(regex);
       } catch (e) {
         return false;
       }
 
       return true;
     }
+  }
 
-    function isFunction(func) {
-      if (func) {
-        var getType = {};
-        return func && getType.toString.call(func) === "[object Function]";
-      }
+  function isEven(number) {
+    return isInteger(number) && !(number & 1);
+  }
 
-      return false;
-    }
+  function isOdd(number) {
+    return isInteger(number) && number & 1 ? true : false;
+  }
 
-    function isObject(object) {
-      return object !== null && typeof object === "object" && !isArray(object);
-    }
+  function isOrigin(number) {
+    return number === 0 ? true : false;
+  }
 
-    function isArray(array) {
-      return array !== null && array.constructor === Array;
-    }
+  function isPositive(number) {
+    return isNumber(number) && number > 0 ? true : false;
+  }
 
-    function isAscii(code, extended) {
-      if (extended === void 0) {
-        extended = true;
-      }
+  function isNegative(number) {
+    return number < 0 ? true : false;
+  }
 
-      if (isInteger(code, false)) {
-        return extended && code >= 0 && code <= 255 || code >= 0 && code <= 127;
-      }
+  function isEmail(email) {
+    var regex = /^(?=[a-z0-9@.!$%&'*+\/=?^_‘{|}~-]{6,254}$)(?=[a-z0-9.!#$%&'*+\/=?^_‘{|}~-]{1,64}@)[a-z0-9!#$%&'*+\/=?^‘{|}~]+(?:[\._-][a-z0-9!#$%&'*+\/=?^‘{|}~]+)*@(?:(?=[a-z0-9-]{1,63}\.)[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?=[a-z0-9-]{2,63}$)[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    return regex.test(String(email).toLowerCase());
+  }
 
-      return false;
-    }
+  function isIpAddress(ipAddress) {
+    var regex = /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+    return regex.test(ipAddress);
+  }
 
-    function isInteger(number, typeCheck) {
-      if (typeCheck === void 0) {
-        typeCheck = true;
-      }
+  exports.isArray = isArray;
+  exports.isAscii = isAscii;
+  exports.isBoolean = isBoolean;
+  exports.isEmail = isEmail;
+  exports.isEven = isEven;
+  exports.isFloat = isFloat;
+  exports.isFunction = isFunction;
+  exports.isHtmlElement = isHtmlElement;
+  exports.isHtmlEventAttribute = isHtmlEventAttribute;
+  exports.isInteger = isInteger;
+  exports.isIpAddress = isIpAddress;
+  exports.isJson = isJson;
+  exports.isNegative = isNegative;
+  exports.isNode = isNode;
+  exports.isNumber = isNumber;
+  exports.isObject = isObject;
+  exports.isOdd = isOdd;
+  exports.isOrigin = isOrigin;
+  exports.isPositive = isPositive;
+  exports.isRegex = isRegex;
+  exports.isString = isString;
 
-      var _int = parseInt(number, 10);
-
-      return typeCheck ? number === _int : number == _int;
-    }
-
-    function isFloat(number, typeCheck) {
-      if (typeCheck === void 0) {
-        typeCheck = true;
-      }
-
-      var moduloCheck = number % 1 !== 0;
-      return typeCheck ? Number(number) === number && moduloCheck : Number(number) == number && moduloCheck;
-    }
-
-    function isNumber(number) {
-      return isInteger(number) || isFloat(number);
-    }
-
-    function isString(string) {
-      return typeof string === "string";
-    }
-
-    function isHtmlElement(htmlElement) {
-      if (htmlElement) {
-        return typeof HTMLElement === "object" ? htmlElement instanceof HTMLElement : htmlElement && typeof htmlElement === "object" && htmlElement !== null && htmlElement.nodeType === 1 && typeof htmlElement.nodeName === "string";
-      }
-
-      return false;
-    }
-
-    function isHtmlEventAttribute(htmlEventAttribute) {
-      switch (htmlEventAttribute) {
-        case "onafterprint":
-        case "onbeforeprint":
-        case "onbeforeunload":
-        case "onerror":
-        case "onhashchange":
-        case "onload":
-        case "onmessage":
-        case "onoffline":
-        case "ononline":
-        case "onpagehide":
-        case "onpageshow":
-        case "onpopstate":
-        case "onresize":
-        case "onstorage":
-        case "onunload":
-        case "onblur":
-        case "onchange":
-        case "oncontextmenu":
-        case "onfocus":
-        case "oninput":
-        case "oninvalid":
-        case "onreset":
-        case "onsearch":
-        case "onselect":
-        case "onsubmit":
-        case "onkeydown":
-        case "onkeypress":
-        case "onkeyup":
-        case "onclick":
-        case "ondblclick":
-        case "onmousedown":
-        case "onmousemove":
-        case "onmouseout":
-        case "onmouseover":
-        case "onmouseup":
-        case "onmousewheel":
-        case "onwheel":
-        case "ondrag":
-        case "ondragend":
-        case "ondragenter":
-        case "ondragleave":
-        case "ondragover":
-        case "ondragstart":
-        case "ondrop":
-        case "onscroll":
-        case "oncopy":
-        case "oncut":
-        case "onpaste":
-        case "onabort":
-        case "oncanplay":
-        case "oncanplaythrough":
-        case "oncuechange":
-        case "ondurationchange":
-        case "onemptied":
-        case "onended":
-        case "onerror":
-        case "onloadeddata":
-        case "onloadedmetadata":
-        case "onloadstart":
-        case "onpause":
-        case "onplay":
-        case "onplaying":
-        case "onprogress":
-        case "onratechange":
-        case "onseeked":
-        case "onseeking":
-        case "onstalled":
-        case "onsuspend":
-        case "ontimeupdate":
-        case "onvolumechange":
-        case "onwaiting":
-        case "ontoggle":
-          return true;
-
-        default:
-          return false;
-      }
-    }
-
-    function isNode(node) {
-      if (node) {
-        return typeof Node === "object" ? node instanceof Node : node && typeof node === "object" && typeof node.nodeType === "number" && typeof node.nodeName === "string";
-      }
-
-      return false;
-    }
-
-    function isRegex(regex, typeCheck) {
-      if (typeCheck === void 0) {
-        typeCheck = true;
-      }
-
-      if (typeCheck) {
-        return regex instanceof RegExp ? true : false;
-      } else {
-        try {
-          new RegExp(regex);
-        } catch (e) {
-          return false;
-        }
-
-        return true;
-      }
-    }
-
-    function isEven(number) {
-      return isInteger(number) && !(number & 1);
-    }
-
-    function isOdd(number) {
-      return isInteger(number) && number & 1 ? true : false;
-    }
-
-    function isOrigin(number) {
-      return number === 0 ? true : false;
-    }
-
-    function isPositive(number) {
-      return isNumber(number) && number > 0 ? true : false;
-    }
-
-    function isNegative(number) {
-      return number < 0 ? true : false;
-    }
-
-    function isEmail(email) {
-      var regex = /^(?=[a-z0-9@.!$%&'*+\/=?^_‘{|}~-]{6,254}$)(?=[a-z0-9.!#$%&'*+\/=?^_‘{|}~-]{1,64}@)[a-z0-9!#$%&'*+\/=?^‘{|}~]+(?:[\._-][a-z0-9!#$%&'*+\/=?^‘{|}~]+)*@(?:(?=[a-z0-9-]{1,63}\.)[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?=[a-z0-9-]{2,63}$)[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-      return regex.test(String(email).toLowerCase());
-    }
-
-    function isIpAddress(ipAddress) {
-      var regex = /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
-      return regex.test(ipAddress);
-    }
-
-    exports.isArray = isArray;
-    exports.isAscii = isAscii;
-    exports.isBoolean = isBoolean;
-    exports.isEmail = isEmail;
-    exports.isEven = isEven;
-    exports.isFloat = isFloat;
-    exports.isFunction = isFunction;
-    exports.isHtmlElement = isHtmlElement;
-    exports.isHtmlEventAttribute = isHtmlEventAttribute;
-    exports.isInteger = isInteger;
-    exports.isIpAddress = isIpAddress;
-    exports.isJson = isJson;
-    exports.isNegative = isNegative;
-    exports.isNode = isNode;
-    exports.isNumber = isNumber;
-    exports.isObject = isObject;
-    exports.isOdd = isOdd;
-    exports.isOrigin = isOrigin;
-    exports.isPositive = isPositive;
-    exports.isRegex = isRegex;
-    exports.isString = isString;
-
-    return exports;
+  return exports;
 
 }({}));
