@@ -1,6 +1,6 @@
 {
   "name": "@lcluber/chjs",
-  "version": "2.10.0",
+  "version": "2.10.1",
   "description": "Type checking library for Javascript",
   "keywords": [
     "type checking"

@@ -1,3 +1,10 @@
+## [2.10.1](https://github.com/LCluber/Ch.js/compare/v2.10.0...v2.10.1) (2020-04-05)
+
+
+### Bug Fixes
+
+* **polyfill:** add polyfill for typeof ([8d3b01c](https://github.com/LCluber/Ch.js/commit/8d3b01c3d76c5369ddfd1dd9208ef54ce641b46b))
+
 # [2.10.0](https://github.com/LCluber/Ch.js/compare/v2.9.0...v2.10.0) (2019-12-25)
 
 
