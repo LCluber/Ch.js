@@ -19,8 +19,17 @@ module.exports = api => {
         [
           "@babel/env",
           {
-            loose: true,
-            modules: false
+            debug: true,
+            targets: {
+              ie: 9,
+              browsers: "cover 99.5%",
+              esmodules: false
+            },
+            loose: false,
+            modules: false,
+            // useBuiltIns: "usage",
+            corejs: 3
+            // forceAllTransforms: true
           }
         ]
       ],
