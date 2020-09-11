@@ -1,3 +1,8 @@
+# 2.11.0 (September 11th 2020)
+
+- IE9 compatibility for iife version
+- Update Typescript to version 4
+
 ## [2.10.1](https://github.com/LCluber/Ch.js/compare/v2.10.0...v2.10.1) (2020-04-05)
 
 

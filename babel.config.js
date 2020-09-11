@@ -27,7 +27,7 @@ module.exports = api => {
             },
             loose: false,
             modules: false,
-            // useBuiltIns: "usage",
+            useBuiltIns: "usage",
             corejs: 3
             // forceAllTransforms: true
           }

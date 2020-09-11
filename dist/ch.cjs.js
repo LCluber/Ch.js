@@ -23,12 +23,13 @@
  *
  * https://github.com/LCluber/Ch.js
  */
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
 function isBoolean(bool) {
     return typeof bool === "boolean";
 }
-exports.isBoolean = isBoolean;
 function isJson(str) {
     if (!isString(str)) {
         return false;
@@ -41,53 +42,41 @@ function isJson(str) {
     }
     return true;
 }
-exports.isJson = isJson;
 function isFunction(func) {
     if (func) {
-        var getType = {};
+        const getType = {};
         return func && getType.toString.call(func) === "[object Function]";
     }
     return false;
 }
-exports.isFunction = isFunction;
 function isObject(object) {
     return object !== null && typeof object === "object" && !isArray(object);
 }
-exports.isObject = isObject;
 function isArray(array) {
     return array !== null && array.constructor === Array;
 }
-exports.isArray = isArray;
-function isAscii(code, extended) {
-    if (extended === void 0) { extended = true; }
+function isAscii(code, extended = true) {
     if (isInteger(code, false)) {
         return (extended && code >= 0 && code <= 255) || (code >= 0 && code <= 127);
     }
     return false;
 }
-exports.isAscii = isAscii;
-function isInteger(number, typeCheck) {
-    if (typeCheck === void 0) { typeCheck = true; }
-    var int = parseInt(number, 10);
+function isInteger(number, typeCheck = true) {
+    const int = parseInt(number, 10);
     return typeCheck ? number === int : number == int;
 }
-exports.isInteger = isInteger;
-function isFloat(number, typeCheck) {
-    if (typeCheck === void 0) { typeCheck = true; }
-    var moduloCheck = number % 1 !== 0;
+function isFloat(number, typeCheck = true) {
+    const moduloCheck = number % 1 !== 0;
     return typeCheck
         ? Number(number) === number && moduloCheck
         : Number(number) == number && moduloCheck;
 }
-exports.isFloat = isFloat;
 function isNumber(number) {
     return isInteger(number) || isFloat(number);
 }
-exports.isNumber = isNumber;
 function isString(string) {
     return typeof string === "string";
 }
-exports.isString = isString;
 function isHtmlElement(htmlElement) {
     if (htmlElement) {
         return typeof HTMLElement === "object"
@@ -100,7 +89,6 @@ function isHtmlElement(htmlElement) {
     }
     return false;
 }
-exports.isHtmlElement = isHtmlElement;
 function isHtmlEventAttribute(htmlEventAttribute) {
     switch (htmlEventAttribute) {
         case "onafterprint":
@@ -180,7 +168,6 @@ function isHtmlEventAttribute(htmlEventAttribute) {
             return false;
     }
 }
-exports.isHtmlEventAttribute = isHtmlEventAttribute;
 function isNode(node) {
     if (node) {
         return typeof Node === "object"
@@ -192,9 +179,7 @@ function isNode(node) {
     }
     return false;
 }
-exports.isNode = isNode;
-function isRegex(regex, typeCheck) {
-    if (typeCheck === void 0) { typeCheck = true; }
+function isRegex(regex, typeCheck = true) {
     if (typeCheck) {
         return regex instanceof RegExp ? true : false;
     }
@@ -208,34 +193,48 @@ function isRegex(regex, typeCheck) {
         return true;
     }
 }
-exports.isRegex = isRegex;
 function isEven(number) {
     return isInteger(number) && !(number & 1);
 }
-exports.isEven = isEven;
 function isOdd(number) {
     return isInteger(number) && number & 1 ? true : false;
 }
-exports.isOdd = isOdd;
 function isOrigin(number) {
     return number === 0 ? true : false;
 }
-exports.isOrigin = isOrigin;
 function isPositive(number) {
     return isNumber(number) && number > 0 ? true : false;
 }
-exports.isPositive = isPositive;
 function isNegative(number) {
     return number < 0 ? true : false;
 }
-exports.isNegative = isNegative;
 function isEmail(email) {
     var regex = /^(?=[a-z0-9@.!$%&'*+\/=?^_‘{|}~-]{6,254}$)(?=[a-z0-9.!#$%&'*+\/=?^_‘{|}~-]{1,64}@)[a-z0-9!#$%&'*+\/=?^‘{|}~]+(?:[\._-][a-z0-9!#$%&'*+\/=?^‘{|}~]+)*@(?:(?=[a-z0-9-]{1,63}\.)[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?=[a-z0-9-]{2,63}$)[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
     return regex.test(String(email).toLowerCase());
 }
-exports.isEmail = isEmail;
 function isIpAddress(ipAddress) {
     var regex = /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
     return regex.test(ipAddress);
 }
+
+exports.isArray = isArray;
+exports.isAscii = isAscii;
+exports.isBoolean = isBoolean;
+exports.isEmail = isEmail;
+exports.isEven = isEven;
+exports.isFloat = isFloat;
+exports.isFunction = isFunction;
+exports.isHtmlElement = isHtmlElement;
+exports.isHtmlEventAttribute = isHtmlEventAttribute;
+exports.isInteger = isInteger;
 exports.isIpAddress = isIpAddress;
+exports.isJson = isJson;
+exports.isNegative = isNegative;
+exports.isNode = isNode;
+exports.isNumber = isNumber;
+exports.isObject = isObject;
+exports.isOdd = isOdd;
+exports.isOrigin = isOrigin;
+exports.isPositive = isPositive;
+exports.isRegex = isRegex;
+exports.isString = isString;

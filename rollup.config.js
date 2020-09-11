@@ -1,5 +1,5 @@
 import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
+// import commonjs from "@rollup/plugin-commonjs";
 import babel from "rollup-plugin-babel";
 import progress from "rollup-plugin-progress";
 import sizes from "rollup-plugin-sizes";
@@ -24,7 +24,7 @@ module.exports = {
   external: [], // <-- suppresses the warning
   plugins: [
     resolve(),
-    commonjs(),
+    // commonjs(),
     babel({
       // exclude: "node_modules/**" // only transpile our source code
     }),

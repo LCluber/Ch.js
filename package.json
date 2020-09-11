@@ -1,6 +1,6 @@
 {
   "name": "@lcluber/chjs",
-  "version": "2.10.1",
+  "version": "2.11.0",
   "description": "Type checking library for Javascript",
   "keywords": [
     "type checking"
@@ -25,26 +25,19 @@
   "contributors": [],
   "scripts": {
     "start": "",
-    "build": "npm run clean && tsc --p tsconfig.cjs.json && tsc && npm run rollup && npm run uglify && npm run banner",
+    "build": "npm run clean && tsc && npm run rollup:iife && npm run rollup:cjs && npm run uglify && npm run banner",
     "clean": "rimraf dist/* build/*",
-    "rollup": "rollup --config",
+    "rollup:iife": "rollup --config rollup.config.js",
+    "rollup:cjs": "rollup --config rollup.config.cjs.js",
     "uglify": "uglifyjs build/ch.iife.js --config-file uglify.config.json --output build/ch.iife.min.js",
-    "banner": "cat license.js build/es6/ch.js > dist/ch.js && cat license.js build/ch.d.ts > dist/ch.d.ts && cat license.js build/ch.iife.js > dist/ch.iife.js && cat license.js build/ch.iife.min.js > dist/ch.iife.min.js && cat license.js build/cjs/ch.js > dist/ch.cjs.js",
-    "pretty": "prettier --check 'src/ts/*.ts' --write",
-    "test": "jest --coverage",
-    "commit": "git-cz",
-    "semantic-release": "semantic-release"
+    "banner": "cat license.js build/es6/ch.js > dist/ch.js && cat license.js build/ch.d.ts > dist/ch.d.ts && cat license.js build/ch.iife.js > dist/ch.iife.js && cat license.js build/ch.iife.min.js > dist/ch.iife.min.js && cat license.js build/ch.cjs.js > dist/ch.cjs.js",
+    "test": "jest --coverage"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "gbvalidator && pretty-quick --staged && npm run test",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "gbvalidator"
-    }
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
+      "pre-commit": "npm run test",
+      "commit-msg": "",
+      "pre-push": ""
     }
   },
   "files": [
@@ -54,23 +47,12 @@
   "devDependencies": {
     "@babel/core": "7.9.0",
     "@babel/preset-env": "7.9.0",
-    "@commitlint/cli": "8.0.0",
-    "@commitlint/config-conventional": "8.0.0",
-    "@commitlint/prompt": "8.0.0",
-    "@lcluber/gitbranchvalidator": "1.3.0",
     "@rollup/plugin-commonjs": "11.0.2",
     "@rollup/plugin-node-resolve": "7.1.1",
-    "@semantic-release/changelog": "3.0.4",
-    "@semantic-release/git": "9.0.0",
-    "@semantic-release/npm": "7.0.5",
     "babel-jest": "24.9.0",
-    "commitizen": "4.0.3",
     "core-js": "3.6.4",
-    "cz-conventional-changelog": "2.1.0",
     "husky": "2.7.0",
     "jest": "24.9.0",
-    "prettier": "1.18.2",
-    "pretty-quick": "1.11.1",
     "rimraf": "3.0.2",
     "rollup": "2.3.3",
     "rollup-plugin-analyzer": "3.2.2",
@@ -78,9 +60,8 @@
     "rollup-plugin-progress": "1.1.1",
     "rollup-plugin-size-snapshot": "0.11.0",
     "rollup-plugin-sizes": "1.0.2",
-    "semantic-release": "17.0.4",
     "tslint": "5.20.1",
-    "typescript": "3.2.2",
+    "typescript": "4.0.2",
     "uglify-js": "3.7.2"
   }
 }
