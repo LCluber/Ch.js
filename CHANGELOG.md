@@ -1,3 +1,7 @@
+# 2.12.0 (September 13th 2020)
+
+- Add IsPowerOfTwo() method
+
 # 2.11.0 (September 11th 2020)
 
 - IE9 compatibility for iife version

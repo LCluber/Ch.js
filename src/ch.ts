@@ -198,6 +198,10 @@ function isNegative(number: any): boolean {
   return number < 0 ? true : false;
 }
 
+function isPowerOfTwo(number: any): boolean {
+  return isInteger(number) && !isOrigin(number) && (number & (number - 1)) === 0;
+}
+
 function isEmail(email: any): boolean {
   var regex = /^(?=[a-z0-9@.!$%&'*+\/=?^_‘{|}~-]{6,254}$)(?=[a-z0-9.!#$%&'*+\/=?^_‘{|}~-]{1,64}@)[a-z0-9!#$%&'*+\/=?^‘{|}~]+(?:[\._-][a-z0-9!#$%&'*+\/=?^‘{|}~]+)*@(?:(?=[a-z0-9-]{1,63}\.)[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?=[a-z0-9-]{2,63}$)[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
   return regex.test(String(email).toLowerCase());
@@ -227,6 +231,7 @@ export {
   isOrigin,
   isPositive,
   isNegative,
+  isPowerOfTwo,
   isRegex,
   isEmail,
   isIpAddress
