@@ -1,3 +1,8 @@
+# 2.13.0 (December 6th 2020)
+
+- Add typeCheck parameter to isNumber(), isOdd(), isOrigin(), isPositive(), isNegative(), isPowerOfTwo() methods
+- Improved isNumber() perfromance
+
 # 2.12.0 (September 13th 2020)
 
 - Add IsPowerOfTwo() method

@@ -47,13 +47,16 @@ function isInteger(number: any, typeCheck: boolean = true): boolean {
 
 function isFloat(number: any, typeCheck: boolean = true): boolean {
   const moduloCheck = number % 1 !== 0;
-  return typeCheck
-    ? Number(number) === number && moduloCheck
-    : Number(number) == number && moduloCheck;
+  return typeCheck ? (Number(number) === number && moduloCheck) : (Number(number) == number && moduloCheck);
 }
 
-function isNumber(number: any): boolean {
-  return isInteger(number) || isFloat(number);
+// No type checking. Works with '8e4', '+true', '0x44' etc
+function isNumeric(number: any): boolean {
+  return !isNaN(number - parseFloat(number));
+}
+
+function isNumber(number: any, typeCheck: boolean = true): boolean {
+  return typeCheck ? Number(number) === number : isNumeric(number);
 }
 
 function isString(string: any): boolean {
@@ -178,28 +181,28 @@ function isRegex(regex: any, typeCheck: boolean = true): boolean {
   }
 }
 
-function isEven(number: any): boolean {
-  return isInteger(number) && !(number & 1);
+function isEven(number: any, typeCheck: boolean = true): boolean {
+  return isInteger(number, typeCheck) && !(number & 1);
 }
 
-function isOdd(number: any): boolean {
-  return isInteger(number) && number & 1 ? true : false;
+function isOdd(number: any, typeCheck: boolean = true): boolean {
+  return isInteger(number, typeCheck) && number & 1 ? true : false;
 }
 
-function isOrigin(number: any): boolean {
-  return number === 0 ? true : false;
+function isOrigin(number: any, typeCheck: boolean = true): boolean {
+  return typeCheck ? (number === 0 ? true : false) : (number == 0 ? true : false);
 }
 
-function isPositive(number: any): boolean {
-  return isNumber(number) && number > 0 ? true : false;
+function isPositive(number: any, typeCheck: boolean = true): boolean {
+  return isNumber(number, typeCheck) && number > 0 ? true : false;
 }
 
-function isNegative(number: any): boolean {
-  return number < 0 ? true : false;
+function isNegative(number: any, typeCheck: boolean = true): boolean {
+  return isNumber(number, typeCheck) && number < 0 ? true : false;
 }
 
-function isPowerOfTwo(number: any): boolean {
-  return isInteger(number) && !isOrigin(number) && (number & (number - 1)) === 0;
+function isPowerOfTwo(number: any, typeCheck: boolean = true): boolean {
+  return isInteger(number, typeCheck) && !isOrigin(number, typeCheck) && (number & (number - 1)) === 0;
 }
 
 function isEmail(email: any): boolean {

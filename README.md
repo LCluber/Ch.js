@@ -104,7 +104,8 @@ isInteger(number: any, typeCheck: boolean = true): boolean {}
 
 isFloat(number: any, typeCheck: boolean = true): boolean {}
 
-isNumber(number: any): boolean {}
+// Find out if a variable is a numeric value, including exponential notation, hexadecimal value, etc
+isNumber(number: any, typeCheck: boolean = true): boolean {}
 
 isString(string: any): boolean {}
 
@@ -114,17 +115,17 @@ isHtmlEventAttribute(htmlEventAttribute: any): boolean {}
 
 isNode(node: any): boolean {}
 
-isEven(number: any): boolean {}
+isEven(number: any, typeCheck: boolean = true): boolean {}
 
-isOdd(number: any): boolean {}
+isOdd(number: any, typeCheck: boolean = true): boolean {}
 
-isOrigin(number: any): boolean {}
+isOrigin(number: any, typeCheck: boolean = true): boolean {}
 
-isPositive(number: any): boolean {}
+isPositive(number: any, typeCheck: boolean = true): boolean {}
 
-isNegative(number: any): boolean {}
+isNegative(number: any, typeCheck: boolean = true): boolean {}
 
-isPowerOfTwo(number: any): boolean {}
+isPowerOfTwo(number: any, typeCheck: boolean = true): boolean {}
 
 isRegex(regex: any, typeCheck: boolean = true): boolean {}
 

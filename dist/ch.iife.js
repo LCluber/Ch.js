@@ -101,8 +101,13 @@ var Ch = (function (exports) {
     return typeCheck ? Number(number) === number && moduloCheck : Number(number) == number && moduloCheck;
   }
 
+  function isNumeric(number) {
+    return !isNaN(number - parseFloat(number));
+  }
+
   function isNumber(number) {
-    return isInteger(number) || isFloat(number);
+    var typeCheck = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+    return typeCheck ? Number(number) === number : isNumeric(number);
   }
 
   function isString(string) {
@@ -223,27 +228,33 @@ var Ch = (function (exports) {
   }
 
   function isEven(number) {
-    return isInteger(number) && !(number & 1);
+    var typeCheck = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+    return isInteger(number, typeCheck) && !(number & 1);
   }
 
   function isOdd(number) {
-    return isInteger(number) && number & 1 ? true : false;
+    var typeCheck = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+    return isInteger(number, typeCheck) && number & 1 ? true : false;
   }
 
   function isOrigin(number) {
-    return number === 0 ? true : false;
+    var typeCheck = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+    return typeCheck ? number === 0 ? true : false : number == 0 ? true : false;
   }
 
   function isPositive(number) {
-    return isNumber(number) && number > 0 ? true : false;
+    var typeCheck = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+    return isNumber(number, typeCheck) && number > 0 ? true : false;
   }
 
   function isNegative(number) {
-    return number < 0 ? true : false;
+    var typeCheck = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+    return isNumber(number, typeCheck) && number < 0 ? true : false;
   }
 
   function isPowerOfTwo(number) {
-    return isInteger(number) && !isOrigin(number) && (number & number - 1) === 0;
+    var typeCheck = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+    return isInteger(number, typeCheck) && !isOrigin(number, typeCheck) && (number & number - 1) === 0;
   }
 
   function isEmail(email) {

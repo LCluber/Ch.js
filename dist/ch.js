@@ -63,12 +63,13 @@ function isInteger(number, typeCheck = true) {
 }
 function isFloat(number, typeCheck = true) {
     const moduloCheck = number % 1 !== 0;
-    return typeCheck
-        ? Number(number) === number && moduloCheck
-        : Number(number) == number && moduloCheck;
+    return typeCheck ? (Number(number) === number && moduloCheck) : (Number(number) == number && moduloCheck);
 }
-function isNumber(number) {
-    return isInteger(number) || isFloat(number);
+function isNumeric(number) {
+    return !isNaN(number - parseFloat(number));
+}
+function isNumber(number, typeCheck = true) {
+    return typeCheck ? Number(number) === number : isNumeric(number);
 }
 function isString(string) {
     return typeof string === "string";
@@ -189,23 +190,23 @@ function isRegex(regex, typeCheck = true) {
         return true;
     }
 }
-function isEven(number) {
-    return isInteger(number) && !(number & 1);
+function isEven(number, typeCheck = true) {
+    return isInteger(number, typeCheck) && !(number & 1);
 }
-function isOdd(number) {
-    return isInteger(number) && number & 1 ? true : false;
+function isOdd(number, typeCheck = true) {
+    return isInteger(number, typeCheck) && number & 1 ? true : false;
 }
-function isOrigin(number) {
-    return number === 0 ? true : false;
+function isOrigin(number, typeCheck = true) {
+    return typeCheck ? (number === 0 ? true : false) : (number == 0 ? true : false);
 }
-function isPositive(number) {
-    return isNumber(number) && number > 0 ? true : false;
+function isPositive(number, typeCheck = true) {
+    return isNumber(number, typeCheck) && number > 0 ? true : false;
 }
-function isNegative(number) {
-    return number < 0 ? true : false;
+function isNegative(number, typeCheck = true) {
+    return isNumber(number, typeCheck) && number < 0 ? true : false;
 }
-function isPowerOfTwo(number) {
-    return isInteger(number) && !isOrigin(number) && (number & (number - 1)) === 0;
+function isPowerOfTwo(number, typeCheck = true) {
+    return isInteger(number, typeCheck) && !isOrigin(number, typeCheck) && (number & (number - 1)) === 0;
 }
 function isEmail(email) {
     var regex = /^(?=[a-z0-9@.!$%&'*+\/=?^_‘{|}~-]{6,254}$)(?=[a-z0-9.!#$%&'*+\/=?^_‘{|}~-]{1,64}@)[a-z0-9!#$%&'*+\/=?^‘{|}~]+(?:[\._-][a-z0-9!#$%&'*+\/=?^‘{|}~]+)*@(?:(?=[a-z0-9-]{1,63}\.)[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?=[a-z0-9-]{2,63}$)[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
