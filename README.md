@@ -152,4 +152,3 @@ To contribute please read **[NOTICE.md](https://github.com/LCluber/Ch.js/blob/ma
 | type checking   | [TypeScript](https://www.typescriptlang.org) | static type checking along with the latest ECMAScript features |
 | module bundler  |      [Rollup.js](https://rollupjs.org)       |                        advanced module bundler for ES6 modules |
 | unit testing    |          [Jest](https://jestjs.io/)          |                  delightful testing with a focus on simplicity |
-| deployment      |       [Travis](https://travis-ci.com/)       |                                test and deploy with confidence |
