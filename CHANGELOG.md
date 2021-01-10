@@ -1,3 +1,9 @@
+
+# 2.14.0 (January 10th 2021)
+
+- Ch.js becomes CheckHard.js 
+- Project transfered from LCluber to DWTechs. See README.md for more info.
+
 # 2.13.0 (December 6th 2020)
 
 - Add typeCheck parameter to isNumber(), isOdd(), isOrigin(), isPositive(), isNegative(), isPowerOfTwo() methods

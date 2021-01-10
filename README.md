@@ -19,6 +19,8 @@
 
 ## Synopsis
 
+### This project has been transfered to DWTechs and is now called CheckHard.js. Please update your project dependencies to CheckHard.js as Ch.js will not be updated anymore.
+
 **[Ch.js](https://github.com/LCluber/Ch.js)** is an open source type checking library for Javascript.
 
 ## Motivation
