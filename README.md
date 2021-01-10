@@ -1,5 +1,8 @@
 ### This project has been transfered to [DWTechs](https://github.com/DWTechs/CheckHard.js) and is now called [CheckHard.js](https://github.com/DWTechs/CheckHard.js). Please update your project dependencies to [CheckHard.js](https://github.com/DWTechs/CheckHard.js) as Ch.js will not be updated anymore.
 
+
+
+
 [![License: MIT](https://img.shields.io/npm/l/@lcluber/chjs.svg)](https://opensource.org/licenses/MIT)
 [![npm version](https://badge.fury.io/js/%40lcluber%2Fchjs.svg)](https://www.npmjs.com/package/@lcluber/chjs)
 ![Jest:coverage](https://img.shields.io/badge/Jest:coverage-100%25-brightgreen.svg)
