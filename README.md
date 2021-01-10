@@ -1,4 +1,4 @@
-### This project has been transfered to [DWTechs](https://github.com/DWTechs/CheckHard.js) and is now called [CheckHard.js](https://github.com/DWTechs/CheckHard.js). 
+### This project has been transferred to [DWTechs](https://github.com/DWTechs/CheckHard.js) and is now called [CheckHard.js](https://github.com/DWTechs/CheckHard.js). 
 
 ### Please update your project dependencies to [CheckHard.js](https://github.com/DWTechs/CheckHard.js) as Ch.js will not be updated anymore.
 
